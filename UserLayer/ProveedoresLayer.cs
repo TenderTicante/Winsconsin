@@ -15,6 +15,10 @@ namespace UserLayer
         public ProveedoresLayer()
         {
             InitializeComponent();
+            pictureBox1.Controls.Add(pictureBox2);
+            pictureBox1.Dock = DockStyle.Top;
+            pictureBox2.Location = new Point(20, 10);
+            pictureBox2.BackColor = Color.Transparent;
         }
     }
 }

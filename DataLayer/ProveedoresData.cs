@@ -10,7 +10,7 @@ using System.Data.SqlClient;
 
 namespace DataLayer
 {
-    class ProveedoresData
+    public class ProveedoresData
     {
         //Variables para hacer referencia a los de la tabla
         private string _ClaveProveedor;
@@ -115,6 +115,11 @@ namespace DataLayer
             }
         }
 
+        //Constructor vacio
+        public ProveedoresData()
+        {
+
+        }
         //Constructor para el acceso a datos
         public ProveedoresData(string clavep,string nombrep,string contacto,string correo,string telefono,string direccion,string aux)
         {

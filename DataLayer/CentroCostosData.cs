@@ -10,7 +10,7 @@ using System.Data.SqlClient;
 
 namespace DataLayer
 {
-    class CentroCostosData
+    public class CentroCostosData
     {
         //Variables para hacer referencia a los de la tabla
         private int _ClaveCC;

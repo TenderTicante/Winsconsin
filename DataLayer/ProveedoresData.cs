@@ -24,18 +24,7 @@ namespace DataLayer
         private string _AuxTxt;
 
         //Metodos de encapsulamiento de los datos
-        public string ClaveProveedor
-        {
-            get
-            {
-                return ClaveProveedor;
-            }
 
-            set
-            {
-                ClaveProveedor = value;
-            }
-        }
 
         public string NombreProveedor
         {
@@ -115,6 +104,19 @@ namespace DataLayer
             }
         }
 
+        public string ClaveProveedor
+        {
+            get
+            {
+                return _ClaveProveedor;
+            }
+
+            set
+            {
+                _ClaveProveedor = value;
+            }
+        }
+
         //Constructor vacio
         public ProveedoresData()
         {
@@ -158,6 +160,7 @@ namespace DataLayer
                 ParClaveProv.ParameterName = "@ClaveProveedor";
                 ParClaveProv.SqlDbType = SqlDbType.VarChar;
                 ParClaveProv.Size = 50;
+                ParClaveProv.Value = Proveedor.ClaveProveedor;
                 SqlComd.Parameters.Add(ParClaveProv);
 
                 SqlParameter ParNomProv = new SqlParameter();
@@ -229,7 +232,7 @@ namespace DataLayer
                 //Establecer Comando
                 SqlCommand SqlComd = new SqlCommand();
                 SqlComd.Connection = SqlCon;
-                SqlComd.CommandText = "speditarProv";
+                SqlComd.CommandText = "spmodificarProv";
                 SqlComd.CommandType = CommandType.StoredProcedure;
 
                 //Definiendo atributos de la tabla Proveedores
@@ -238,6 +241,7 @@ namespace DataLayer
                 ParClaveProv.ParameterName = "@ClaveProveedor";
                 ParClaveProv.SqlDbType = SqlDbType.VarChar;
                 ParClaveProv.Size = 50;
+                ParClaveProv.Value = Proveedor.ClaveProveedor;
                 SqlComd.Parameters.Add(ParClaveProv);
 
                 SqlParameter ParNomProv = new SqlParameter();
@@ -319,6 +323,7 @@ namespace DataLayer
                 ParClaveProv.ParameterName = "@ClaveProveedor";
                 ParClaveProv.SqlDbType = SqlDbType.VarChar;
                 ParClaveProv.Size = 50;
+                ParClaveProv.Value = Proveedor.ClaveProveedor;
                 SqlComd.Parameters.Add(ParClaveProv);
 
                 //Se hace la condicion para saber si se inserto correctamente el registro
@@ -393,5 +398,35 @@ namespace DataLayer
             return dataResultado;
         }
 
+        //Metodo Buscar proveedor por Numero de cuenta
+        public DataTable BuscarxClave(ProveedoresData Proveedor)
+        {
+            DataTable DataResultado = new DataTable("Proveedores");
+            SqlConnection Sqlcon = new SqlConnection();
+            try
+            {
+                Sqlcon.ConnectionString = Conexion.CadenaConexion;
+                SqlCommand Sqlcmd = new SqlCommand();
+                Sqlcmd.Connection = Sqlcon;
+                Sqlcmd.CommandText = "spbuscarClaveProv";
+                Sqlcmd.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter Paraux = new SqlParameter();
+                Paraux.ParameterName = "@txtaux";
+                Paraux.SqlDbType = SqlDbType.VarChar;
+                Paraux.Size = 50;
+                Paraux.Value = Proveedor.AuxTxt;
+                Sqlcmd.Parameters.Add(Paraux);
+
+                SqlDataAdapter Sqldatadpt = new SqlDataAdapter(Sqlcmd);
+                Sqldatadpt.Fill(DataResultado); 
+            }
+            catch(Exception ex)
+            {
+                DataResultado = null;
+            }
+
+            return DataResultado;
+        }
     }
 }

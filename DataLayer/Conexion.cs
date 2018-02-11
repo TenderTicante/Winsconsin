@@ -8,6 +8,7 @@ namespace DataLayer
 {
     class Conexion
     {
-        public static string CadenaConexion = "Data Source=DESKTOP-8L7GQC9; Initial Catalog= dbToolCrib; Integrated Security=true";
+        public static string CadenaConexion = "Data Source=DESKTOP-8L7GQC9\\SQLEXPRESS; Initial Catalog=dbToolCrib; Integrated Security=true";
+        //DESKTOP-8L7GQC9\SQLEXPRESS
     }
 }

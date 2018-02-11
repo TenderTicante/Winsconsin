@@ -13,7 +13,7 @@ namespace StructLayer
     public class ProveedoresStruct
     {
         //Metodo para llamar a la funcion Insertar que esta en la capa de datos
-        public string Insertar(string clavep,string nombrep,string contacto,string correo,string telefono,string direccion)
+        public static string Insertar(string clavep,string nombrep,string contacto,string correo,string telefono,string direccion)
         {
             ProveedoresData PD = new ProveedoresData();
             PD.ClaveProveedor = clavep;
@@ -28,7 +28,7 @@ namespace StructLayer
 
         //Metodo para llamar a la funcion Editar que esta en la capa de datos
 
-        public string Editar(string clavep, string nombrep, string contacto, string correo, string telefono, string direccion)
+        public static string Editar(string clavep, string nombrep, string contacto, string correo, string telefono, string direccion)
         {
             ProveedoresData PD = new ProveedoresData();
             PD.ClaveProveedor = clavep;
@@ -43,7 +43,7 @@ namespace StructLayer
 
         //Metodo para llamar a la funcion Eliminar que esta en la capa de datos
 
-        public string Eliminar(string clavep)
+        public static string Eliminar(string clavep)
         {
             ProveedoresData PD = new ProveedoresData();
             PD.ClaveProveedor = clavep;
@@ -53,7 +53,7 @@ namespace StructLayer
 
        //Metodo para llamar a la funcion Mostrar que esta en la capa de datos
 
-        public DataTable Mostrar()
+        public static DataTable Mostrar()
         {
 
             return new ProveedoresData().Mostrar();
@@ -61,12 +61,21 @@ namespace StructLayer
 
         //Metodo de Busqueda que esta en la capa de datos
 
-        public DataTable BuscarProveedor(string var)
+        public static DataTable BuscarProveedor(string var)
         {
             ProveedoresData PD = new ProveedoresData();
             PD.AuxTxt = var;
 
             return PD.Busqueda(PD);
         } 
+
+        //Metodo de Busqueda de Clave en la capa de datos
+
+        public static DataTable BuscarClaveProv(string var)
+        {
+            ProveedoresData PD = new ProveedoresData();
+            PD.AuxTxt = var;
+            return PD.BuscarxClave(PD);
+        }
     }
 }

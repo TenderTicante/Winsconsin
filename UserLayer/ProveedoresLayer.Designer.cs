@@ -30,6 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProveedoresLayer));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -144,6 +147,7 @@
             this.tabPage1.Controls.Add(this.Buscarbtn);
             this.tabPage1.Controls.Add(this.txtBuscar);
             this.tabPage1.Controls.Add(this.cbBusqueda);
+            this.tabPage1.ForeColor = System.Drawing.Color.Maroon;
             this.tabPage1.Location = new System.Drawing.Point(4, 54);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -157,12 +161,42 @@
             this.dataListado.AllowUserToAddRows = false;
             this.dataListado.AllowUserToDeleteRows = false;
             this.dataListado.AllowUserToOrderColumns = true;
+            this.dataListado.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataListado.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataListado.BackgroundColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Maroon;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataListado.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataListado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Eliminar});
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Maroon;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataListado.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dataListado.GridColor = System.Drawing.Color.DimGray;
             this.dataListado.Location = new System.Drawing.Point(27, 101);
             this.dataListado.Name = "dataListado";
             this.dataListado.ReadOnly = true;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataListado.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dataListado.Size = new System.Drawing.Size(817, 114);
             this.dataListado.TabIndex = 7;
             this.dataListado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataListado_CellContentClick);
@@ -198,7 +232,7 @@
             // 
             // Imprimirbtn
             // 
-            this.Imprimirbtn.Location = new System.Drawing.Point(639, 26);
+            this.Imprimirbtn.Location = new System.Drawing.Point(646, 27);
             this.Imprimirbtn.Name = "Imprimirbtn";
             this.Imprimirbtn.Size = new System.Drawing.Size(75, 28);
             this.Imprimirbtn.TabIndex = 4;
@@ -217,6 +251,7 @@
             // 
             // Buscarbtn
             // 
+            this.Buscarbtn.ForeColor = System.Drawing.Color.Black;
             this.Buscarbtn.Location = new System.Drawing.Point(400, 26);
             this.Buscarbtn.Name = "Buscarbtn";
             this.Buscarbtn.Size = new System.Drawing.Size(75, 28);
@@ -415,20 +450,28 @@
             // 
             // txtclavep
             // 
-            this.txtclavep.Location = new System.Drawing.Point(145, 23);
+            this.txtclavep.ForeColor = System.Drawing.Color.SteelBlue;
+            this.txtclavep.Location = new System.Drawing.Point(181, 24);
+            this.txtclavep.Multiline = true;
             this.txtclavep.Name = "txtclavep";
-            this.txtclavep.Size = new System.Drawing.Size(100, 26);
+            this.txtclavep.Size = new System.Drawing.Size(100, 33);
             this.txtclavep.TabIndex = 1;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.BackColor = System.Drawing.Color.SteelBlue;
+            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label3.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.errorIcono.SetIconAlignment(this.label3, System.Windows.Forms.ErrorIconAlignment.TopLeft);
+            this.label3.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
             this.label3.Location = new System.Drawing.Point(6, 26);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(124, 20);
+            this.label3.Size = new System.Drawing.Size(142, 23);
             this.label3.TabIndex = 0;
             this.label3.Text = "Clave Proveedor";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ttMensaje
             // 
@@ -482,7 +525,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox cbBusqueda;
         private System.Windows.Forms.TextBox txtBuscar;
-        private System.Windows.Forms.DataGridView dataListado;
         private System.Windows.Forms.CheckBox Eliminarchk;
         private System.Windows.Forms.Label Registroslbl;
         private System.Windows.Forms.Button Imprimirbtn;
@@ -506,6 +548,7 @@
         private System.Windows.Forms.TextBox txtclavep;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ErrorProvider errorIcono;
+        private System.Windows.Forms.DataGridView dataListado;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Eliminar;
     }
 }

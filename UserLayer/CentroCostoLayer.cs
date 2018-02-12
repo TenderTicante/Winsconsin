@@ -12,6 +12,9 @@ namespace UserLayer
 {
     public partial class CentroCostoLayer : Form
     {
+        //Banderas para saber si es insercion o edicion
+        private bool isNuevo = false;
+        private bool isEditar = false;
         public CentroCostoLayer()
         {
             InitializeComponent();
@@ -22,8 +25,8 @@ namespace UserLayer
             pictureBox1.Controls.Add(label1);
 
             //Se fija el logo de Robert Bosch en la parte superior izquierda de la pantalla 
-            pictureBox2.Top = 15;
-            pictureBox2.Left = 20;
+            pictureBox2.Top = 10;
+            pictureBox2.Left = 10;
 
             //Se fija la leyenda Proveedor en la parte central superior
             label1.Top = (this.ClientSize.Height - label1.Height) / 16;
@@ -34,7 +37,7 @@ namespace UserLayer
 
             //Se agregan las pestañas para visualizar los proveedores y/o modificarlos segun se requiera
             tabControl1.Left = ((this.ClientSize.Width - tabControl1.Width) / 2);
-            tabControl1.Top = ((this.ClientSize.Height - tabControl1.Height) / 2);
+            tabControl1.Top = ((this.ClientSize.Height - tabControl1.Height) / 2) + 20;
 
             //Se agregan los grupos de botones a los tab pages correspondientes para asegurar un diseño
             //responsive
@@ -44,38 +47,20 @@ namespace UserLayer
             groupBox1.Top = ((this.tabPage2.Height - groupBox1.Height) / 10) * 6;
             groupBox1.Left = ((this.tabPage2.Width - groupBox1.Width) / 2);
 
-            this.ttMensaje.SetToolTip(this.txtclavep, "Ingrese el numero de cuenta del proveedor");
-            this.ttMensaje.SetToolTip(this.nombreptxt, "Ingrese el nombre del proveedor");
+            this.ttMensaje.SetToolTip(this.txtclavep, "Ingrese el centro de costo");
+            this.ttMensaje.SetToolTip(this.nombreptxt, "Ingrese el nombre del centro de costo");
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        //Mensaje de confirmacion
+        private void MensajeKK(string mensaje)
         {
-
+            MessageBox.Show(mensaje, "Sistema Tool Crib", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void ttMensaje_Popup(object sender, PopupEventArgs e)
+        //Mensaje de Error
+        private void MensajeError(string mensaje)
         {
-
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-
+            MessageBox.Show(mensaje, "Sistemas Tool Crib", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }

@@ -14,6 +14,7 @@ namespace UserLayer
 {
     public partial class ProveedoresLayer : Form
     {
+        //Banderas para saber si es insercion o edicion
         private bool isNuevo = false;
         private bool isEditar = false;
         public ProveedoresLayer()

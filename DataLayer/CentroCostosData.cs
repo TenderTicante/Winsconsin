@@ -229,7 +229,7 @@ namespace DataLayer
                 //Definiendo atributos de la tabla CentroCosto
 
                 SqlParameter ParClaveCC = new SqlParameter();
-                ParClaveCC.ParameterName = "@ClaveCentroCosto";
+                ParClaveCC.ParameterName = "@intaux";
                 ParClaveCC.SqlDbType = SqlDbType.Int;
                 ParClaveCC.Value = CentroCosto.ClaveCC;
                 SqlComd.Parameters.Add(ParClaveCC);

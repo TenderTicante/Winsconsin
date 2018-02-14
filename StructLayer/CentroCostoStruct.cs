@@ -34,7 +34,7 @@ namespace StructLayer
             CCD.Nombre = nombrecc;
             CCD.MSE = mse;
 
-            return CCD.Insertar(CCD);
+            return CCD.Editar(CCD);
         }
 
         //Metodo para llamar a la funcion Eliminar que esta en la capa de datos
@@ -45,7 +45,7 @@ namespace StructLayer
 
             CCD.ClaveCC = clavecc;
 
-            return CCD.Insertar(CCD);
+            return CCD.Eliminar(CCD);
         }
 
         //Metodo para llamar a la funcion Mostrar que esta en la capa de datos

@@ -61,6 +61,12 @@
     <Compile Include="ProveedoresLayer.Designer.cs">
       <DependentUpon>ProveedoresLayer.cs</DependentUpon>
     </Compile>
+    <Compile Include="UsuarioLayer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UsuarioLayer.Designer.cs">
+      <DependentUpon>UsuarioLayer.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\StructLayer\StructLayer.csproj">
@@ -78,6 +84,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ProveedoresLayer.resx">
       <DependentUpon>ProveedoresLayer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UsuarioLayer.resx">
+      <DependentUpon>UsuarioLayer.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

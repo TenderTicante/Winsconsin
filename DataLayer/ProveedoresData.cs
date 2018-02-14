@@ -398,7 +398,7 @@ namespace DataLayer
             return dataResultado;
         }
 
-        //Metodo Buscar proveedor por Numero de cuenta
+        //Metodo Buscar proveedor por Numero de Cuenta
         public DataTable BuscarxClave(ProveedoresData Proveedor)
         {
             DataTable DataResultado = new DataTable("Proveedores");

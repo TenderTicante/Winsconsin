@@ -8,10 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using StructLayer;
+
 namespace UserLayer
 {
     public partial class UsuarioLayer : Form
     {
+        //Banderas para saber si es insercion o edicion
+        private bool isNuevo = false;
+        private bool isEditar = false;
         public UsuarioLayer()
         {
             InitializeComponent();

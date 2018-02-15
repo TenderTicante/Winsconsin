@@ -229,7 +229,7 @@
             "MSE2",
             "MSE3",
             "MSE4"});
-            this.msecb.Location = new System.Drawing.Point(289, 121);
+            this.msecb.Location = new System.Drawing.Point(289, 125);
             this.msecb.Margin = new System.Windows.Forms.Padding(1, 0, 0, 0);
             this.msecb.Name = "msecb";
             this.msecb.Size = new System.Drawing.Size(216, 28);
@@ -301,7 +301,7 @@
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(861, 221);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Listado de Proveedores";
+            this.tabPage1.Text = "Listado de Centros de Costo";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel1
@@ -311,7 +311,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 61.71694F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 129F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 104F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 165F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 166F));
             this.tableLayoutPanel1.Controls.Add(this.txtBuscar, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.Imprimirbtn, 4, 0);
             this.tableLayoutPanel1.Controls.Add(this.Eliminarchk, 0, 1);
@@ -335,17 +335,17 @@
             this.txtBuscar.Location = new System.Drawing.Point(184, 10);
             this.txtBuscar.Margin = new System.Windows.Forms.Padding(10);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(262, 26);
+            this.txtBuscar.Size = new System.Drawing.Size(261, 26);
             this.txtBuscar.TabIndex = 1;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // Imprimirbtn
             // 
             this.Imprimirbtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Imprimirbtn.Location = new System.Drawing.Point(695, 6);
+            this.Imprimirbtn.Location = new System.Drawing.Point(694, 6);
             this.Imprimirbtn.Margin = new System.Windows.Forms.Padding(6);
             this.Imprimirbtn.Name = "Imprimirbtn";
-            this.Imprimirbtn.Size = new System.Drawing.Size(154, 34);
+            this.Imprimirbtn.Size = new System.Drawing.Size(155, 34);
             this.Imprimirbtn.TabIndex = 4;
             this.Imprimirbtn.Text = "Imprimir";
             this.Imprimirbtn.UseVisualStyleBackColor = true;
@@ -369,7 +369,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Buscarbtn.ForeColor = System.Drawing.Color.Black;
-            this.Buscarbtn.Location = new System.Drawing.Point(462, 6);
+            this.Buscarbtn.Location = new System.Drawing.Point(461, 6);
             this.Buscarbtn.Margin = new System.Windows.Forms.Padding(6);
             this.Buscarbtn.Name = "Buscarbtn";
             this.Buscarbtn.Size = new System.Drawing.Size(117, 34);
@@ -380,7 +380,7 @@
             // Eliminarbtn
             // 
             this.Eliminarbtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Eliminarbtn.Location = new System.Drawing.Point(591, 6);
+            this.Eliminarbtn.Location = new System.Drawing.Point(590, 6);
             this.Eliminarbtn.Margin = new System.Windows.Forms.Padding(6);
             this.Eliminarbtn.Name = "Eliminarbtn";
             this.Eliminarbtn.Size = new System.Drawing.Size(92, 34);
@@ -397,7 +397,7 @@
             this.Registroslbl.Location = new System.Drawing.Point(184, 56);
             this.Registroslbl.Margin = new System.Windows.Forms.Padding(10);
             this.Registroslbl.Name = "Registroslbl";
-            this.Registroslbl.Size = new System.Drawing.Size(262, 26);
+            this.Registroslbl.Size = new System.Drawing.Size(261, 26);
             this.Registroslbl.TabIndex = 5;
             this.Registroslbl.Text = "El borrego hace beeeeeeeee";
             // 

@@ -172,7 +172,7 @@ namespace UserLayer
                 {
                     if (this.isNuevo)
                     {
-                        respuesta = CentroCostoStruct.Insertar(Convert.ToInt32(this.clavecctxt.Text.Trim()), this.nombrecctxt.Text.Trim(), Convert.ToString(this.msecb.SelectedValue).Trim());
+                        respuesta = CentroCostoStruct.Insertar(Convert.ToInt32(this.clavecctxt.Text.Trim()), this.nombrecctxt.Text.Trim(), Convert.ToString(this.msecb.Text).Trim());
                     }
                     else
                     {
@@ -280,6 +280,7 @@ namespace UserLayer
             if (Eliminarchk.Checked)
             {
                 this.dataListado.Columns[0].Visible = true;
+                Eliminarchk.Checked = false;
             }
             else
             {

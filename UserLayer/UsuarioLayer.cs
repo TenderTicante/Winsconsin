@@ -48,6 +48,12 @@ namespace UserLayer
             //Se alinea el group box a la medida
             groupBox1.Top = ((this.tabPage2.Height - groupBox1.Height) / 10) * 6;
             groupBox1.Left = ((this.tabPage2.Width - groupBox1.Width) / 2);
+
+            this.ttMensaje.SetToolTip(this.idutxt, "Ingrese el usuario para inicio de sesion");
+            this.ttMensaje.SetToolTip(this.nombreutxt, "Ingrese el nombre(s) de la persona");
+            this.ttMensaje.SetToolTip(this.apeutxt, "Ingrese el apellido(s) de la persona");
+            this.ttMensaje.SetToolTip(this.passwordtxt, "Ingrese su clave para el inicio de sesion");
+            this.ttMensaje.SetToolTip(this.accesocb, "Ingrese el nivel de privilegios");
         }
     }
 }

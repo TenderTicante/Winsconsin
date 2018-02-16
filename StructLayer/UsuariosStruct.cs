@@ -9,7 +9,7 @@ using System.Data;
 
 namespace StructLayer
 {
-    class UsuariosStruct
+    public class UsuariosStruct
     {
         //Metodo para llamar a la funcion Insertar que esta en la capa de datos
         public static string Insertar(string idu, string nombreu, string apu, string acceso, string password)

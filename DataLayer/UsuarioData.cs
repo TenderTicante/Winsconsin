@@ -171,7 +171,7 @@ namespace DataLayer
                 SqlParameter ParPassword = new SqlParameter();
                 ParPassword.ParameterName = "@Password";
                 ParPassword.SqlDbType = SqlDbType.VarChar;
-                ParPassword.Size = 8;
+                ParPassword.Size = 16;
                 ParPassword.Value = Usuario.Password;
                 SqlComd.Parameters.Add(ParPassword);
 
@@ -220,7 +220,7 @@ namespace DataLayer
                 ParIDUser.Size = 16;
                 ParIDUser.Value = Usuario.IDUsuario;
                 SqlComd.Parameters.Add(ParIDUser);
-
+                
                 SqlParameter ParNomUser = new SqlParameter();
                 ParNomUser.ParameterName = "@Nombre";
                 ParNomUser.SqlDbType = SqlDbType.VarChar;
@@ -245,7 +245,7 @@ namespace DataLayer
                 SqlParameter ParPassword = new SqlParameter();
                 ParPassword.ParameterName = "@Password";
                 ParPassword.SqlDbType = SqlDbType.VarChar;
-                ParPassword.Size = 8;
+                ParPassword.Size = 16;
                 ParPassword.Value = Usuario.Password;
                 SqlComd.Parameters.Add(ParPassword);
 
@@ -290,7 +290,7 @@ namespace DataLayer
                 //Definiendo atributos de la tabla Proveedores
 
                 SqlParameter ParIDUser = new SqlParameter();
-                ParIDUser.ParameterName = "@IDUsuario";
+                ParIDUser.ParameterName = "@txtaux";
                 ParIDUser.SqlDbType = SqlDbType.VarChar;
                 ParIDUser.Size = 16;
                 ParIDUser.Value = Usuario.IDUsuario;

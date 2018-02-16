@@ -314,6 +314,7 @@ namespace UserLayer
                         }
                     }
                     this.MostrarColumnas();
+                    Eliminarchk.Checked = false;
                 }
             }
             catch (Exception ex)

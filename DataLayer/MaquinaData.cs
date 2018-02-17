@@ -260,10 +260,10 @@ namespace DataLayer
                 //Definiendo atributos de la tabla Maquina
 
                 SqlParameter ParIDUser = new SqlParameter();
-                ParIDUser.ParameterName = "@txtaux";
+                ParIDUser.ParameterName = "@aux";
                 ParIDUser.SqlDbType = SqlDbType.VarChar;
-                ParIDUser.Size = 16;
-                ParIDUser.Value = Maquina.AuxTxt;
+                ParIDUser.Size = 50;
+                ParIDUser.Value = Maquina.NoMaquina;
                 SqlComd.Parameters.Add(ParIDUser);
 
                 //Se hace la condicion para saber si se inserto correctamente el registro
@@ -293,7 +293,7 @@ namespace DataLayer
                 SqlCxn.ConnectionString = Conexion.CadenaConexion;
                 SqlCommand SqlCmd = new SqlCommand();
                 SqlCmd.Connection = SqlCxn;
-                SqlCmd.CommandText = "spmostrarmaquina";
+                SqlCmd.CommandText = "spmostarmaquina";
                 SqlCmd.CommandType = CommandType.StoredProcedure;
 
                 SqlDataAdapter SqlData = new SqlDataAdapter(SqlCmd);

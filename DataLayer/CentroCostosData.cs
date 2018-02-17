@@ -251,10 +251,10 @@ namespace DataLayer
             return respuesta;
         }
 
-        //Mostrar los proveedores
+        //Mostrar los centros de Costo
         public DataTable Mostrar()
         {
-            DataTable dataResultado = new DataTable("CentroCostos");
+            DataTable dataResultado = new DataTable("CentroCosto");
             SqlConnection SqlCxn = new SqlConnection();
             try
             {
@@ -274,6 +274,7 @@ namespace DataLayer
 
             return dataResultado;
         }
+
 
         //Buscar Centro de Costo
         public DataTable Busqueda(CentroCostosData CentroCosto)

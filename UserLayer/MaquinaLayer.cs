@@ -227,7 +227,7 @@ namespace UserLayer
 
         private void dataListado_DoubleClick(object sender, EventArgs e)
         {
-            this.nomaqtxt.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["NoMaq"].Value);
+            this.nomaqtxt.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["NoMaquina"].Value);
             this.cctxt.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["ClaveCentroCosto"].Value);
             this.tipotxt.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["TipoMaquina"].Value);
             this.localizaciontxt.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Localizacion"].Value);
@@ -305,6 +305,16 @@ namespace UserLayer
             {
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

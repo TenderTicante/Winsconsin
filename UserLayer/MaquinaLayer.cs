@@ -51,7 +51,7 @@ namespace UserLayer
             groupBox1.Left = ((this.tabPage2.Width - groupBox1.Width) / 2);
 
             this.ttMensaje.SetToolTip(this.nomaqtxt, "Ingrese el numero de cuenta del proveedor");
-            this.ttMensaje.SetToolTip(this.cctxt, "Ingrese el nombre del proveedor");
+            this.ttMensaje.SetToolTip(this.cbcc, "Ingrese el nombre del proveedor");
             this.ttMensaje.SetToolTip(this.tipotxt, "Ingrese el numero de cuenta del proveedor");
         }
 
@@ -73,7 +73,7 @@ namespace UserLayer
             this.nomaqtxt.Text = string.Empty;
             this.tipotxt.Text = string.Empty;
             this.localizaciontxt.Text = string.Empty;
-            this.cctxt.Text = string.Empty;
+            this.cbcc.SelectedIndex = -1;
         }
 
         //Habilitar controles del formulario
@@ -82,7 +82,7 @@ namespace UserLayer
             this.nomaqtxt.ReadOnly = !valor;
             this.tipotxt.ReadOnly = !valor;
             this.localizaciontxt.ReadOnly = !valor;
-            this.cctxt.ReadOnly = !valor;
+            this.cbcc.Enabled = valor;
         }
 
         //Habilitar Botones
@@ -133,9 +133,10 @@ namespace UserLayer
         private void MaquinaLayer_Load(object sender, EventArgs e)
         {
             this.MostrarColumnas();
-            //this.OcultarColumnas();
+            this.OcultarColumnas();
             this.Habilitar(false);
             this.Botones();
+            this.llenarCombo();
         }
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
@@ -151,7 +152,7 @@ namespace UserLayer
             this.Limpiar();
             this.Habilitar(true);
             this.nomaqtxt.Focus();
-            this.cctxt.Focus();
+            this.cbcc.Focus();
             this.tipotxt.Focus();
             this.localizaciontxt.Focus();
         }
@@ -161,16 +162,16 @@ namespace UserLayer
             try
             {
                 string respuesta = "";
-                if (this.nomaqtxt.Text == string.Empty || this.cctxt.Text == string.Empty || this.tipotxt.Text == string.Empty)
+                if (this.nomaqtxt.Text == string.Empty || this.cbcc.Text == string.Empty || this.tipotxt.Text == string.Empty)
                 {
                     MensajeError("Datos ingresados erroneamente, favor de revisar");
                     if (this.nomaqtxt.Text == string.Empty)
                     {
                         errorIcono.SetError(nomaqtxt, "Numero de maquina vacio");
                     }
-                    if (this.cctxt.Text == string.Empty)
+                    if (this.cbcc.Text == string.Empty)
                     {
-                        errorIcono.SetError(cctxt, "Clave de Centro de Costo vacia");
+                        errorIcono.SetError(cbcc, "Clave de Centro de Costo vacia");
                     }
                     if (this.tipotxt.Text == string.Empty)
                     {
@@ -181,11 +182,11 @@ namespace UserLayer
                 {
                     if (this.isNuevo)
                     {
-                        respuesta = MaquinaStruct.Insertar(this.nomaqtxt.Text.Trim(),Convert.ToInt32(this.cctxt.Text.Trim()), this.tipotxt.Text.Trim(), this.localizaciontxt.Text.Trim());
+                        respuesta = MaquinaStruct.Insertar(this.nomaqtxt.Text.Trim(),Convert.ToInt32(this.cbcc.Text.Trim()), this.tipotxt.Text.Trim(), this.localizaciontxt.Text.Trim());
                     }
                     else
                     {
-                        respuesta = MaquinaStruct.Editar(this.nomaqtxt.Text.Trim(), Convert.ToInt32(this.cctxt.Text.Trim()), this.tipotxt.Text.Trim(), this.localizaciontxt.Text.Trim());
+                        respuesta = MaquinaStruct.Editar(this.nomaqtxt.Text.Trim(), Convert.ToInt32(this.cbcc.Text.Trim()), this.tipotxt.Text.Trim(), this.localizaciontxt.Text.Trim());
                     }
 
                     if (respuesta.Equals("KK"))
@@ -228,7 +229,7 @@ namespace UserLayer
         private void dataListado_DoubleClick(object sender, EventArgs e)
         {
             this.nomaqtxt.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["NoMaquina"].Value);
-            this.cctxt.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["ClaveCentroCosto"].Value);
+            this.cbcc.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["ClaveCentroCosto"].Value);
             this.tipotxt.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["TipoMaquina"].Value);
             this.localizaciontxt.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Localizacion"].Value);
 
@@ -307,14 +308,12 @@ namespace UserLayer
             }
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        //Llenado del combo box
+        private void llenarCombo()
         {
-
-        }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
+            this.cbcc.DataSource = CentroCostoStruct.Mostrar();
+            cbcc.ValueMember = "ClaveCentroCosto";
+            cbcc.DisplayMember = "ClaveCentroCosto";
         }
     }
 }

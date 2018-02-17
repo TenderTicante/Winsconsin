@@ -1,6 +1,6 @@
 ﻿namespace UserLayer
 {
-    partial class UsuarioLayer
+    partial class MaquinaLayer
     {
         /// <summary>
         /// Required designer variable.
@@ -29,29 +29,26 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UsuarioLayer));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MaquinaLayer));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.nuevobtn = new System.Windows.Forms.Button();
-            this.cancelarbtn = new System.Windows.Forms.Button();
-            this.errorIcono = new System.Windows.Forms.ErrorProvider(this.components);
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.accesocb = new System.Windows.Forms.ComboBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.idutxt = new System.Windows.Forms.TextBox();
-            this.passwordtxt = new System.Windows.Forms.TextBox();
-            this.nombreutxt = new System.Windows.Forms.TextBox();
-            this.apeutxt = new System.Windows.Forms.TextBox();
+            this.nomaqtxt = new System.Windows.Forms.TextBox();
+            this.localizaciontxt = new System.Windows.Forms.TextBox();
+            this.cctxt = new System.Windows.Forms.TextBox();
+            this.tipotxt = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.nuevobtn = new System.Windows.Forms.Button();
+            this.cancelarbtn = new System.Windows.Forms.Button();
+            this.errorIcono = new System.Windows.Forms.ErrorProvider(this.components);
             this.guardarbtn = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -74,13 +71,12 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ttMensaje = new System.Windows.Forms.ToolTip(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.errorIcono)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorIcono)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -92,6 +88,188 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.AutoSize = true;
+            this.tableLayoutPanel2.BackColor = System.Drawing.Color.White;
+            this.tableLayoutPanel2.ColumnCount = 3;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.Controls.Add(this.pictureBox6, 0, 3);
+            this.tableLayoutPanel2.Controls.Add(this.pictureBox9, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this.pictureBox8, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.label5, 1, 2);
+            this.tableLayoutPanel2.Controls.Add(this.label6, 1, 3);
+            this.tableLayoutPanel2.Controls.Add(this.nomaqtxt, 2, 0);
+            this.tableLayoutPanel2.Controls.Add(this.localizaciontxt, 2, 3);
+            this.tableLayoutPanel2.Controls.Add(this.cctxt, 2, 1);
+            this.tableLayoutPanel2.Controls.Add(this.tipotxt, 2, 2);
+            this.tableLayoutPanel2.Controls.Add(this.label3, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.label4, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.pictureBox4, 0, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.errorIcono.SetIconAlignment(this.tableLayoutPanel2, System.Windows.Forms.ErrorIconAlignment.TopLeft);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 22);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 4;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(491, 163);
+            this.tableLayoutPanel2.TabIndex = 16;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
+            this.pictureBox6.Location = new System.Drawing.Point(50, 130);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(50, 10, 0, 10);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(50, 23);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox6.TabIndex = 8;
+            this.pictureBox6.TabStop = false;
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
+            this.pictureBox9.Location = new System.Drawing.Point(50, 90);
+            this.pictureBox9.Margin = new System.Windows.Forms.Padding(50, 10, 0, 10);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(50, 20);
+            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox9.TabIndex = 8;
+            this.pictureBox9.TabStop = false;
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
+            this.pictureBox8.Location = new System.Drawing.Point(50, 50);
+            this.pictureBox8.Margin = new System.Windows.Forms.Padding(50, 10, 0, 10);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(50, 20);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox8.TabIndex = 8;
+            this.pictureBox8.TabStop = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.MediumVioletRed;
+            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label5.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(100, 100);
+            this.label5.Margin = new System.Windows.Forms.Padding(0, 20, 0, 20);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(174, 1);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Tipo";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.MediumVioletRed;
+            this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label6.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(100, 140);
+            this.label6.Margin = new System.Windows.Forms.Padding(0, 20, 0, 20);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(174, 3);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "Localizacion";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // nomaqtxt
+            // 
+            this.nomaqtxt.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.nomaqtxt.ForeColor = System.Drawing.Color.SteelBlue;
+            this.nomaqtxt.Location = new System.Drawing.Point(275, 7);
+            this.nomaqtxt.Margin = new System.Windows.Forms.Padding(1, 0, 0, 0);
+            this.nomaqtxt.Name = "nomaqtxt";
+            this.nomaqtxt.Size = new System.Drawing.Size(199, 26);
+            this.nomaqtxt.TabIndex = 1;
+            // 
+            // localizaciontxt
+            // 
+            this.localizaciontxt.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.localizaciontxt.Location = new System.Drawing.Point(275, 128);
+            this.localizaciontxt.Margin = new System.Windows.Forms.Padding(1, 0, 0, 0);
+            this.localizaciontxt.Name = "localizaciontxt";
+            this.localizaciontxt.Size = new System.Drawing.Size(216, 26);
+            this.localizaciontxt.TabIndex = 7;
+            // 
+            // cctxt
+            // 
+            this.cctxt.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cctxt.Location = new System.Drawing.Point(275, 47);
+            this.cctxt.Margin = new System.Windows.Forms.Padding(1, 0, 0, 0);
+            this.cctxt.Name = "cctxt";
+            this.cctxt.Size = new System.Drawing.Size(199, 26);
+            this.cctxt.TabIndex = 3;
+            // 
+            // tipotxt
+            // 
+            this.tipotxt.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.tipotxt.Location = new System.Drawing.Point(275, 87);
+            this.tipotxt.Margin = new System.Windows.Forms.Padding(1, 0, 0, 0);
+            this.tipotxt.Name = "tipotxt";
+            this.tipotxt.Size = new System.Drawing.Size(199, 26);
+            this.tipotxt.TabIndex = 5;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.MediumVioletRed;
+            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label3.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.errorIcono.SetIconAlignment(this.label3, System.Windows.Forms.ErrorIconAlignment.TopLeft);
+            this.label3.Location = new System.Drawing.Point(100, 60);
+            this.label3.Margin = new System.Windows.Forms.Padding(0, 20, 0, 20);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(174, 1);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Centro de Costo ";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.MediumVioletRed;
+            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label4.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.errorIcono.SetIconAlignment(this.label4, System.Windows.Forms.ErrorIconAlignment.TopLeft);
+            this.label4.Location = new System.Drawing.Point(100, 20);
+            this.label4.Margin = new System.Windows.Forms.Padding(0, 20, 0, 20);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(174, 1);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Numero de Maquina";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(50, 10);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(50, 10, 0, 10);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(50, 20);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 12;
+            this.pictureBox4.TabStop = false;
             // 
             // nuevobtn
             // 
@@ -120,235 +298,6 @@
             // errorIcono
             // 
             this.errorIcono.ContainerControl = this;
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.AutoSize = true;
-            this.tableLayoutPanel2.BackColor = System.Drawing.Color.White;
-            this.tableLayoutPanel2.ColumnCount = 3;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel2.Controls.Add(this.accesocb, 2, 4);
-            this.tableLayoutPanel2.Controls.Add(this.pictureBox7, 0, 4);
-            this.tableLayoutPanel2.Controls.Add(this.pictureBox6, 0, 3);
-            this.tableLayoutPanel2.Controls.Add(this.pictureBox9, 0, 2);
-            this.tableLayoutPanel2.Controls.Add(this.pictureBox8, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.label5, 1, 2);
-            this.tableLayoutPanel2.Controls.Add(this.label6, 1, 3);
-            this.tableLayoutPanel2.Controls.Add(this.label7, 1, 4);
-            this.tableLayoutPanel2.Controls.Add(this.idutxt, 2, 0);
-            this.tableLayoutPanel2.Controls.Add(this.passwordtxt, 2, 3);
-            this.tableLayoutPanel2.Controls.Add(this.nombreutxt, 2, 1);
-            this.tableLayoutPanel2.Controls.Add(this.apeutxt, 2, 2);
-            this.tableLayoutPanel2.Controls.Add(this.label3, 1, 1);
-            this.tableLayoutPanel2.Controls.Add(this.label4, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.pictureBox4, 0, 0);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.errorIcono.SetIconAlignment(this.tableLayoutPanel2, System.Windows.Forms.ErrorIconAlignment.TopLeft);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 22);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 5;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(435, 163);
-            this.tableLayoutPanel2.TabIndex = 17;
-            // 
-            // accesocb
-            // 
-            this.accesocb.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.accesocb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.accesocb.FormattingEnabled = true;
-            this.accesocb.Items.AddRange(new object[] {
-            "Administrador",
-            "Tool-Crib",
-            "Financieros",
-            "Mantenimiento"});
-            this.accesocb.Location = new System.Drawing.Point(207, 131);
-            this.accesocb.Name = "accesocb";
-            this.accesocb.Size = new System.Drawing.Size(225, 28);
-            this.accesocb.TabIndex = 11;
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(50, 138);
-            this.pictureBox7.Margin = new System.Windows.Forms.Padding(50, 10, 0, 10);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(50, 15);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox7.TabIndex = 7;
-            this.pictureBox7.TabStop = false;
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(50, 106);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(50, 10, 0, 10);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(50, 12);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox6.TabIndex = 8;
-            this.pictureBox6.TabStop = false;
-            // 
-            // pictureBox9
-            // 
-            this.pictureBox9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
-            this.pictureBox9.Location = new System.Drawing.Point(50, 74);
-            this.pictureBox9.Margin = new System.Windows.Forms.Padding(50, 10, 0, 10);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(50, 12);
-            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox9.TabIndex = 8;
-            this.pictureBox9.TabStop = false;
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
-            this.pictureBox8.Location = new System.Drawing.Point(50, 42);
-            this.pictureBox8.Margin = new System.Windows.Forms.Padding(50, 10, 0, 10);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(50, 12);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox8.TabIndex = 8;
-            this.pictureBox8.TabStop = false;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Indigo;
-            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label5.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(100, 84);
-            this.label5.Margin = new System.Windows.Forms.Padding(0, 20, 0, 20);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(104, 1);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Apellido (s)";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Indigo;
-            this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label6.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(100, 116);
-            this.label6.Margin = new System.Windows.Forms.Padding(0, 20, 0, 20);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(104, 1);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "Password";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Indigo;
-            this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label7.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(100, 148);
-            this.label7.Margin = new System.Windows.Forms.Padding(0, 20, 0, 20);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(104, 1);
-            this.label7.TabIndex = 8;
-            this.label7.Text = "Acceso";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // idutxt
-            // 
-            this.idutxt.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.idutxt.ForeColor = System.Drawing.Color.SteelBlue;
-            this.idutxt.Location = new System.Drawing.Point(205, 3);
-            this.idutxt.Margin = new System.Windows.Forms.Padding(1, 0, 0, 0);
-            this.idutxt.Name = "idutxt";
-            this.idutxt.Size = new System.Drawing.Size(200, 26);
-            this.idutxt.TabIndex = 1;
-            // 
-            // passwordtxt
-            // 
-            this.passwordtxt.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.passwordtxt.Location = new System.Drawing.Point(205, 99);
-            this.passwordtxt.Margin = new System.Windows.Forms.Padding(1, 0, 0, 0);
-            this.passwordtxt.Name = "passwordtxt";
-            this.passwordtxt.Size = new System.Drawing.Size(200, 26);
-            this.passwordtxt.TabIndex = 7;
-            this.passwordtxt.UseSystemPasswordChar = true;
-            // 
-            // nombreutxt
-            // 
-            this.nombreutxt.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.nombreutxt.Location = new System.Drawing.Point(205, 35);
-            this.nombreutxt.Margin = new System.Windows.Forms.Padding(1, 0, 0, 0);
-            this.nombreutxt.Name = "nombreutxt";
-            this.nombreutxt.Size = new System.Drawing.Size(200, 26);
-            this.nombreutxt.TabIndex = 3;
-            // 
-            // apeutxt
-            // 
-            this.apeutxt.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.apeutxt.Location = new System.Drawing.Point(205, 67);
-            this.apeutxt.Margin = new System.Windows.Forms.Padding(1, 0, 0, 0);
-            this.apeutxt.Name = "apeutxt";
-            this.apeutxt.Size = new System.Drawing.Size(200, 26);
-            this.apeutxt.TabIndex = 5;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Indigo;
-            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label3.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.errorIcono.SetIconAlignment(this.label3, System.Windows.Forms.ErrorIconAlignment.TopLeft);
-            this.label3.Location = new System.Drawing.Point(100, 52);
-            this.label3.Margin = new System.Windows.Forms.Padding(0, 20, 0, 20);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(104, 1);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Nombre (s)";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Indigo;
-            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label4.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.errorIcono.SetIconAlignment(this.label4, System.Windows.Forms.ErrorIconAlignment.TopLeft);
-            this.label4.Location = new System.Drawing.Point(100, 20);
-            this.label4.Margin = new System.Windows.Forms.Padding(0, 20, 0, 20);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(104, 1);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "ID Usuario";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(50, 10);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(50, 10, 0, 10);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(50, 12);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 12;
-            this.pictureBox4.TabStop = false;
             // 
             // guardarbtn
             // 
@@ -388,7 +337,7 @@
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(861, 221);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Listado de Usuarios";
+            this.tabPage1.Text = "Listado de Maquinas";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel1
@@ -398,7 +347,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 61.71694F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 129F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 104F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 174F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 173F));
             this.tableLayoutPanel1.Controls.Add(this.cbBusqueda, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.txtBuscar, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.Imprimirbtn, 4, 0);
@@ -426,8 +375,7 @@
             this.cbBusqueda.FormattingEnabled = true;
             this.cbBusqueda.Items.AddRange(new object[] {
             "Nombre",
-            "Apellido",
-            "IDUsuario"});
+            "Numero Cuenta"});
             this.cbBusqueda.Location = new System.Drawing.Point(10, 10);
             this.cbBusqueda.Margin = new System.Windows.Forms.Padding(10);
             this.cbBusqueda.Name = "cbBusqueda";
@@ -440,17 +388,17 @@
             this.txtBuscar.Location = new System.Drawing.Point(181, 10);
             this.txtBuscar.Margin = new System.Windows.Forms.Padding(10);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(256, 26);
+            this.txtBuscar.Size = new System.Drawing.Size(257, 26);
             this.txtBuscar.TabIndex = 1;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // Imprimirbtn
             // 
             this.Imprimirbtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Imprimirbtn.Location = new System.Drawing.Point(686, 6);
+            this.Imprimirbtn.Location = new System.Drawing.Point(687, 6);
             this.Imprimirbtn.Margin = new System.Windows.Forms.Padding(6);
             this.Imprimirbtn.Name = "Imprimirbtn";
-            this.Imprimirbtn.Size = new System.Drawing.Size(163, 34);
+            this.Imprimirbtn.Size = new System.Drawing.Size(162, 34);
             this.Imprimirbtn.TabIndex = 4;
             this.Imprimirbtn.Text = "Imprimir";
             this.Imprimirbtn.UseVisualStyleBackColor = true;
@@ -460,9 +408,10 @@
             this.Eliminarchk.AutoSize = true;
             this.Eliminarchk.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Eliminarchk.ForeColor = System.Drawing.Color.Black;
-            this.Eliminarchk.Location = new System.Drawing.Point(3, 49);
+            this.Eliminarchk.Location = new System.Drawing.Point(10, 49);
+            this.Eliminarchk.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
             this.Eliminarchk.Name = "Eliminarchk";
-            this.Eliminarchk.Size = new System.Drawing.Size(165, 40);
+            this.Eliminarchk.Size = new System.Drawing.Size(158, 40);
             this.Eliminarchk.TabIndex = 6;
             this.Eliminarchk.Text = "Eliminar Registros";
             this.Eliminarchk.UseVisualStyleBackColor = true;
@@ -474,19 +423,18 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Buscarbtn.ForeColor = System.Drawing.Color.Black;
-            this.Buscarbtn.Location = new System.Drawing.Point(453, 6);
+            this.Buscarbtn.Location = new System.Drawing.Point(454, 6);
             this.Buscarbtn.Margin = new System.Windows.Forms.Padding(6);
             this.Buscarbtn.Name = "Buscarbtn";
             this.Buscarbtn.Size = new System.Drawing.Size(117, 34);
             this.Buscarbtn.TabIndex = 2;
             this.Buscarbtn.Text = "Buscar";
             this.Buscarbtn.UseVisualStyleBackColor = true;
-            this.Buscarbtn.Click += new System.EventHandler(this.Buscarbtn_Click);
             // 
             // Eliminarbtn
             // 
             this.Eliminarbtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Eliminarbtn.Location = new System.Drawing.Point(582, 6);
+            this.Eliminarbtn.Location = new System.Drawing.Point(583, 6);
             this.Eliminarbtn.Margin = new System.Windows.Forms.Padding(6);
             this.Eliminarbtn.Name = "Eliminarbtn";
             this.Eliminarbtn.Size = new System.Drawing.Size(92, 34);
@@ -503,9 +451,9 @@
             this.Registroslbl.Location = new System.Drawing.Point(181, 56);
             this.Registroslbl.Margin = new System.Windows.Forms.Padding(10);
             this.Registroslbl.Name = "Registroslbl";
-            this.Registroslbl.Size = new System.Drawing.Size(256, 26);
+            this.Registroslbl.Size = new System.Drawing.Size(257, 26);
             this.Registroslbl.TabIndex = 5;
-            this.Registroslbl.Text = "El puerquito hace Oinkkkkkkkkkk";
+            this.Registroslbl.Text = "El pollito hace pioooooooooooooo";
             // 
             // dataListado
             // 
@@ -575,8 +523,8 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.tableLayoutPanel2);
             this.groupBox1.Controls.Add(this.tableLayoutPanel3);
+            this.groupBox1.Controls.Add(this.tableLayoutPanel2);
             this.groupBox1.Location = new System.Drawing.Point(16, 15);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(827, 188);
@@ -617,7 +565,7 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Indigo;
+            this.pictureBox3.BackColor = System.Drawing.Color.MediumVioletRed;
             this.pictureBox3.Location = new System.Drawing.Point(247, 12);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(100, 50);
@@ -628,14 +576,14 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Indigo;
+            this.label1.BackColor = System.Drawing.Color.MediumVioletRed;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Snow;
             this.label1.Location = new System.Drawing.Point(410, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(222, 55);
+            this.label1.Size = new System.Drawing.Size(241, 55);
             this.label1.TabIndex = 7;
-            this.label1.Text = "Usuarios";
+            this.label1.Text = "Maquinas";
             // 
             // pictureBox2
             // 
@@ -651,7 +599,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Indigo;
+            this.pictureBox1.BackColor = System.Drawing.Color.MediumVioletRed;
             this.pictureBox1.Location = new System.Drawing.Point(-4, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(994, 96);
@@ -662,7 +610,7 @@
             // 
             this.ttMensaje.IsBalloon = true;
             // 
-            // UsuarioLayer
+            // MaquinaLayer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -673,18 +621,18 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
-            this.Name = "UsuarioLayer";
-            this.Text = "UsuarioLayer";
+            this.Name = "MaquinaLayer";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "MaquinaLayer";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.UsuarioLayer_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.errorIcono)).EndInit();
+            this.Load += new System.EventHandler(this.MaquinaLayer_Load);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorIcono)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -703,6 +651,18 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox pictureBox9;
+        private System.Windows.Forms.PictureBox pictureBox8;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox nomaqtxt;
+        private System.Windows.Forms.TextBox localizaciontxt;
+        private System.Windows.Forms.TextBox cctxt;
+        private System.Windows.Forms.TextBox tipotxt;
+        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ErrorProvider errorIcono;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
@@ -727,22 +687,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.ToolTip ttMensaje;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.PictureBox pictureBox9;
-        private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox idutxt;
-        private System.Windows.Forms.TextBox passwordtxt;
-        private System.Windows.Forms.TextBox nombreutxt;
-        private System.Windows.Forms.TextBox apeutxt;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.ComboBox accesocb;
+        private System.Windows.Forms.ToolTip ttMensaje;
     }
 }

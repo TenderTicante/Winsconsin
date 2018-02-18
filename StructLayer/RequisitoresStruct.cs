@@ -10,7 +10,7 @@ using System.Data;
 
 namespace StructLayer
 {
-    class RequisitoresStruct
+    public class RequisitoresStruct
     {
         //Metodo para llamar a la funcion Insertar que esta en la capa de datos
         public static string Insertar(string idr, string nombrer, string apr, int ccc, string puesto)
@@ -95,6 +95,24 @@ namespace StructLayer
             RD.AuxTxt = var;
 
             return RD.BusquedaxPuesto(RD);
+        }
+
+        private void Buscarbtn_Click(object sender, EventArgs e)
+        {
+            if (cbBusqueda.Text.Equals("Clave Requisitor"))
+            {
+                BuscarxClave();
+            }
+            else if (cbBusqueda.Text.Equals("Centro Costo"))
+            {
+                BuscarxCC();
+            }
+            else if (cbBusqueda.Text.Equals("Puesto"))
+            {
+
+            }
+            else
+                BuscarxApellido();
         }
     }
 }

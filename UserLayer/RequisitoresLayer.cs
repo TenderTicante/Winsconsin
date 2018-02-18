@@ -126,15 +126,15 @@ namespace UserLayer
         //Buscar por Nombre de Requisitor
         private void BuscarxNombre()
         {
-            this.dataListado.DataSource = RequisitoresStruct.BuscarxNombre(this.txtBuscar.Text);
+            this.dataListado.DataSource = RequisitoresStruct.BuscarxNom(this.txtBuscar.Text);
             this.OcultarColumnas();
             Registroslbl.Text = "Total de Registros: " + Convert.ToString(dataListado.Rows.Count);
         }
 
         //Buscar por Apellido Requisitor
-        private void BuscarxApellido()
+        private void BuscarxAp()
         {
-            this.dataListado.DataSource = RequisitoresStruct.BuscarxApellido(this.txtBuscar.Text);
+            this.dataListado.DataSource = RequisitoresStruct.BuscarxApel(this.txtBuscar.Text);
             this.OcultarColumnas();
             Registroslbl.Text = "Total de Registros: " + Convert.ToString(dataListado.Rows.Count);
         }
@@ -174,7 +174,7 @@ namespace UserLayer
             {
                 BuscarxNombre();
             }
-            else if (cbBusqueda.Text.Equals("Centro de Costo"))
+            else if (cbBusqueda.Text.Equals("CentroCosto"))
             {
                 BuscarxCC();
             }
@@ -183,7 +183,185 @@ namespace UserLayer
                 BuscarxPuesto();
             }
             else
-                BuscarxApellido();
+                BuscarxAp();
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            BuscarxAp();
+        }
+
+        private void nuevobtn_Click(object sender, EventArgs e)
+        {
+            this.isNuevo = true;
+            this.isEditar = false;
+            this.Botones();
+            this.Limpiar();
+            this.Habilitar(true);
+            this.idrtxt.Focus();
+            this.nombrertxt.Focus();
+            this.cccb.Focus();
+            this.puestocb.Focus();
+        }
+
+        private void guardarbtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string respuesta = "";
+                if (this.idrtxt.Text == string.Empty || this.nombrertxt.Text == string.Empty || this.apertxt.Text == string.Empty || this.cccb.Text == string.Empty || this.puestocb.Text == string.Empty)
+                {
+                    MensajeError("Datos ingresados erroneamente, favor de revisar");
+                    if (this.idrtxt.Text == string.Empty)
+                    {
+                        errorIcono.SetError(idrtxt, "Clave de Requisitor vacia");
+                    }
+                    if (this.nombrertxt.Text == string.Empty)
+                    {
+                        errorIcono.SetError(nombrertxt, "Nombre de Requisittor vacio");
+                    }
+                    if (this.apertxt.Text == string.Empty)
+                    {
+                        errorIcono.SetError(apertxt, "Apellido de Requisitor vacio");
+                    }
+                    if (this.cccb.Text == string.Empty)
+                    {
+                        errorIcono.SetError(cccb, "Centro de Costo vacio");
+                    }
+                    if (this.puestocb.Text == string.Empty)
+                    {
+                        errorIcono.SetError(puestocb, "Puesto no definido");
+                    }
+                }
+                else
+                {
+                    if (this.isNuevo)
+                    {
+                        respuesta = RequisitoresStruct.Insertar(this.idrtxt.Text.Trim(), this.nombrertxt.Text.Trim(), this.apertxt.Text.Trim(), Convert.ToInt32(this.cccb.Text.Trim()), this.puestocb.Text.Trim());
+                    }
+                    else
+                    {
+                        respuesta = RequisitoresStruct.Editar(this.idrtxt.Text.Trim(), this.nombrertxt.Text.Trim(), this.apertxt.Text.Trim(), Convert.ToInt32(this.cccb.Text.Trim()), this.puestocb.Text.Trim());
+                    }
+
+                    if (respuesta.Equals("KK"))
+                    {
+                        if (this.isNuevo)
+                        {
+                            this.MensajeKK("Registro guardado exitosamente");
+                        }
+                        else
+                        {
+                            this.MensajeKK("Se actualizo el registro correctamente");
+                        }
+                    }
+                    else
+                    {
+                        this.MensajeError(respuesta);
+                    }
+                    this.isNuevo = false;
+                    this.isEditar = false;
+                    this.Botones();
+                    this.Limpiar();
+                    this.MostrarColumnas();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+        private void dataListado_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == dataListado.Columns["Eliminar"].Index)
+            {
+                DataGridViewCheckBoxCell ChkEliminar = (DataGridViewCheckBoxCell)dataListado.Rows[e.RowIndex].Cells["Eliminar"];
+                ChkEliminar.Value = !Convert.ToBoolean(ChkEliminar.Value);
+            }
+        }
+
+        private void dataListado_DoubleClick(object sender, EventArgs e)
+        {
+            this.idrtxt.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["ClaveRequisitor"].Value);
+            this.nombrertxt.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Nombre"].Value);
+            this.apertxt.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Apellidos"].Value);
+            this.cccb.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["CentroCosto"].Value);
+            this.puestocb.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Puesto"].Value);
+
+            this.tabControl1.SelectedIndex = 1;
+        }
+
+        private void editarbtn_Click(object sender, EventArgs e)
+        {
+            if (!this.idrtxt.Text.Equals(""))
+            {
+                this.isEditar = true;
+                this.Botones();
+                this.Habilitar(true);
+            }
+            else
+            {
+                this.MensajeError("Seleccionar el registro a modificar");
+            }
+        }
+
+        private void cancelarbtn_Click(object sender, EventArgs e)
+        {
+            this.isNuevo = false;
+            this.isEditar = false;
+            this.Botones();
+            this.Limpiar();
+            this.Habilitar(false);
+        }
+
+        private void Eliminarchk_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Eliminarchk.Checked)
+            {
+                this.dataListado.Columns[0].Visible = true;
+            }
+            else
+            {
+                this.dataListado.Columns[0].Visible = false;
+            }
+        }
+
+        private void Eliminarbtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DialogResult Opcion;
+                Opcion = MessageBox.Show("Esta seguro de eliminar los registros de la base de datos?", "Tool Crib Management System", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (Opcion == DialogResult.OK)
+                {
+                    string codigo;
+                    string respuesta = "";
+
+                    foreach (DataGridViewRow Row in dataListado.Rows)
+                    {
+                        if (Convert.ToBoolean(Row.Cells[0].Value))
+                        {
+                            codigo = Convert.ToString(Row.Cells[1].Value);
+                            respuesta = RequisitoresStruct.Eliminar(codigo);
+                            if (respuesta.Equals("KK"))
+                            {
+                                this.MensajeKK("Se elimino correctamente el registro");
+                            }
+                            else
+                            {
+                                this.MensajeError(respuesta);
+                            }
+                        }
+                    }
+                    this.MostrarColumnas();
+                    Eliminarchk.Checked = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
         }
     }
 }

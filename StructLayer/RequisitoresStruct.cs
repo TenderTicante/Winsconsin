@@ -59,7 +59,7 @@ namespace StructLayer
 
         //Metodo de Busqueda de Nombre que esta en la capa de datos
 
-        public static DataTable BuscarxNombre(string var)
+        public static DataTable BuscarxNom(string var)
         {
             RequisitoresData UD = new RequisitoresData();
             UD.AuxTxt = var;
@@ -69,7 +69,7 @@ namespace StructLayer
 
         //Metodo de Busqueda de Apellido que esta en la capa de datos
 
-        public static DataTable BuscarxApellido(string var)
+        public static DataTable BuscarxApel(string var)
         {
             RequisitoresData RD = new RequisitoresData();
             RD.AuxTxt = var;
@@ -95,24 +95,6 @@ namespace StructLayer
             RD.AuxTxt = var;
 
             return RD.BusquedaxPuesto(RD);
-        }
-
-        private void Buscarbtn_Click(object sender, EventArgs e)
-        {
-            if (cbBusqueda.Text.Equals("Clave Requisitor"))
-            {
-                BuscarxClave();
-            }
-            else if (cbBusqueda.Text.Equals("Centro Costo"))
-            {
-                BuscarxCC();
-            }
-            else if (cbBusqueda.Text.Equals("Puesto"))
-            {
-
-            }
-            else
-                BuscarxApellido();
         }
     }
 }

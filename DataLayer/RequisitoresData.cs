@@ -398,7 +398,7 @@ namespace DataLayer
         //Buscar por Centro de Costo
         public DataTable BusquedaxCC(RequisitoresData Requisitor)
         {
-            DataTable dataResultado = new DataTable("Requisitor");
+            DataTable dataResultado = new DataTable("Requisitores");
             SqlConnection SqlCxn = new SqlConnection();
             try
             {

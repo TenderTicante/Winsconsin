@@ -75,7 +75,7 @@ namespace UserLayer
             this.idrtxt.Text = string.Empty;
             this.nombrertxt.Text = string.Empty;
             this.apertxt.Text = string.Empty;
-            this.cccb.SelectedIndex = 1;
+            this.cccb.SelectedIndex = -1;
             this.puestocb.SelectedIndex = -1;
         }
 
@@ -166,6 +166,7 @@ namespace UserLayer
             this.OcultarColumnas();
             this.Habilitar(false);
             this.Botones();
+            this.llenarCombo();
         }
 
         private void Buscarbtn_Click(object sender, EventArgs e)
@@ -286,7 +287,7 @@ namespace UserLayer
             this.idrtxt.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["ClaveRequisitor"].Value);
             this.nombrertxt.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Nombre"].Value);
             this.apertxt.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Apellidos"].Value);
-            this.cccb.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["CentroCosto"].Value);
+            this.cccb.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["ClaveCentroCosto"].Value);
             this.puestocb.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Puesto"].Value);
 
             this.tabControl1.SelectedIndex = 1;
@@ -362,6 +363,14 @@ namespace UserLayer
             {
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
+        }
+
+        //Llenado del combo box
+        private void llenarCombo()
+        {
+            this.cccb.DataSource = CentroCostoStruct.Mostrar();
+            cccb.ValueMember = "ClaveCentroCosto";
+            cccb.DisplayMember = "ClaveCentroCosto";
         }
     }
 }

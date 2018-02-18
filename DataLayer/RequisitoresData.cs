@@ -206,7 +206,7 @@ namespace DataLayer
                 //Establecer Comando
                 SqlCommand SqlComd = new SqlCommand();
                 SqlComd.Connection = SqlCon;
-                SqlComd.CommandText = "spMdificarReq";
+                SqlComd.CommandText = "spModificarReq";
                 SqlComd.CommandType = CommandType.StoredProcedure;
 
                 //Definiendo atributos de la tabla Requisitores

@@ -46,6 +46,7 @@
     <Compile Include="MaquinaStruct.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProveedoresStruct.cs" />
+    <Compile Include="RequisitoresStruct.cs" />
     <Compile Include="UsuariosStruct.cs" />
   </ItemGroup>
   <ItemGroup>

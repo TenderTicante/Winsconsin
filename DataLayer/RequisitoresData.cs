@@ -10,7 +10,7 @@ using System.Data.SqlClient;
 
 namespace DataLayer
 {
-    class RequisitoresData
+    public class RequisitoresData
     {
         //Variables para hacer referencia a los de la tabla
 

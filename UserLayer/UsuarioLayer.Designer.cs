@@ -45,13 +45,13 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.idutxt = new System.Windows.Forms.TextBox();
             this.passwordtxt = new System.Windows.Forms.TextBox();
             this.nombreutxt = new System.Windows.Forms.TextBox();
             this.apeutxt = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.idutxt = new System.Windows.Forms.TextBox();
             this.guardarbtn = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -137,13 +137,13 @@
             this.tableLayoutPanel2.Controls.Add(this.label5, 1, 2);
             this.tableLayoutPanel2.Controls.Add(this.label6, 1, 3);
             this.tableLayoutPanel2.Controls.Add(this.label7, 1, 4);
-            this.tableLayoutPanel2.Controls.Add(this.idutxt, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.passwordtxt, 2, 3);
             this.tableLayoutPanel2.Controls.Add(this.nombreutxt, 2, 1);
             this.tableLayoutPanel2.Controls.Add(this.apeutxt, 2, 2);
             this.tableLayoutPanel2.Controls.Add(this.label3, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.label4, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.pictureBox4, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.idutxt, 2, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.errorIcono.SetIconAlignment(this.tableLayoutPanel2, System.Windows.Forms.ErrorIconAlignment.TopLeft);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 22);
@@ -168,7 +168,7 @@
             "Tool-Crib",
             "Financieros",
             "Mantenimiento"});
-            this.accesocb.Location = new System.Drawing.Point(207, 135);
+            this.accesocb.Location = new System.Drawing.Point(207, 131);
             this.accesocb.Name = "accesocb";
             this.accesocb.Size = new System.Drawing.Size(225, 28);
             this.accesocb.TabIndex = 11;
@@ -266,16 +266,6 @@
             this.label7.Text = "Acceso";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // idutxt
-            // 
-            this.idutxt.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.idutxt.ForeColor = System.Drawing.Color.SteelBlue;
-            this.idutxt.Location = new System.Drawing.Point(205, 3);
-            this.idutxt.Margin = new System.Windows.Forms.Padding(1, 0, 0, 0);
-            this.idutxt.Name = "idutxt";
-            this.idutxt.Size = new System.Drawing.Size(200, 26);
-            this.idutxt.TabIndex = 1;
-            // 
             // passwordtxt
             // 
             this.passwordtxt.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -340,7 +330,6 @@
             // pictureBox4
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox4.Dock = System.Windows.Forms.DockStyle.Right;
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
             this.pictureBox4.Location = new System.Drawing.Point(50, 10);
             this.pictureBox4.Margin = new System.Windows.Forms.Padding(50, 10, 0, 10);
@@ -349,6 +338,16 @@
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 12;
             this.pictureBox4.TabStop = false;
+            // 
+            // idutxt
+            // 
+            this.idutxt.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.idutxt.ForeColor = System.Drawing.Color.SteelBlue;
+            this.idutxt.Location = new System.Drawing.Point(205, 3);
+            this.idutxt.Margin = new System.Windows.Forms.Padding(1, 0, 0, 0);
+            this.idutxt.Name = "idutxt";
+            this.idutxt.Size = new System.Drawing.Size(200, 26);
+            this.idutxt.TabIndex = 1;
             // 
             // guardarbtn
             // 
@@ -398,7 +397,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 61.71694F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 129F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 104F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 179F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 186F));
             this.tableLayoutPanel1.Controls.Add(this.cbBusqueda, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.txtBuscar, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.Imprimirbtn, 4, 0);
@@ -431,26 +430,26 @@
             this.cbBusqueda.Location = new System.Drawing.Point(10, 10);
             this.cbBusqueda.Margin = new System.Windows.Forms.Padding(10);
             this.cbBusqueda.Name = "cbBusqueda";
-            this.cbBusqueda.Size = new System.Drawing.Size(149, 28);
+            this.cbBusqueda.Size = new System.Drawing.Size(146, 28);
             this.cbBusqueda.TabIndex = 0;
             // 
             // txtBuscar
             // 
             this.txtBuscar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtBuscar.Location = new System.Drawing.Point(179, 10);
+            this.txtBuscar.Location = new System.Drawing.Point(176, 10);
             this.txtBuscar.Margin = new System.Windows.Forms.Padding(10);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(253, 26);
+            this.txtBuscar.Size = new System.Drawing.Size(249, 26);
             this.txtBuscar.TabIndex = 1;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // Imprimirbtn
             // 
             this.Imprimirbtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Imprimirbtn.Location = new System.Drawing.Point(681, 6);
+            this.Imprimirbtn.Location = new System.Drawing.Point(674, 6);
             this.Imprimirbtn.Margin = new System.Windows.Forms.Padding(6);
             this.Imprimirbtn.Name = "Imprimirbtn";
-            this.Imprimirbtn.Size = new System.Drawing.Size(168, 34);
+            this.Imprimirbtn.Size = new System.Drawing.Size(175, 34);
             this.Imprimirbtn.TabIndex = 4;
             this.Imprimirbtn.Text = "Imprimir";
             this.Imprimirbtn.UseVisualStyleBackColor = true;
@@ -462,7 +461,7 @@
             this.Eliminarchk.ForeColor = System.Drawing.Color.Black;
             this.Eliminarchk.Location = new System.Drawing.Point(3, 49);
             this.Eliminarchk.Name = "Eliminarchk";
-            this.Eliminarchk.Size = new System.Drawing.Size(163, 40);
+            this.Eliminarchk.Size = new System.Drawing.Size(160, 40);
             this.Eliminarchk.TabIndex = 6;
             this.Eliminarchk.Text = "Eliminar Registros";
             this.Eliminarchk.UseVisualStyleBackColor = true;
@@ -474,7 +473,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Buscarbtn.ForeColor = System.Drawing.Color.Black;
-            this.Buscarbtn.Location = new System.Drawing.Point(448, 6);
+            this.Buscarbtn.Location = new System.Drawing.Point(441, 6);
             this.Buscarbtn.Margin = new System.Windows.Forms.Padding(6);
             this.Buscarbtn.Name = "Buscarbtn";
             this.Buscarbtn.Size = new System.Drawing.Size(117, 34);
@@ -486,7 +485,7 @@
             // Eliminarbtn
             // 
             this.Eliminarbtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Eliminarbtn.Location = new System.Drawing.Point(577, 6);
+            this.Eliminarbtn.Location = new System.Drawing.Point(570, 6);
             this.Eliminarbtn.Margin = new System.Windows.Forms.Padding(6);
             this.Eliminarbtn.Name = "Eliminarbtn";
             this.Eliminarbtn.Size = new System.Drawing.Size(92, 34);
@@ -500,10 +499,10 @@
             this.Registroslbl.AutoSize = true;
             this.Registroslbl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Registroslbl.ForeColor = System.Drawing.Color.Black;
-            this.Registroslbl.Location = new System.Drawing.Point(179, 56);
+            this.Registroslbl.Location = new System.Drawing.Point(176, 56);
             this.Registroslbl.Margin = new System.Windows.Forms.Padding(10);
             this.Registroslbl.Name = "Registroslbl";
-            this.Registroslbl.Size = new System.Drawing.Size(253, 26);
+            this.Registroslbl.Size = new System.Drawing.Size(249, 26);
             this.Registroslbl.TabIndex = 5;
             this.Registroslbl.Text = "El puerquito hace Oinkkkkkkkkkk";
             // 
@@ -582,7 +581,7 @@
             this.groupBox1.Size = new System.Drawing.Size(827, 188);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Proveedores";
+            this.groupBox1.Text = "Usuarios";
             // 
             // tableLayoutPanel3
             // 

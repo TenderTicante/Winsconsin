@@ -43,6 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArticuloLayer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ArticuloLayer.Designer.cs">
+      <DependentUpon>ArticuloLayer.cs</DependentUpon>
+    </Compile>
     <Compile Include="CentroCostoLayer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +86,12 @@
     <Compile Include="UsuarioLayer.Designer.cs">
       <DependentUpon>UsuarioLayer.cs</DependentUpon>
     </Compile>
+    <Compile Include="VistaProveedorArticulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VistaProveedorArticulo.Designer.cs">
+      <DependentUpon>VistaProveedorArticulo.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\StructLayer\StructLayer.csproj">
@@ -88,6 +100,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="ArticuloLayer.resx">
+      <DependentUpon>ArticuloLayer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CentroCostoLayer.resx">
       <DependentUpon>CentroCostoLayer.cs</DependentUpon>
     </EmbeddedResource>
@@ -106,6 +121,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UsuarioLayer.resx">
       <DependentUpon>UsuarioLayer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VistaProveedorArticulo.resx">
+      <DependentUpon>VistaProveedorArticulo.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

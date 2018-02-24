@@ -387,18 +387,24 @@ namespace DataLayer
                 SqlParameter ParMin = new SqlParameter();
                 ParMin.ParameterName = "@Minimo";
                 ParMin.SqlDbType = SqlDbType.Decimal;
+                ParMin.Precision = 8;
+                ParMin.Scale = 3;
                 ParMin.Value = Articulo.Minimo;
                 SqlComd.Parameters.Add(ParMin);
 
                 SqlParameter ParMax = new SqlParameter();
                 ParMax.ParameterName = "@Maximo";
                 ParMax.SqlDbType = SqlDbType.Decimal;
+                ParMax.Precision = 8;
+                ParMax.Scale = 3;
                 ParMax.Value = Articulo.Maximo;
                 SqlComd.Parameters.Add(ParMax);
 
                 SqlParameter ParStock = new SqlParameter();
                 ParStock.ParameterName = "@Stock";
                 ParStock.SqlDbType = SqlDbType.Decimal;
+                ParStock.Precision = 8;
+                ParStock.Scale = 3;
                 ParStock.Value = Articulo.Stock;
                 SqlComd.Parameters.Add(ParStock);
 
@@ -548,18 +554,24 @@ namespace DataLayer
                 SqlParameter ParMin = new SqlParameter();
                 ParMin.ParameterName = "@Minimo";
                 ParMin.SqlDbType = SqlDbType.Decimal;
+                ParMin.Precision = 8;
+                ParMin.Scale = 3;
                 ParMin.Value = Articulo.Minimo;
                 SqlComd.Parameters.Add(ParMin);
 
                 SqlParameter ParMax = new SqlParameter();
                 ParMax.ParameterName = "@Maximo";
                 ParMax.SqlDbType = SqlDbType.Decimal;
+                ParMax.Precision = 8;
+                ParMax.Scale = 3;
                 ParMax.Value = Articulo.Maximo;
                 SqlComd.Parameters.Add(ParMax);
 
                 SqlParameter ParStock = new SqlParameter();
                 ParStock.ParameterName = "@Stock";
                 ParStock.SqlDbType = SqlDbType.Decimal;
+                ParStock.Precision = 8;
+                ParStock.Scale = 3;
                 ParStock.Value = Articulo.Stock;
                 SqlComd.Parameters.Add(ParStock);
 

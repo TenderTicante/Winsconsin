@@ -121,6 +121,8 @@ namespace UserLayer
             this.psatxt.Text = string.Empty;
             this.cbnc.SelectedIndex = -1;
             this.pxImg.Image = global::UserLayer.Properties.Resources.file;
+            this.nomptxt.Text = string.Empty;
+            this.dllstxt.Text = string.Empty;
         }
 
         //Calcular costo Dolares
@@ -464,11 +466,11 @@ namespace UserLayer
                     byte[] imagen = ms.GetBuffer();
                     if (this.isNuevo)
                     {
-                        respuesta = ArticulosStruct.Insertar(this.saptxt.Text.Trim().ToUpper(), this.desctxt.Text.Trim(), this.marcatxt.Text.Trim(), this.umtxt.Text.Trim(), this.loctxt.Text.Trim(), this.subloc.Text.Trim(), this.areatxt.Text.Trim(), Convert.ToDecimal(this.mintxt.Text.Trim()),Convert.ToDecimal(this.maxtxt.Text.Trim()),Convert.ToDecimal(this.stocktxt.Text.Trim()),this.claveptxt.Text.Trim(),Convert.ToDecimal(this.costotxt.Text.Trim()), this.cbtc.Text.Trim(), this.mgtxt.Text.Trim(), this.cuentatxt.Text.Trim(), this.psatxt.Text.Trim(), this.cbnc.Text.Trim(),imagen);
+                        respuesta = ArticulosStruct.Insertar(this.saptxt.Text.Trim().ToUpper(), this.desctxt.Text.Trim(), this.marcatxt.Text.Trim(), this.umtxt.Text.Trim(), this.loctxt.Text.Trim(), this.subloc.Text.Trim(), this.areatxt.Text.Trim(), Convert.ToDecimal(this.mintxt.Text),Convert.ToDecimal(this.maxtxt.Text),Convert.ToDecimal(this.stocktxt.Text),this.claveptxt.Text.Trim(),Convert.ToDecimal(this.costotxt.Text.Trim()), this.cbtc.Text.Trim(), this.mgtxt.Text.Trim(), this.cuentatxt.Text.Trim(), this.psatxt.Text.Trim(), this.cbnc.Text.Trim(),imagen);
                     }
                     else
                     {
-                        respuesta = ArticulosStruct.Editar(this.saptxt.Text.Trim().ToUpper(), this.desctxt.Text.Trim(), this.marcatxt.Text.Trim(), this.umtxt.Text.Trim(), this.loctxt.Text.Trim(), this.subloc.Text.Trim(), this.areatxt.Text.Trim(), Convert.ToDecimal(this.mintxt.Text.Trim()), Convert.ToDecimal(this.maxtxt.Text.Trim()), Convert.ToDecimal(this.stocktxt.Text.Trim()), this.claveptxt.Text.Trim(), Convert.ToDecimal(this.costotxt.Text.Trim()), this.cbtc.Text.Trim(), this.mgtxt.Text.Trim(), this.cuentatxt.Text.Trim(), this.psatxt.Text.Trim(), this.cbnc.Text.Trim(), imagen);
+                        respuesta = ArticulosStruct.Editar(this.saptxt.Text.Trim().ToUpper(), this.desctxt.Text.Trim(), this.marcatxt.Text.Trim(), this.umtxt.Text.Trim(), this.loctxt.Text.Trim(), this.subloc.Text.Trim(), this.areatxt.Text.Trim(), Convert.ToDecimal(this.mintxt.Text), Convert.ToDecimal(this.maxtxt.Text), Convert.ToDecimal(this.stocktxt.Text), this.claveptxt.Text.Trim(), Convert.ToDecimal(this.costotxt.Text.Trim()), this.cbtc.Text.Trim(), this.mgtxt.Text.Trim(), this.cuentatxt.Text.Trim(), this.psatxt.Text.Trim(), this.cbnc.Text.Trim(), imagen);
                     }
 
                     if (respuesta.Equals("KK"))
@@ -528,10 +530,10 @@ namespace UserLayer
             this.cuentatxt.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Cuenta"].Value);
             this.psatxt.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["AreaPSA"].Value);
             this.cbnc.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["NationCode"].Value);
-            /*byte[] imgnBuffer = (byte[])this.dataListado.CurrentRow.Cells["Imagen"].Value;
-            System.IO.MemoryStream ms = new System.IO.MemoryStream(imgnBuffer);
-            this.pxImg.Image = Image.FromStream(ms);
-            this.pxImg.SizeMode = PictureBoxSizeMode.StretchImage;*/
+                /*byte[] imgnBuffer = (byte[])this.dataListado.CurrentRow.Cells["Imagen"].Value;
+                System.IO.MemoryStream ms = new System.IO.MemoryStream(imgnBuffer);
+                this.pxImg.Image = Image.FromStream(ms);
+                this.pxImg.SizeMode = PictureBoxSizeMode.StretchImage;*/
             this.tabControl1.SelectedIndex = 1;
             this.Dolar();
         }

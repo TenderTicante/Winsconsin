@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Globalization;
 
 using StructLayer;
 
@@ -127,14 +128,20 @@ namespace UserLayer
         {
             decimal tipocambio = Convert.ToDecimal(textBox20.Text);
             decimal costo = Convert.ToDecimal(costotxt.Text);
+            
 
             if (cbtc.Text.Equals("MXP"))
             {
-                MessageBox.Show("Holis");
-                dllstxt.Text = Convert.ToString(costo/tipocambio);
+                //MessageBox.Show("C");
+                dllstxt.Text = Convert.ToString(Math.Round(costo/tipocambio, 2));
             }
-            else
-                dllstxt.Text = costotxt.Text;
+            else if (cbtc.Text.Equals("DLL")){
+                //MessageBox.Show("B");
+                dllstxt.Text = Convert.ToString(Math.Round(costo, 2));
+            }
+            else{
+                //MessageBox.Show("A");
+            }
         }
 
         //Habilitar controles del formulario
@@ -514,15 +521,19 @@ namespace UserLayer
             this.maxtxt.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Maximo"].Value);
             this.stocktxt.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Stock"].Value);
             this.claveptxt.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["ClaveProveedor"].Value);
+            this.nomptxt.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["NombreProveedor"].Value);
             this.costotxt.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["PrecioUnitario"].Value);
             this.cbtc.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["TipoCambio"].Value);
             this.mgtxt.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["MaterialGroup"].Value);
             this.cuentatxt.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Cuenta"].Value);
             this.psatxt.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["AreaPSA"].Value);
             this.cbnc.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["NationCode"].Value);
-
+            /*byte[] imgnBuffer = (byte[])this.dataListado.CurrentRow.Cells["Imagen"].Value;
+            System.IO.MemoryStream ms = new System.IO.MemoryStream(imgnBuffer);
+            this.pxImg.Image = Image.FromStream(ms);
+            this.pxImg.SizeMode = PictureBoxSizeMode.StretchImage;*/
             this.tabControl1.SelectedIndex = 1;
-            //this.Dolar();
+            this.Dolar();
         }
 
         private void editarbtn_Click(object sender, EventArgs e)
@@ -623,7 +634,7 @@ namespace UserLayer
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            textBox20.ReadOnly = true;
         }
 
         private void pxImg_DoubleClick(object sender, EventArgs e)
@@ -643,9 +654,27 @@ namespace UserLayer
             previewForm.ShowDialog();
         }
 
-        private void tctxt_TextChanged(object sender, EventArgs e)
+        private void textBox20_DoubleClick(object sender, EventArgs e)
         {
+            textBox20.ReadOnly = false;
 
+        }
+
+        private void textBox20_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            CultureInfo cc = System.Threading.Thread.CurrentThread.CurrentCulture;
+
+            if (char.IsNumber(e.KeyChar) ||
+
+                e.KeyChar.ToString() == cc.NumberFormat.NumberDecimalSeparator || e.KeyChar == 8
+
+                )
+
+                e.Handled = false;
+
+            else
+
+                e.Handled = true;
         }
     }
 }

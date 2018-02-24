@@ -40,24 +40,24 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ttMensaje = new System.Windows.Forms.ToolTip(this.components);
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.cbBusqueda = new System.Windows.Forms.ComboBox();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.Imprimirbtn = new System.Windows.Forms.Button();
+            this.Eliminarchk = new System.Windows.Forms.CheckBox();
+            this.Buscarbtn = new System.Windows.Forms.Button();
+            this.Eliminarbtn = new System.Windows.Forms.Button();
+            this.Registroslbl = new System.Windows.Forms.Label();
             this.dataListado = new System.Windows.Forms.DataGridView();
             this.Eliminar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.Registroslbl = new System.Windows.Forms.Label();
-            this.Eliminarbtn = new System.Windows.Forms.Button();
-            this.Buscarbtn = new System.Windows.Forms.Button();
-            this.Eliminarchk = new System.Windows.Forms.CheckBox();
-            this.Imprimirbtn = new System.Windows.Forms.Button();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.cbBusqueda = new System.Windows.Forms.ComboBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             ((System.ComponentModel.ISupportInitialize)(this.errorIcono)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataListado)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataListado)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -125,6 +125,118 @@
             this.tabPage1.Text = "Listado de Proveedores";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 5;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 38.28306F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 61.71694F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 129F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 104F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 176F));
+            this.tableLayoutPanel1.Controls.Add(this.cbBusqueda, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.txtBuscar, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.Imprimirbtn, 4, 0);
+            this.tableLayoutPanel1.Controls.Add(this.Eliminarchk, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.Buscarbtn, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.Eliminarbtn, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.Registroslbl, 1, 1);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(855, 92);
+            this.tableLayoutPanel1.TabIndex = 8;
+            // 
+            // cbBusqueda
+            // 
+            this.cbBusqueda.AutoCompleteCustomSource.AddRange(new string[] {
+            "Nombre",
+            "Numero Cuenta"});
+            this.cbBusqueda.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbBusqueda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbBusqueda.FormattingEnabled = true;
+            this.cbBusqueda.Items.AddRange(new object[] {
+            "Nombre",
+            "Numero Cuenta"});
+            this.cbBusqueda.Location = new System.Drawing.Point(10, 10);
+            this.cbBusqueda.Margin = new System.Windows.Forms.Padding(10);
+            this.cbBusqueda.Name = "cbBusqueda";
+            this.cbBusqueda.Size = new System.Drawing.Size(150, 28);
+            this.cbBusqueda.TabIndex = 0;
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtBuscar.Location = new System.Drawing.Point(180, 10);
+            this.txtBuscar.Margin = new System.Windows.Forms.Padding(10);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(255, 26);
+            this.txtBuscar.TabIndex = 1;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
+            // 
+            // Imprimirbtn
+            // 
+            this.Imprimirbtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Imprimirbtn.Location = new System.Drawing.Point(684, 6);
+            this.Imprimirbtn.Margin = new System.Windows.Forms.Padding(6);
+            this.Imprimirbtn.Name = "Imprimirbtn";
+            this.Imprimirbtn.Size = new System.Drawing.Size(165, 34);
+            this.Imprimirbtn.TabIndex = 4;
+            this.Imprimirbtn.Text = "Imprimir";
+            this.Imprimirbtn.UseVisualStyleBackColor = true;
+            // 
+            // Eliminarchk
+            // 
+            this.Eliminarchk.AutoSize = true;
+            this.Eliminarchk.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Eliminarchk.ForeColor = System.Drawing.Color.Black;
+            this.Eliminarchk.Location = new System.Drawing.Point(3, 49);
+            this.Eliminarchk.Name = "Eliminarchk";
+            this.Eliminarchk.Size = new System.Drawing.Size(164, 40);
+            this.Eliminarchk.TabIndex = 6;
+            this.Eliminarchk.Text = "Eliminar Registros";
+            this.Eliminarchk.UseVisualStyleBackColor = true;
+            // 
+            // Buscarbtn
+            // 
+            this.Buscarbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Buscarbtn.ForeColor = System.Drawing.Color.Black;
+            this.Buscarbtn.Location = new System.Drawing.Point(451, 6);
+            this.Buscarbtn.Margin = new System.Windows.Forms.Padding(6);
+            this.Buscarbtn.Name = "Buscarbtn";
+            this.Buscarbtn.Size = new System.Drawing.Size(117, 34);
+            this.Buscarbtn.TabIndex = 2;
+            this.Buscarbtn.Text = "Buscar";
+            this.Buscarbtn.UseVisualStyleBackColor = true;
+            // 
+            // Eliminarbtn
+            // 
+            this.Eliminarbtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Eliminarbtn.Location = new System.Drawing.Point(580, 6);
+            this.Eliminarbtn.Margin = new System.Windows.Forms.Padding(6);
+            this.Eliminarbtn.Name = "Eliminarbtn";
+            this.Eliminarbtn.Size = new System.Drawing.Size(92, 34);
+            this.Eliminarbtn.TabIndex = 3;
+            this.Eliminarbtn.Text = "Eliminar";
+            this.Eliminarbtn.UseVisualStyleBackColor = true;
+            // 
+            // Registroslbl
+            // 
+            this.Registroslbl.AutoSize = true;
+            this.Registroslbl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Registroslbl.ForeColor = System.Drawing.Color.Black;
+            this.Registroslbl.Location = new System.Drawing.Point(180, 56);
+            this.Registroslbl.Margin = new System.Windows.Forms.Padding(10);
+            this.Registroslbl.Name = "Registroslbl";
+            this.Registroslbl.Size = new System.Drawing.Size(255, 26);
+            this.Registroslbl.TabIndex = 5;
+            this.Registroslbl.Text = "La vaca hace moooooooooo";
+            // 
             // dataListado
             // 
             this.dataListado.AllowUserToAddRows = false;
@@ -168,123 +280,13 @@
             this.dataListado.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataListado.Size = new System.Drawing.Size(817, 114);
             this.dataListado.TabIndex = 7;
+            this.dataListado.DoubleClick += new System.EventHandler(this.dataListado_DoubleClick);
             // 
             // Eliminar
             // 
             this.Eliminar.HeaderText = "Eliminar";
             this.Eliminar.Name = "Eliminar";
             this.Eliminar.ReadOnly = true;
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 5;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 38.28306F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 61.71694F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 129F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 104F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 173F));
-            this.tableLayoutPanel1.Controls.Add(this.cbBusqueda, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.txtBuscar, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.Imprimirbtn, 4, 0);
-            this.tableLayoutPanel1.Controls.Add(this.Eliminarchk, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.Buscarbtn, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.Eliminarbtn, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.Registroslbl, 1, 1);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(855, 92);
-            this.tableLayoutPanel1.TabIndex = 8;
-            // 
-            // Registroslbl
-            // 
-            this.Registroslbl.AutoSize = true;
-            this.Registroslbl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Registroslbl.ForeColor = System.Drawing.Color.Black;
-            this.Registroslbl.Location = new System.Drawing.Point(181, 56);
-            this.Registroslbl.Margin = new System.Windows.Forms.Padding(10);
-            this.Registroslbl.Name = "Registroslbl";
-            this.Registroslbl.Size = new System.Drawing.Size(257, 26);
-            this.Registroslbl.TabIndex = 5;
-            this.Registroslbl.Text = "La vaca hace moooooooooo";
-            // 
-            // Eliminarbtn
-            // 
-            this.Eliminarbtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Eliminarbtn.Location = new System.Drawing.Point(583, 6);
-            this.Eliminarbtn.Margin = new System.Windows.Forms.Padding(6);
-            this.Eliminarbtn.Name = "Eliminarbtn";
-            this.Eliminarbtn.Size = new System.Drawing.Size(92, 34);
-            this.Eliminarbtn.TabIndex = 3;
-            this.Eliminarbtn.Text = "Eliminar";
-            this.Eliminarbtn.UseVisualStyleBackColor = true;
-            // 
-            // Buscarbtn
-            // 
-            this.Buscarbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Buscarbtn.ForeColor = System.Drawing.Color.Black;
-            this.Buscarbtn.Location = new System.Drawing.Point(454, 6);
-            this.Buscarbtn.Margin = new System.Windows.Forms.Padding(6);
-            this.Buscarbtn.Name = "Buscarbtn";
-            this.Buscarbtn.Size = new System.Drawing.Size(117, 34);
-            this.Buscarbtn.TabIndex = 2;
-            this.Buscarbtn.Text = "Buscar";
-            this.Buscarbtn.UseVisualStyleBackColor = true;
-            // 
-            // Eliminarchk
-            // 
-            this.Eliminarchk.AutoSize = true;
-            this.Eliminarchk.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Eliminarchk.ForeColor = System.Drawing.Color.Black;
-            this.Eliminarchk.Location = new System.Drawing.Point(3, 49);
-            this.Eliminarchk.Name = "Eliminarchk";
-            this.Eliminarchk.Size = new System.Drawing.Size(165, 40);
-            this.Eliminarchk.TabIndex = 6;
-            this.Eliminarchk.Text = "Eliminar Registros";
-            this.Eliminarchk.UseVisualStyleBackColor = true;
-            // 
-            // Imprimirbtn
-            // 
-            this.Imprimirbtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Imprimirbtn.Location = new System.Drawing.Point(687, 6);
-            this.Imprimirbtn.Margin = new System.Windows.Forms.Padding(6);
-            this.Imprimirbtn.Name = "Imprimirbtn";
-            this.Imprimirbtn.Size = new System.Drawing.Size(162, 34);
-            this.Imprimirbtn.TabIndex = 4;
-            this.Imprimirbtn.Text = "Imprimir";
-            this.Imprimirbtn.UseVisualStyleBackColor = true;
-            // 
-            // txtBuscar
-            // 
-            this.txtBuscar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtBuscar.Location = new System.Drawing.Point(181, 10);
-            this.txtBuscar.Margin = new System.Windows.Forms.Padding(10);
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(257, 26);
-            this.txtBuscar.TabIndex = 1;
-            // 
-            // cbBusqueda
-            // 
-            this.cbBusqueda.AutoCompleteCustomSource.AddRange(new string[] {
-            "Nombre",
-            "Numero Cuenta"});
-            this.cbBusqueda.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbBusqueda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbBusqueda.FormattingEnabled = true;
-            this.cbBusqueda.Items.AddRange(new object[] {
-            "Nombre",
-            "Numero Cuenta"});
-            this.cbBusqueda.Location = new System.Drawing.Point(10, 10);
-            this.cbBusqueda.Margin = new System.Windows.Forms.Padding(10);
-            this.cbBusqueda.Name = "cbBusqueda";
-            this.cbBusqueda.Size = new System.Drawing.Size(151, 28);
-            this.cbBusqueda.TabIndex = 0;
             // 
             // tabControl1
             // 
@@ -315,15 +317,16 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "VistaProveedorArticulo";
             this.Text = "VistaProveedorArticulo";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.VistaProveedorArticulo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorIcono)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataListado)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataListado)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

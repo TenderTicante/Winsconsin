@@ -128,6 +128,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\clavep.png" />
+    <Content Include="Resources\file.png" />
     <Content Include="Resources\logoBosch.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

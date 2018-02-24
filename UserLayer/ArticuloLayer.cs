@@ -30,9 +30,10 @@ namespace UserLayer
             return _Instancia;
         }
 
-        public void setProveedor(string ClaveP)
+        public void setProveedor(string ClaveP, string NombreP)
         {
             this.claveptxt.Text = ClaveP;
+            this.nomptxt.Text = NombreP;
         }
 
         public ArticuloLayer()
@@ -79,11 +80,11 @@ namespace UserLayer
             this.ttMensaje.SetToolTip(this.stocktxt, "Ingrese el stock definido para dicha pieza");
             this.ttMensaje.SetToolTip(this.claveptxt, "Da click en el boton para buscar al proveedor de dicha pieza");
             this.ttMensaje.SetToolTip(this.costotxt, "Ingrese el costo de la pieza");
-            this.ttMensaje.SetToolTip(this.tctxt, "Ingrese el tipo de cambio de la pieza (DLLS/Pesos)");
+            this.ttMensaje.SetToolTip(this.cbtc, "Ingrese el tipo de cambio de la pieza (DLLS/Pesos)");
             this.ttMensaje.SetToolTip(this.mgtxt, "Capture el Materia Group de la pieza");
             this.ttMensaje.SetToolTip(this.cuentatxt, "Capture el numero de cuenta de la pieza");
             this.ttMensaje.SetToolTip(this.psatxt, "Capture el PSA de la pieza");
-            this.ttMensaje.SetToolTip(this.nctxt, "Capture el Nation Code de la pieza (16 / 49)");
+            this.ttMensaje.SetToolTip(this.cbnc, "Capture el Nation Code de la pieza (16 / 49)");
         }
 
         //Mensaje de confirmacion
@@ -113,18 +114,34 @@ namespace UserLayer
             this.stocktxt.Text = string.Empty;
             this.claveptxt.Text = string.Empty;
             this.costotxt.Text = string.Empty;
-            this.tctxt.Text = string.Empty;
+            this.cbtc.SelectedIndex = -1;
             this.mgtxt.Text = string.Empty;
             this.cuentatxt.Text = string.Empty;
             this.psatxt.Text = string.Empty;
-            this.nctxt.Text = string.Empty;
+            this.cbnc.SelectedIndex = -1;
+            this.pxImg.Image = global::UserLayer.Properties.Resources.file;
+        }
+
+        //Calcular costo Dolares
+        private void Dolar()
+        {
+            decimal tipocambio = Convert.ToDecimal(textBox20.Text);
+            decimal costo = Convert.ToDecimal(costotxt.Text);
+
+            if (cbtc.Text.Equals("MXP"))
+            {
+                MessageBox.Show("Holis");
+                dllstxt.Text = Convert.ToString(costo/tipocambio);
+            }
+            else
+                dllstxt.Text = costotxt.Text;
         }
 
         //Habilitar controles del formulario
         private void Habilitar(bool valor)
         {
             this.saptxt.ReadOnly = !valor;
-            this.desctxt.ReadOnly = !valor; ;
+            this.desctxt.ReadOnly = !valor;
             this.marcatxt.ReadOnly = !valor;
             this.umtxt.ReadOnly = !valor;
             this.loctxt.ReadOnly = !valor;
@@ -135,11 +152,14 @@ namespace UserLayer
             this.stocktxt.ReadOnly = !valor;
             this.claveptxt.ReadOnly = !valor;
             this.costotxt.ReadOnly = !valor;
-            this.tctxt.ReadOnly = !valor;
+            this.cbtc.Enabled = valor;
             this.mgtxt.ReadOnly = !valor;
             this.cuentatxt.ReadOnly = !valor;
             this.psatxt.ReadOnly = !valor;
-            this.nctxt.ReadOnly = !valor;
+            this.cbnc.Enabled = valor;
+            this.bprovbtn.Enabled = valor;
+            this.loadimg.Enabled = valor;
+            this.delimg.Enabled = valor;
         }
 
         private void Botones()
@@ -166,12 +186,14 @@ namespace UserLayer
         private void OcultarColumnas()
         {
             this.dataListado.Columns[0].Visible = false;
+            this.dataListado.Columns[11].Visible = false;
         }
 
         //Mostrar los Proveedores Registrados en la base de datos
         private void MostrarColumnas()
         {
             this.dataListado.DataSource = ArticulosStruct.Mostrar();
+            this.OcultarColumnas();
             Registroslbl.Text = "Total de Registros: " + Convert.ToString(dataListado.Rows.Count);
 
         }
@@ -356,11 +378,11 @@ namespace UserLayer
             this.stocktxt.Focus();
             this.claveptxt.Focus();
             this.costotxt.Focus();
-            this.tctxt.Focus();
+            this.cbtc.Focus();
             this.mgtxt.Focus();
             this.cuentatxt.Focus();
             this.psatxt.Focus();
-            this.nctxt.Focus();
+            this.cbnc.Focus();
         }
 
         private void guardarbtn_Click(object sender, EventArgs e)
@@ -370,77 +392,76 @@ namespace UserLayer
                 string respuesta = "";
                 if (this.saptxt.Text == string.Empty || this.desctxt.Text == string.Empty ||
                     this.marcatxt.Text == string.Empty || this.umtxt.Text == string.Empty || this.loctxt.Text == string.Empty ||
-                    this.subloc.Text == string.Empty || this.areatxt.Text == string.Empty || this.mintxt.Text == string.Empty ||
+                    this.areatxt.Text == string.Empty || this.mintxt.Text == string.Empty ||
                     this.maxtxt.Text == string.Empty || this.stocktxt.Text == string.Empty || this.claveptxt.Text == string.Empty ||
-                    this.costotxt.Text == string.Empty || this.tctxt.Text == string.Empty || this.nctxt.Text == string.Empty)
+                    this.costotxt.Text == string.Empty || this.cbtc.Text == string.Empty || this.cbnc.Text == string.Empty)
                 {
                     MensajeError("Datos ingresados erroneamente, favor de revisar");
                     if (this.saptxt.Text == string.Empty)
                     {
-                        errorIcono.SetError(saptxt, "Clave de Requisitor vacia");
+                        errorIcono.SetError(saptxt, "SAP Number no definido");
                     }
                     if (this.desctxt.Text == string.Empty)
                     {
-                        errorIcono.SetError(desctxt, "Nombre de Requisittor vacio");
+                        errorIcono.SetError(desctxt, "Descripcion no definida");
                     }
                     if (this.marcatxt.Text == string.Empty)
                     {
-                        errorIcono.SetError(marcatxt, "Apellido de Requisitor vacio");
+                        errorIcono.SetError(marcatxt, "Marca no definido");
                     }
                     if (this.umtxt.Text == string.Empty)
                     {
-                        errorIcono.SetError(umtxt, "Centro de Costo vacio");
+                        errorIcono.SetError(umtxt, "Unidad de meidida no definida");
                     }
                     if (this.loctxt.Text == string.Empty)
                     {
-                        errorIcono.SetError(loctxt, "Puesto no definido");
-                    }
-                    if (this.subloc.Text == string.Empty)
-                    {
-                        errorIcono.SetError(subloc, "Puesto no definido");
+                        errorIcono.SetError(loctxt, "Locacion no definida");
                     }
                     if (this.areatxt.Text == string.Empty)
                     {
-                        errorIcono.SetError(areatxt, "Puesto no definido");
+                        errorIcono.SetError(areatxt, "Area no definida");
                     }
                     if (this.mintxt.Text == string.Empty)
                     {
-                        errorIcono.SetError(mintxt, "Puesto no definido");
+                        errorIcono.SetError(mintxt, "Cantidad Minima no definida");
                     }
                     if (this.maxtxt.Text == string.Empty)
                     {
-                        errorIcono.SetError(maxtxt, "Puesto no definido");
+                        errorIcono.SetError(maxtxt, "Cantidad Maxima no definida");
                     }
                     if (this.stocktxt.Text == string.Empty)
                     {
-                        errorIcono.SetError(stocktxt, "Puesto no definido");
+                        errorIcono.SetError(stocktxt, "Stock no definido");
                     }
                     if (this.claveptxt.Text == string.Empty)
                     {
-                        errorIcono.SetError(claveptxt, "Puesto no definido");
+                        errorIcono.SetError(claveptxt, "Proveedor no definido");
                     }
                     if (this.costotxt.Text == string.Empty)
                     {
-                        errorIcono.SetError(costotxt, "Puesto no definido");
+                        errorIcono.SetError(costotxt, "Precio no definido");
                     }
-                    if (this.tctxt.Text == string.Empty)
+                    if (this.cbtc.Text == string.Empty)
                     {
-                        errorIcono.SetError(tctxt, "Puesto no definido");
+                        errorIcono.SetError(cbtc, "Tipo de Cambio no definido");
                     }
-                    if (this.nctxt.Text == string.Empty)
+                    if (this.cbnc.Text == string.Empty)
                     {
-                        errorIcono.SetError(nctxt, "Puesto no definido");
+                        errorIcono.SetError(cbnc, "Nation Code no definido");
                     }
                 }
                 else
                 {
+                    System.IO.MemoryStream ms = new System.IO.MemoryStream();
+                    this.pxImg.Image.Save(ms,System.Drawing.Imaging.ImageFormat.Png);
+                    byte[] imagen = ms.GetBuffer();
                     if (this.isNuevo)
                     {
-                        //respuesta = ArticulosStruct.Insertar(this.saptxt.Text.Trim(), this.desctxt.Text.Trim(), this.marcatxt.Text.Trim(), this.umtxt.Text.Trim(), this.loctxt.Text.Trim(), this.subloc.Text.Trim(), this.areatxt.Text.Trim(), Convert.ToDecimal(this.mintxt.Text.Trim()),Convert.ToDecimal(this.maxtxt.Text.Trim()),Convert.ToDecimal(this.stocktxt.Text.Trim()),this.claveptxt.Text.Trim(),Convert.ToDecimal(this.costotxt.Text.Trim()), this.tctxt.Text.Trim(), this.mgtxt.Text.Trim(), this.cuentatxt.Text.Trim(), this.psatxt.Text.Trim(), this.nctxt.Text.Trim(),Convert.ToByte[](this.txtimg));
+                        respuesta = ArticulosStruct.Insertar(this.saptxt.Text.Trim().ToUpper(), this.desctxt.Text.Trim(), this.marcatxt.Text.Trim(), this.umtxt.Text.Trim(), this.loctxt.Text.Trim(), this.subloc.Text.Trim(), this.areatxt.Text.Trim(), Convert.ToDecimal(this.mintxt.Text.Trim()),Convert.ToDecimal(this.maxtxt.Text.Trim()),Convert.ToDecimal(this.stocktxt.Text.Trim()),this.claveptxt.Text.Trim(),Convert.ToDecimal(this.costotxt.Text.Trim()), this.cbtc.Text.Trim(), this.mgtxt.Text.Trim(), this.cuentatxt.Text.Trim(), this.psatxt.Text.Trim(), this.cbnc.Text.Trim(),imagen);
                     }
                     else
                     {
-                        //respuesta = ArticulosStruct.Editar(this.saptxt.Text.Trim(), this.desctxt.Text.Trim(), this.marcatxt.Text.Trim(), this.umtxt.Text.Trim(), this.loctxt.Text.Trim(), this.subloc.Text.Trim(), this.areatxt.Text.Trim(), Convert.ToDecimal(this.mintxt.Text.Trim()), Convert.ToDecimal(this.maxtxt.Text.Trim()), Convert.ToDecimal(this.stocktxt.Text.Trim()), this.claveptxt.Text.Trim(), Convert.ToDecimal(this.costotxt.Text.Trim()), this.tctxt.Text.Trim(), this.mgtxt.Text.Trim(), this.cuentatxt.Text.Trim(), this.psatxt.Text.Trim(), this.nctxt.Text.Trim(), Convert.ToByte[](this.txtimg));
+                        respuesta = ArticulosStruct.Editar(this.saptxt.Text.Trim().ToUpper(), this.desctxt.Text.Trim(), this.marcatxt.Text.Trim(), this.umtxt.Text.Trim(), this.loctxt.Text.Trim(), this.subloc.Text.Trim(), this.areatxt.Text.Trim(), Convert.ToDecimal(this.mintxt.Text.Trim()), Convert.ToDecimal(this.maxtxt.Text.Trim()), Convert.ToDecimal(this.stocktxt.Text.Trim()), this.claveptxt.Text.Trim(), Convert.ToDecimal(this.costotxt.Text.Trim()), this.cbtc.Text.Trim(), this.mgtxt.Text.Trim(), this.cuentatxt.Text.Trim(), this.psatxt.Text.Trim(), this.cbnc.Text.Trim(), imagen);
                     }
 
                     if (respuesta.Equals("KK"))
@@ -494,11 +515,14 @@ namespace UserLayer
             this.stocktxt.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Stock"].Value);
             this.claveptxt.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["ClaveProveedor"].Value);
             this.costotxt.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["PrecioUnitario"].Value);
-            this.tctxt.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["TipoCambio"].Value);
+            this.cbtc.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["TipoCambio"].Value);
             this.mgtxt.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["MaterialGroup"].Value);
             this.cuentatxt.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Cuenta"].Value);
             this.psatxt.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["AreaPSA"].Value);
-            this.nctxt.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["NationCode"].Value);
+            this.cbnc.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["NationCode"].Value);
+
+            this.tabControl1.SelectedIndex = 1;
+            //this.Dolar();
         }
 
         private void editarbtn_Click(object sender, EventArgs e)
@@ -577,6 +601,51 @@ namespace UserLayer
         {
             VistaProveedorArticulo Vista = new VistaProveedorArticulo();
             Vista.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog();
+            DialogResult result = dialog.ShowDialog();
+
+            if (result==DialogResult.OK)
+            {
+                this.pxImg.SizeMode = PictureBoxSizeMode.StretchImage;
+                this.pxImg.Image = Image.FromFile(dialog.FileName);
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.pxImg.SizeMode = PictureBoxSizeMode.StretchImage;
+            this.pxImg.Image = global::UserLayer.Properties.Resources.file;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pxImg_DoubleClick(object sender, EventArgs e)
+        {
+            Form previewForm = new Form()
+            {
+                WindowState = FormWindowState.Maximized,
+                FormBorderStyle = FormBorderStyle.FixedSingle
+            };
+            PictureBox picture = new PictureBox()
+            {
+                Image = pxImg.Image,
+                Dock = DockStyle.Fill,
+                SizeMode = PictureBoxSizeMode.Zoom
+            };
+            previewForm.Controls.Add(picture);
+            previewForm.ShowDialog();
+        }
+
+        private void tctxt_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

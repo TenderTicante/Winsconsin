@@ -56,6 +56,18 @@
       <DependentUpon>CentroCostoLayer.cs</DependentUpon>
     </Compile>
     <Compile Include="Class1.cs" />
+    <Compile Include="MainFlatLayer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainFlatLayer.Designer.cs">
+      <DependentUpon>MainFlatLayer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainLayer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainLayer.Designer.cs">
+      <DependentUpon>MainLayer.cs</DependentUpon>
+    </Compile>
     <Compile Include="MaquinaLayer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +118,12 @@
     <EmbeddedResource Include="CentroCostoLayer.resx">
       <DependentUpon>CentroCostoLayer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MainFlatLayer.resx">
+      <DependentUpon>MainFlatLayer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainLayer.resx">
+      <DependentUpon>MainLayer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MaquinaLayer.resx">
       <DependentUpon>MaquinaLayer.cs</DependentUpon>
     </EmbeddedResource>
@@ -127,9 +145,19 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\requisitores.png" />
+    <None Include="Resources\centrocosto.png" />
+    <None Include="Resources\1-150I1200QX36.png" />
     <Content Include="Resources\clavep.png" />
+    <None Include="Resources\consumocc.png" />
+    <None Include="Resources\consumomaq.png" />
+    <None Include="Resources\exit.png" />
     <Content Include="Resources\file.png" />
     <Content Include="Resources\logoBosch.png" />
+    <None Include="Resources\usuario.png" />
+    <None Include="Resources\maquina.png" />
+    <None Include="Resources\proveedores.png" />
+    <None Include="Resources\productos.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

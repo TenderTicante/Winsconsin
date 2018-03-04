@@ -56,6 +56,12 @@
       <DependentUpon>CentroCostoLayer.cs</DependentUpon>
     </Compile>
     <Compile Include="Class1.cs" />
+    <Compile Include="LoginLayer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginLayer.Designer.cs">
+      <DependentUpon>LoginLayer.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainFlatLayer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +124,9 @@
     <EmbeddedResource Include="CentroCostoLayer.resx">
       <DependentUpon>CentroCostoLayer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LoginLayer.resx">
+      <DependentUpon>LoginLayer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainFlatLayer.resx">
       <DependentUpon>MainFlatLayer.cs</DependentUpon>
     </EmbeddedResource>
@@ -145,6 +154,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Sin título.png" />
     <None Include="Resources\requisitores.png" />
     <None Include="Resources\centrocosto.png" />
     <None Include="Resources\1-150I1200QX36.png" />
@@ -153,6 +163,8 @@
     <None Include="Resources\consumomaq.png" />
     <None Include="Resources\exit.png" />
     <Content Include="Resources\file.png" />
+    <None Include="Resources\globe.jpg" />
+    <None Include="Resources\LOGO.png" />
     <Content Include="Resources\logoBosch.png" />
     <None Include="Resources\usuario.png" />
     <None Include="Resources\maquina.png" />

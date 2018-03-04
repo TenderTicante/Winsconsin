@@ -429,5 +429,43 @@ namespace DataLayer
 
             return dataResultado;
         }
+
+        //Inicio de Sesion
+        public DataTable Login(UsuarioData Usuario)
+        {
+            DataTable dataResultado = new DataTable("Usuario");
+            SqlConnection SqlCxn = new SqlConnection();
+            try
+            {
+                SqlCxn.ConnectionString = Conexion.CadenaConexion;
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCxn;
+                SqlCmd.CommandText = "splogin";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter ParUsuario = new SqlParameter();
+                ParUsuario.ParameterName = "@usuario";
+                ParUsuario.SqlDbType = SqlDbType.VarChar;
+                ParUsuario.Size = 20;
+                ParUsuario.Value = Usuario.IDUsuario;
+                SqlCmd.Parameters.Add(ParUsuario);
+
+                SqlParameter ParPassword = new SqlParameter();
+                ParPassword.ParameterName = "@password";
+                ParPassword.SqlDbType = SqlDbType.VarChar;
+                ParPassword.Size = 20;
+                ParPassword.Value = Usuario.Password;
+                SqlCmd.Parameters.Add(ParPassword);
+
+                SqlDataAdapter SqlData = new SqlDataAdapter(SqlCmd);
+                SqlData.Fill(dataResultado);
+            }
+            catch (Exception e)
+            {
+                dataResultado = null;
+            }
+
+            return dataResultado;
+        }
     }
 }

@@ -123,6 +123,26 @@ namespace UserLayer.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap globe {
+            get {
+                object obj = ResourceManager.GetObject("globe", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LOGO {
+            get {
+                object obj = ResourceManager.GetObject("LOGO", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logoBosch {
             get {
                 object obj = ResourceManager.GetObject("logoBosch", resourceCulture);
@@ -166,6 +186,16 @@ namespace UserLayer.Properties {
         internal static System.Drawing.Bitmap requisitores {
             get {
                 object obj = ResourceManager.GetObject("requisitores", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Sin_título {
+            get {
+                object obj = ResourceManager.GetObject("Sin título", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

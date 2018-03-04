@@ -13,7 +13,9 @@ namespace UserLayer
     public partial class MainLayer : Form
     {
         private int childFormNumber = 0;
-
+        public string idusuario = "";
+        public string Nombre = "";
+        public string Acceso = "";
         public MainLayer()
         {
             InitializeComponent();
@@ -51,7 +53,7 @@ namespace UserLayer
 
         private void ExitToolsStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void CutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -151,6 +153,32 @@ namespace UserLayer
             layer.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             layer.Dock = DockStyle.Fill;
             layer.Show();
+        }
+
+        private void MainLayer_Load(object sender, EventArgs e)
+        {
+            GestionUsuario();
+        }
+
+        private void GestionUsuario()
+        {
+            //Control de Accesos
+            if(Acceso == "Administrador")
+            {
+                MessageBox.Show("Bienvenido "+Nombre,"Tool-Crib Management Assistant");
+            }
+            else if(Acceso == "Financieros")
+            {
+                MessageBox.Show("Bienvenido " + Nombre, "Tool-Crib Management Assistant");
+            }
+            else if (Acceso == "Tool-Crib")
+            {
+                MessageBox.Show("Bienvenido " + Nombre, "Tool-Crib Management Assistant");
+            }
+            else
+            {
+                MessageBox.Show("Fuck off " + Nombre, "Tool-Crib Management Assistant");
+            }
         }
     }
 }

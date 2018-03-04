@@ -86,5 +86,16 @@ namespace StructLayer
 
             return UD.BusquedaxApellido(UD);
         }
+
+        //Metodo Login que se encuentra en la capa de Datos
+
+        public static DataTable Login(string usuario,string password)
+        {
+            UsuarioData UD = new UsuarioData();
+            UD.IDUsuario = usuario;
+            UD.Password = password;
+
+            return UD.Login(UD);
+        }
     }
 }

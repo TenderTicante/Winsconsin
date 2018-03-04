@@ -103,7 +103,7 @@ namespace UserLayer
         //Limpiar Controles del Formulario
         private void Limpiar()
         {
-            this.saptxt.Text = string.Empty;
+            this.saptxt.Text = "6082Y0";
             this.desctxt.Text = string.Empty;
             this.marcatxt.Text = string.Empty;
             this.umtxt.Text = string.Empty;

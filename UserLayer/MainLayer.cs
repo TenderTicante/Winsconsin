@@ -180,5 +180,14 @@ namespace UserLayer
                 MessageBox.Show("Fuck off " + Nombre, "Tool-Crib Management Assistant");
             }
         }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            ConsmoCCLayer layer = new ConsmoCCLayer();
+            layer.MdiParent = this;
+            layer.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            layer.Dock = DockStyle.Fill;
+            layer.Show();
+        }
     }
 }

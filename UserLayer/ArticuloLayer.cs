@@ -159,7 +159,7 @@ namespace UserLayer
             this.mintxt.ReadOnly = !valor;
             this.maxtxt.ReadOnly = !valor;
             this.stocktxt.ReadOnly = !valor;
-            this.claveptxt.ReadOnly = !valor;
+            //this.claveptxt.ReadOnly = !valor;
             this.costotxt.ReadOnly = !valor;
             this.cbtc.Enabled = valor;
             this.mgtxt.ReadOnly = !valor;
@@ -677,6 +677,11 @@ namespace UserLayer
             else
 
                 e.Handled = true;
+        }
+
+        private void ArticuloLayer_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            _Instancia = null;
         }
     }
 }

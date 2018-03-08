@@ -32,5 +32,10 @@ namespace UserLayer
             ArticuloLayer layer = ArticuloLayer.GetInstancia();
             layer.Show();
         }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

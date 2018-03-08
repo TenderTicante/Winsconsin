@@ -119,10 +119,10 @@
             this.delimg = new System.Windows.Forms.Button();
             this.ttMensaje = new System.Windows.Forms.ToolTip(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.errorIcono = new System.Windows.Forms.ErrorProvider(this.components);
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabPage1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -152,9 +152,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pxImg)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
             this.tabControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorIcono)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorIcono)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -179,7 +179,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 61.71694F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 129F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 104F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 205F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 208F));
             this.tableLayoutPanel1.Controls.Add(this.cbBusqueda, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.txtBuscar, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.Imprimirbtn, 4, 0);
@@ -221,26 +221,26 @@
             this.cbBusqueda.Location = new System.Drawing.Point(10, 9);
             this.cbBusqueda.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.cbBusqueda.Name = "cbBusqueda";
-            this.cbBusqueda.Size = new System.Drawing.Size(139, 28);
+            this.cbBusqueda.Size = new System.Drawing.Size(138, 28);
             this.cbBusqueda.TabIndex = 0;
             // 
             // txtBuscar
             // 
             this.txtBuscar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtBuscar.Location = new System.Drawing.Point(169, 9);
+            this.txtBuscar.Location = new System.Drawing.Point(168, 9);
             this.txtBuscar.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(236, 26);
+            this.txtBuscar.Size = new System.Drawing.Size(234, 26);
             this.txtBuscar.TabIndex = 1;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // Imprimirbtn
             // 
             this.Imprimirbtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Imprimirbtn.Location = new System.Drawing.Point(654, 6);
+            this.Imprimirbtn.Location = new System.Drawing.Point(651, 6);
             this.Imprimirbtn.Margin = new System.Windows.Forms.Padding(6);
             this.Imprimirbtn.Name = "Imprimirbtn";
-            this.Imprimirbtn.Size = new System.Drawing.Size(194, 34);
+            this.Imprimirbtn.Size = new System.Drawing.Size(197, 34);
             this.Imprimirbtn.TabIndex = 4;
             this.Imprimirbtn.Text = "Imprimir";
             this.Imprimirbtn.UseVisualStyleBackColor = true;
@@ -253,7 +253,7 @@
             this.Eliminarchk.Location = new System.Drawing.Point(3, 50);
             this.Eliminarchk.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Eliminarchk.Name = "Eliminarchk";
-            this.Eliminarchk.Size = new System.Drawing.Size(153, 39);
+            this.Eliminarchk.Size = new System.Drawing.Size(152, 39);
             this.Eliminarchk.TabIndex = 6;
             this.Eliminarchk.Text = "Eliminar Registros";
             this.Eliminarchk.UseVisualStyleBackColor = true;
@@ -265,7 +265,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Buscarbtn.ForeColor = System.Drawing.Color.Black;
-            this.Buscarbtn.Location = new System.Drawing.Point(421, 6);
+            this.Buscarbtn.Location = new System.Drawing.Point(418, 6);
             this.Buscarbtn.Margin = new System.Windows.Forms.Padding(6);
             this.Buscarbtn.Name = "Buscarbtn";
             this.Buscarbtn.Size = new System.Drawing.Size(117, 34);
@@ -277,7 +277,7 @@
             // Eliminarbtn
             // 
             this.Eliminarbtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Eliminarbtn.Location = new System.Drawing.Point(550, 6);
+            this.Eliminarbtn.Location = new System.Drawing.Point(547, 6);
             this.Eliminarbtn.Margin = new System.Windows.Forms.Padding(6);
             this.Eliminarbtn.Name = "Eliminarbtn";
             this.Eliminarbtn.Size = new System.Drawing.Size(92, 34);
@@ -291,10 +291,10 @@
             this.Registroslbl.AutoSize = true;
             this.Registroslbl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Registroslbl.ForeColor = System.Drawing.Color.Black;
-            this.Registroslbl.Location = new System.Drawing.Point(169, 55);
+            this.Registroslbl.Location = new System.Drawing.Point(168, 55);
             this.Registroslbl.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.Registroslbl.Name = "Registroslbl";
-            this.Registroslbl.Size = new System.Drawing.Size(236, 29);
+            this.Registroslbl.Size = new System.Drawing.Size(234, 29);
             this.Registroslbl.TabIndex = 5;
             this.Registroslbl.Text = "El puerquito hace Oinkkkkkkkkkk";
             // 
@@ -303,9 +303,6 @@
             this.dataListado.AllowUserToAddRows = false;
             this.dataListado.AllowUserToDeleteRows = false;
             this.dataListado.AllowUserToOrderColumns = true;
-            this.dataListado.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataListado.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataListado.BackgroundColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -1168,6 +1165,7 @@
             this.claveptxt.Location = new System.Drawing.Point(470, 20);
             this.claveptxt.Margin = new System.Windows.Forms.Padding(0, 20, 0, 0);
             this.claveptxt.Name = "claveptxt";
+            this.claveptxt.ReadOnly = true;
             this.claveptxt.Size = new System.Drawing.Size(72, 26);
             this.claveptxt.TabIndex = 41;
             // 
@@ -1388,16 +1386,6 @@
             this.tabControl1.Size = new System.Drawing.Size(868, 279);
             this.tabControl1.TabIndex = 14;
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Firebrick;
-            this.pictureBox3.Location = new System.Drawing.Point(248, 11);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox3.TabIndex = 13;
-            this.pictureBox3.TabStop = false;
-            // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -1411,6 +1399,20 @@
             this.label1.TabIndex = 12;
             this.label1.Text = "Articulos";
             // 
+            // errorIcono
+            // 
+            this.errorIcono.ContainerControl = this;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.Firebrick;
+            this.pictureBox3.Location = new System.Drawing.Point(248, 11);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox3.TabIndex = 13;
+            this.pictureBox3.TabStop = false;
+            // 
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
@@ -1422,10 +1424,6 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 11;
             this.pictureBox2.TabStop = false;
-            // 
-            // errorIcono
-            // 
-            this.errorIcono.ContainerControl = this;
             // 
             // pictureBox1
             // 
@@ -1450,8 +1448,9 @@
             this.Controls.Add(this.pictureBox1);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ArticuloLayer";
-            this.Text = "v";
+            this.Text = "Articulos";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ArticuloLayer_FormClosing);
             this.Load += new System.EventHandler(this.ArticuloLayer_Load);
             this.tabPage1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -1484,9 +1483,9 @@
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             this.tabControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.errorIcono)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorIcono)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

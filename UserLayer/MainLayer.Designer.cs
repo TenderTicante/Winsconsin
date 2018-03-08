@@ -509,6 +509,7 @@
             this.button8.Text = "Consumo Centro Costo";
             this.button8.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button1
             // 

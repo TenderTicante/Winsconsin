@@ -698,6 +698,12 @@ namespace DataLayer
             SqlConnection SqlCxn = new SqlConnection();
             try
             {
+
+               // Connection con = new Connection();
+
+
+               // List<Articulo> articulos = con.Articulo.Take(100).ToList();
+
                 SqlCxn.ConnectionString = Conexion.CadenaConexion;
                 SqlCommand SqlCmd = new SqlCommand();
                 SqlCmd.Connection = SqlCxn;

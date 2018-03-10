@@ -16,5 +16,10 @@ namespace UserLayer
         {
             InitializeComponent();
         }
+
+        private void ReqConsumoView_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

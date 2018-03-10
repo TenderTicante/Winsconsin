@@ -43,6 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArticuloConsumoCCLayer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ArticuloConsumoCCLayer.Designer.cs">
+      <DependentUpon>ArticuloConsumoCCLayer.cs</DependentUpon>
+    </Compile>
     <Compile Include="ArticuloLayer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +136,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="ArticuloConsumoCCLayer.resx">
+      <DependentUpon>ArticuloConsumoCCLayer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ArticuloLayer.resx">
       <DependentUpon>ArticuloLayer.cs</DependentUpon>
     </EmbeddedResource>

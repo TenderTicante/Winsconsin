@@ -19,15 +19,15 @@ namespace UserLayer
 
         private decimal total = 0;
 
-        private static ArticuloLayer _Articulo;
+        private static ConsmoCCLayer _Consumo;
 
-        public static ArticuloLayer GetInstancia()
+        public static ConsmoCCLayer GetInstancia()
         {
-            if (_Articulo==null)
+            if (_Consumo == null)
             {
-                _Articulo = new ArticuloLayer();
+                _Consumo = new ConsmoCCLayer();
             }
-            return _Articulo;
+            return _Consumo;
         }
 
         public void setRequisitor(string idreq,string nombre)
@@ -88,7 +88,7 @@ namespace UserLayer
 
         private void ConsmoCCLayer_FormClosing(object sender, FormClosingEventArgs e)
         {
-            _Articulo = null;
+            _Consumo = null;
         }
     }
 }

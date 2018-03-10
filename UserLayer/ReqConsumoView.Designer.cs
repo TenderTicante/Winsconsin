@@ -37,7 +37,6 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.Imprimirbtn = new System.Windows.Forms.Button();
             this.Buscarbtn = new System.Windows.Forms.Button();
             this.Registroslbl = new System.Windows.Forms.Label();
             this.cbBusqueda = new System.Windows.Forms.ComboBox();
@@ -93,11 +92,10 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 38.28306F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 61.71694F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 129F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 104F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 106F));
             this.tableLayoutPanel1.Controls.Add(this.txtBuscar, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.Buscarbtn, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.Registroslbl, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.Imprimirbtn, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.cbBusqueda, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
@@ -112,21 +110,11 @@
             // txtBuscar
             // 
             this.txtBuscar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtBuscar.Location = new System.Drawing.Point(248, 10);
+            this.txtBuscar.Location = new System.Drawing.Point(247, 10);
             this.txtBuscar.Margin = new System.Windows.Forms.Padding(10);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(363, 26);
+            this.txtBuscar.Size = new System.Drawing.Size(362, 26);
             this.txtBuscar.TabIndex = 1;
-            // 
-            // Imprimirbtn
-            // 
-            this.Imprimirbtn.Location = new System.Drawing.Point(756, 6);
-            this.Imprimirbtn.Margin = new System.Windows.Forms.Padding(6);
-            this.Imprimirbtn.Name = "Imprimirbtn";
-            this.Imprimirbtn.Size = new System.Drawing.Size(93, 34);
-            this.Imprimirbtn.TabIndex = 4;
-            this.Imprimirbtn.Text = "Imprimir";
-            this.Imprimirbtn.UseVisualStyleBackColor = true;
             // 
             // Buscarbtn
             // 
@@ -134,23 +122,24 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Buscarbtn.ForeColor = System.Drawing.Color.Black;
-            this.Buscarbtn.Location = new System.Drawing.Point(627, 6);
+            this.Buscarbtn.Location = new System.Drawing.Point(625, 6);
             this.Buscarbtn.Margin = new System.Windows.Forms.Padding(6);
             this.Buscarbtn.Name = "Buscarbtn";
             this.Buscarbtn.Size = new System.Drawing.Size(117, 34);
             this.Buscarbtn.TabIndex = 2;
             this.Buscarbtn.Text = "Buscar";
             this.Buscarbtn.UseVisualStyleBackColor = true;
+            this.Buscarbtn.Click += new System.EventHandler(this.Buscarbtn_Click);
             // 
             // Registroslbl
             // 
             this.Registroslbl.AutoSize = true;
             this.Registroslbl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Registroslbl.ForeColor = System.Drawing.Color.Black;
-            this.Registroslbl.Location = new System.Drawing.Point(248, 56);
+            this.Registroslbl.Location = new System.Drawing.Point(247, 56);
             this.Registroslbl.Margin = new System.Windows.Forms.Padding(10);
             this.Registroslbl.Name = "Registroslbl";
-            this.Registroslbl.Size = new System.Drawing.Size(363, 26);
+            this.Registroslbl.Size = new System.Drawing.Size(362, 26);
             this.Registroslbl.TabIndex = 5;
             this.Registroslbl.Text = "El caballo hace hiiiiiiiiiiiiiiiiiiiii";
             this.Registroslbl.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -165,7 +154,7 @@
             "Apellido",
             "CentroCosto",
             "Puesto"});
-            this.cbBusqueda.Location = new System.Drawing.Point(107, 12);
+            this.cbBusqueda.Location = new System.Drawing.Point(106, 12);
             this.cbBusqueda.Margin = new System.Windows.Forms.Padding(10);
             this.cbBusqueda.Name = "cbBusqueda";
             this.cbBusqueda.Size = new System.Drawing.Size(121, 28);
@@ -214,6 +203,7 @@
             this.dataListado.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataListado.Size = new System.Drawing.Size(817, 114);
             this.dataListado.TabIndex = 7;
+            this.dataListado.DoubleClick += new System.EventHandler(this.dataListado_DoubleClick);
             // 
             // Eliminar
             // 
@@ -305,7 +295,6 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TextBox txtBuscar;
-        private System.Windows.Forms.Button Imprimirbtn;
         private System.Windows.Forms.Button Buscarbtn;
         private System.Windows.Forms.Label Registroslbl;
         private System.Windows.Forms.ComboBox cbBusqueda;

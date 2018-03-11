@@ -33,6 +33,7 @@ namespace UserLayer
         private void MostrarColumnas()
         {
             this.dataListado.DataSource = RequisitoresStruct.Mostrar();
+            this.OcultarColumnas();
             Registroslbl.Text = "Total de Registros: " + Convert.ToString(dataListado.Rows.Count);
 
         }

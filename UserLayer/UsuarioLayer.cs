@@ -125,6 +125,7 @@ namespace UserLayer
         private void BuscarxNombre()
         {
             this.dataListado.DataSource = UsuariosStruct.BuscarxNombre(this.txtBuscar.Text);
+            
             this.OcultarColumnas();
             Registroslbl.Text = "Total de Registros: " + Convert.ToString(dataListado.Rows.Count);
         }

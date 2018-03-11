@@ -63,13 +63,15 @@ namespace StructLayer
         public static DataTable BuscarArtNombre(string varaux)
         {
             ConsumoCCData Consumo = new ConsumoCCData();
-            return Consumo.MostrarDetalles(varaux);
+            Consumo.VarAux = varaux;
+            return Consumo.MostrarDescripcionArt(Consumo);
         }
 
         public static DataTable BuscarArtSAP(string varaux)
         {
             ConsumoCCData Consumo = new ConsumoCCData();
-            return Consumo.MostrarSAPArt(varaux);
+            Consumo.VarAux = varaux;
+            return Consumo.MostrarSAPArt(Consumo);
         }
     }
 }

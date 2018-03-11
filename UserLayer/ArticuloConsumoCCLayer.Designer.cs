@@ -40,22 +40,22 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.cbBusqueda = new System.Windows.Forms.ComboBox();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.Buscarbtn = new System.Windows.Forms.Button();
+            this.Eliminarbtn = new System.Windows.Forms.Button();
+            this.Registroslbl = new System.Windows.Forms.Label();
             this.dataListado = new System.Windows.Forms.DataGridView();
             this.Eliminar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.Registroslbl = new System.Windows.Forms.Label();
-            this.Eliminarbtn = new System.Windows.Forms.Button();
-            this.Buscarbtn = new System.Windows.Forms.Button();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.cbBusqueda = new System.Windows.Forms.ComboBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             ((System.ComponentModel.ISupportInitialize)(this.errorIcono)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataListado)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataListado)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -126,6 +126,93 @@
             this.tabPage1.Text = "Listado de Articulos";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 4;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 38.28306F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 61.71694F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 129F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 106F));
+            this.tableLayoutPanel1.Controls.Add(this.cbBusqueda, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.txtBuscar, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.Buscarbtn, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.Eliminarbtn, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.Registroslbl, 1, 1);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 4);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(10, 4, 10, 4);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(854, 93);
+            this.tableLayoutPanel1.TabIndex = 8;
+            // 
+            // cbBusqueda
+            // 
+            this.cbBusqueda.AutoCompleteCustomSource.AddRange(new string[] {
+            "Nombre",
+            "Numero Cuenta"});
+            this.cbBusqueda.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbBusqueda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbBusqueda.FormattingEnabled = true;
+            this.cbBusqueda.Items.AddRange(new object[] {
+            "Descripcion",
+            "SAP Number"});
+            this.cbBusqueda.Location = new System.Drawing.Point(10, 9);
+            this.cbBusqueda.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
+            this.cbBusqueda.Name = "cbBusqueda";
+            this.cbBusqueda.Size = new System.Drawing.Size(216, 28);
+            this.cbBusqueda.TabIndex = 0;
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtBuscar.Location = new System.Drawing.Point(246, 9);
+            this.txtBuscar.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(362, 26);
+            this.txtBuscar.TabIndex = 1;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
+            // 
+            // Buscarbtn
+            // 
+            this.Buscarbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Buscarbtn.ForeColor = System.Drawing.Color.Black;
+            this.Buscarbtn.Location = new System.Drawing.Point(624, 6);
+            this.Buscarbtn.Margin = new System.Windows.Forms.Padding(6);
+            this.Buscarbtn.Name = "Buscarbtn";
+            this.Buscarbtn.Size = new System.Drawing.Size(117, 34);
+            this.Buscarbtn.TabIndex = 2;
+            this.Buscarbtn.Text = "Buscar";
+            this.Buscarbtn.UseVisualStyleBackColor = true;
+            this.Buscarbtn.Click += new System.EventHandler(this.Buscarbtn_Click);
+            // 
+            // Eliminarbtn
+            // 
+            this.Eliminarbtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Eliminarbtn.Location = new System.Drawing.Point(753, 6);
+            this.Eliminarbtn.Margin = new System.Windows.Forms.Padding(6);
+            this.Eliminarbtn.Name = "Eliminarbtn";
+            this.Eliminarbtn.Size = new System.Drawing.Size(95, 34);
+            this.Eliminarbtn.TabIndex = 3;
+            this.Eliminarbtn.Text = "Eliminar";
+            this.Eliminarbtn.UseVisualStyleBackColor = true;
+            // 
+            // Registroslbl
+            // 
+            this.Registroslbl.AutoSize = true;
+            this.Registroslbl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Registroslbl.ForeColor = System.Drawing.Color.Black;
+            this.Registroslbl.Location = new System.Drawing.Point(246, 55);
+            this.Registroslbl.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
+            this.Registroslbl.Name = "Registroslbl";
+            this.Registroslbl.Size = new System.Drawing.Size(362, 29);
+            this.Registroslbl.TabIndex = 5;
+            this.Registroslbl.Text = "El puerquito hace Oinkkkkkkkkkk";
+            // 
             // dataListado
             // 
             this.dataListado.AllowUserToAddRows = false;
@@ -167,98 +254,13 @@
             this.dataListado.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataListado.Size = new System.Drawing.Size(818, 113);
             this.dataListado.TabIndex = 7;
+            this.dataListado.DoubleClick += new System.EventHandler(this.dataListado_DoubleClick);
             // 
             // Eliminar
             // 
             this.Eliminar.HeaderText = "Eliminar";
             this.Eliminar.Name = "Eliminar";
             this.Eliminar.ReadOnly = true;
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 4;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 38.28306F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 61.71694F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 129F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 104F));
-            this.tableLayoutPanel1.Controls.Add(this.cbBusqueda, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.txtBuscar, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.Buscarbtn, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.Eliminarbtn, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.Registroslbl, 1, 1);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 4);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(10, 4, 10, 4);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(854, 93);
-            this.tableLayoutPanel1.TabIndex = 8;
-            // 
-            // Registroslbl
-            // 
-            this.Registroslbl.AutoSize = true;
-            this.Registroslbl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Registroslbl.ForeColor = System.Drawing.Color.Black;
-            this.Registroslbl.Location = new System.Drawing.Point(247, 55);
-            this.Registroslbl.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
-            this.Registroslbl.Name = "Registroslbl";
-            this.Registroslbl.Size = new System.Drawing.Size(363, 29);
-            this.Registroslbl.TabIndex = 5;
-            this.Registroslbl.Text = "El puerquito hace Oinkkkkkkkkkk";
-            // 
-            // Eliminarbtn
-            // 
-            this.Eliminarbtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Eliminarbtn.Location = new System.Drawing.Point(755, 6);
-            this.Eliminarbtn.Margin = new System.Windows.Forms.Padding(6);
-            this.Eliminarbtn.Name = "Eliminarbtn";
-            this.Eliminarbtn.Size = new System.Drawing.Size(93, 34);
-            this.Eliminarbtn.TabIndex = 3;
-            this.Eliminarbtn.Text = "Eliminar";
-            this.Eliminarbtn.UseVisualStyleBackColor = true;
-            // 
-            // Buscarbtn
-            // 
-            this.Buscarbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Buscarbtn.ForeColor = System.Drawing.Color.Black;
-            this.Buscarbtn.Location = new System.Drawing.Point(626, 6);
-            this.Buscarbtn.Margin = new System.Windows.Forms.Padding(6);
-            this.Buscarbtn.Name = "Buscarbtn";
-            this.Buscarbtn.Size = new System.Drawing.Size(117, 34);
-            this.Buscarbtn.TabIndex = 2;
-            this.Buscarbtn.Text = "Buscar";
-            this.Buscarbtn.UseVisualStyleBackColor = true;
-            this.Buscarbtn.Click += new System.EventHandler(this.Buscarbtn_Click);
-            // 
-            // txtBuscar
-            // 
-            this.txtBuscar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtBuscar.Location = new System.Drawing.Point(247, 9);
-            this.txtBuscar.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(363, 26);
-            this.txtBuscar.TabIndex = 1;
-            // 
-            // cbBusqueda
-            // 
-            this.cbBusqueda.AutoCompleteCustomSource.AddRange(new string[] {
-            "Nombre",
-            "Numero Cuenta"});
-            this.cbBusqueda.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbBusqueda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbBusqueda.FormattingEnabled = true;
-            this.cbBusqueda.Items.AddRange(new object[] {
-            "Descripcion",
-            "SAP Number"});
-            this.cbBusqueda.Location = new System.Drawing.Point(10, 9);
-            this.cbBusqueda.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
-            this.cbBusqueda.Name = "cbBusqueda";
-            this.cbBusqueda.Size = new System.Drawing.Size(217, 28);
-            this.cbBusqueda.TabIndex = 0;
             // 
             // tabControl1
             // 
@@ -295,9 +297,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.tabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataListado)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataListado)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

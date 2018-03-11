@@ -32,11 +32,10 @@ namespace UserLayer
 
         public void setRequisitor(string idreq,string nombre)
         {
-            this.idreq.Text = idreq;
-            this.Nombrereq.Text = nombre;
+            
         }
 
-        public void setArticulo(string sapn, string desc, decimal precio, decimal stock)
+        public void setArticulo(string sapn, string desc, string unme, decimal stock, decimal preun, string tica)
         {
 
         }
@@ -89,6 +88,30 @@ namespace UserLayer
         private void ConsmoCCLayer_FormClosing(object sender, FormClosingEventArgs e)
         {
             _Consumo = null;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ReqConsumoView Requisitor = new ReqConsumoView();
+            Requisitor.ShowDialog();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            ArticuloConsumoCCLayer Articulo = new ArticuloConsumoCCLayer();
+            Articulo.ShowDialog();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            ReqConsumoView Requisitor = new ReqConsumoView();
+            Requisitor.ShowDialog();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            ReqConsumoView Requisitor = new ReqConsumoView();
+            Requisitor.ShowDialog();
         }
     }
 }

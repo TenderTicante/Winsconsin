@@ -117,7 +117,7 @@ namespace DataLayer
 
         }
 
-        public ConsumoCCData(DateTime fecha,int idconsumo,int ccc, string idreq, decimal total,string varaux, string varaux2)
+        public ConsumoCCData(DateTime fecha, int idconsumo, int ccc, string idreq, decimal total, string varaux, string varaux2)
         {
             this.Fecha = fecha;
             this.IDConsumo = idconsumo;
@@ -178,7 +178,7 @@ namespace DataLayer
             return respuesta;
         }
 
-        public string Insertar(ConsumoCCData Consumo,  List<DetalleConsumoCCData> Detalle)
+        public string Insertar(ConsumoCCData Consumo, List<DetalleConsumoCCData> Detalle)
         {
             string respuesta = "";
 
@@ -237,15 +237,15 @@ namespace DataLayer
                 {
                     //Se obtiene el codigo de la salida genreada
                     this.IDConsumo = Convert.ToInt32(SqlCmd.Parameters["@IDConsumo"].Value);
-                    foreach(DetalleConsumoCCData det in Detalle)
+                    foreach (DetalleConsumoCCData det in Detalle)
                     {
                         det.IDDetalle = this.IDConsumo;
                         //Se llama al metodo Insertar de la clase Detalle de Consumo
-                        respuesta = det.Insertar(det,ref SqlCon,ref SqlTra);
+                        respuesta = det.Insertar(det, ref SqlCon, ref SqlTra);
                         if (!respuesta.Equals("OK"))
                         {
                             break;
-                            
+
                         }
                         else
                         {
@@ -305,7 +305,7 @@ namespace DataLayer
                 //Se ejecuta el comando
                 respuesta = SqlComd.ExecuteNonQuery() == 1 ? "KK" : "No se elimino el consumo correctamente";
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 respuesta = ex.Message;
             }
@@ -331,14 +331,14 @@ namespace DataLayer
                 SqlDataAdapter SqlData = new SqlDataAdapter(SqlCmd);
                 SqlData.Fill(DataResultado);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 DataResultado = null;
             }
             return DataResultado;
         }
         //Metodo para buscar entre fechas
-        public DataTable BusquedaFechas(String varaux1,String varaux2)
+        public DataTable BusquedaFechas(String varaux1, String varaux2)
         {
             DataTable DataResult = new DataTable("ConsumoCC");
             SqlConnection SqlCon = new SqlConnection();
@@ -367,7 +367,7 @@ namespace DataLayer
                 SqlDataAdapter SqlData = new SqlDataAdapter(SqlComd);
                 SqlData.Fill(DataResult);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 DataResult = null;
             }
@@ -398,7 +398,7 @@ namespace DataLayer
                 SqlDataAdapter SqlData = new SqlDataAdapter(SqlComd);
                 SqlData.Fill(DataResult);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 DataResult = null;
             }
@@ -406,7 +406,7 @@ namespace DataLayer
         }
 
         //Mostrar Articulos por su Descripcion
-        public DataTable MostrarDescripcionArt(string TextoBusqueda)
+        public DataTable MostrarDescripcionArt(ConsumoCCData Consumo)
         {
             DataTable DataResult = new DataTable("Articulo");
             SqlConnection SqlCon = new SqlConnection();
@@ -437,7 +437,7 @@ namespace DataLayer
         }
 
         //Mostrar Articulos por su SAPNumber
-        public DataTable MostrarSAPArt(string TextoBusqueda)
+        public DataTable MostrarSAPArt(ConsumoCCData Consumo)
         {
             DataTable DataResult = new DataTable("Articulo");
             SqlConnection SqlCon = new SqlConnection();

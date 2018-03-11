@@ -29,6 +29,7 @@ namespace UserLayer
             this.dataListado.DataSource = ConsumoCCStruct.BuscarArtNombre(this.txtBuscar.Text);
             this.OcultarColumnas();
             Registroslbl.Text = "Total de Registros: " + Convert.ToString(dataListado.Rows.Count);
+            //MessageBox.Show("Halo");
         }
 
         //Buscar por SAP
@@ -45,12 +46,33 @@ namespace UserLayer
 
         private void Buscarbtn_Click(object sender, EventArgs e)
         {
-            if (cbBusqueda.Text.Equals("SAP Number"))
+            if (cbBusqueda.Text.Equals("Descripcion"))
             {
-                BuscarxSAP();
+                BuscarxDescripcion();
             }
             else
-                BuscarxDescripcion();
+                BuscarxSAP();
+        }
+
+        private void dataListado_DoubleClick(object sender, EventArgs e)
+        {
+            ConsmoCCLayer layer = new ConsmoCCLayer();
+            string sap, desc, tc, um;
+            decimal pu, stock;
+
+            sap = Convert.ToString(this.dataListado.CurrentRow.Cells["SAPNumber"].Value);
+            desc = Convert.ToString(this.dataListado.CurrentRow.Cells["Descripcion"].Value);
+            um = Convert.ToString(this.dataListado.CurrentRow.Cells["UnidadMedida"].Value);
+            stock = Convert.ToDecimal(this.dataListado.CurrentRow.Cells["Stock"].Value);
+            pu = Convert.ToDecimal(this.dataListado.CurrentRow.Cells["PrecioUnitario"].Value);
+            tc = Convert.ToString(this.dataListado.CurrentRow.Cells["TipoCambio"].Value);
+            layer.setArticulo(sap,desc,um,stock,pu,tc);
+            this.Hide();
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            BuscarxDescripcion();
         }
     }
 }

@@ -42,5 +42,15 @@ namespace UserLayer
         {
 
         }
+
+        private void Buscarbtn_Click(object sender, EventArgs e)
+        {
+            if (cbBusqueda.Text.Equals("SAP Number"))
+            {
+                BuscarxSAP();
+            }
+            else
+                BuscarxDescripcion();
+        }
     }
 }

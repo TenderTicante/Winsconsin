@@ -29,7 +29,6 @@ namespace UserLayer
             this.dataListado.DataSource = ConsumoCCStruct.BuscarArtNombre(this.txtBuscar.Text);
             this.OcultarColumnas();
             Registroslbl.Text = "Total de Registros: " + Convert.ToString(dataListado.Rows.Count);
-            //MessageBox.Show("Halo");
         }
 
         //Buscar por SAP
@@ -56,7 +55,7 @@ namespace UserLayer
 
         private void dataListado_DoubleClick(object sender, EventArgs e)
         {
-            ConsmoCCLayer layer = new ConsmoCCLayer();
+            ConsmoCCLayer layer = ConsmoCCLayer.GetInstancia();
             string sap, desc, tc, um;
             decimal pu, stock;
 

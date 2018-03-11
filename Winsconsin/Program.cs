@@ -17,7 +17,7 @@ namespace Winsconsin
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ArticuloConsumoCCLayer());
+            Application.Run(new LoginLayer());
         }
     }
 }

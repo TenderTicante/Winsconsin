@@ -132,7 +132,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 38.28306F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 61.71694F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 129F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 106F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 107F));
             this.tableLayoutPanel1.Controls.Add(this.cbBusqueda, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.txtBuscar, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.Buscarbtn, 2, 0);
@@ -171,7 +171,7 @@
             this.txtBuscar.Location = new System.Drawing.Point(246, 9);
             this.txtBuscar.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(362, 26);
+            this.txtBuscar.Size = new System.Drawing.Size(361, 26);
             this.txtBuscar.TabIndex = 1;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
@@ -181,7 +181,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Buscarbtn.ForeColor = System.Drawing.Color.Black;
-            this.Buscarbtn.Location = new System.Drawing.Point(624, 6);
+            this.Buscarbtn.Location = new System.Drawing.Point(623, 6);
             this.Buscarbtn.Margin = new System.Windows.Forms.Padding(6);
             this.Buscarbtn.Name = "Buscarbtn";
             this.Buscarbtn.Size = new System.Drawing.Size(117, 34);
@@ -193,10 +193,10 @@
             // Eliminarbtn
             // 
             this.Eliminarbtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Eliminarbtn.Location = new System.Drawing.Point(753, 6);
+            this.Eliminarbtn.Location = new System.Drawing.Point(752, 6);
             this.Eliminarbtn.Margin = new System.Windows.Forms.Padding(6);
             this.Eliminarbtn.Name = "Eliminarbtn";
-            this.Eliminarbtn.Size = new System.Drawing.Size(95, 34);
+            this.Eliminarbtn.Size = new System.Drawing.Size(96, 34);
             this.Eliminarbtn.TabIndex = 3;
             this.Eliminarbtn.Text = "Eliminar";
             this.Eliminarbtn.UseVisualStyleBackColor = true;
@@ -209,7 +209,7 @@
             this.Registroslbl.Location = new System.Drawing.Point(246, 55);
             this.Registroslbl.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.Registroslbl.Name = "Registroslbl";
-            this.Registroslbl.Size = new System.Drawing.Size(362, 29);
+            this.Registroslbl.Size = new System.Drawing.Size(361, 29);
             this.Registroslbl.TabIndex = 5;
             this.Registroslbl.Text = "El puerquito hace Oinkkkkkkkkkk";
             // 

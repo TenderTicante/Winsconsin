@@ -154,6 +154,14 @@ namespace UserLayer
             layer.Dock = DockStyle.Fill;
             layer.Show();
         }
+        private void button8_Click(object sender, EventArgs e)
+        {
+            ConsmoCCLayer layer = ConsmoCCLayer.GetInstancia();
+            layer.MdiParent = this;
+            layer.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            layer.Dock = DockStyle.Fill;
+            layer.Show();
+        }
 
         private void MainLayer_Load(object sender, EventArgs e)
         {
@@ -179,15 +187,6 @@ namespace UserLayer
             {
                 MessageBox.Show("Fuck off " + Nombre, "Tool-Crib Management Assistant");
             }
-        }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-            ConsmoCCLayer layer = new ConsmoCCLayer();
-            layer.MdiParent = this;
-            layer.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            layer.Dock = DockStyle.Fill;
-            layer.Show();
         }
     }
 }

@@ -82,6 +82,10 @@ namespace UserLayer
         private void ConsmoCCLayer_Load(object sender, EventArgs e)
         {
             llenarCombo();
+            this.ttMensaje.SetToolTip(this.Nombrereq,"Seleccione un requisitor");
+            this.ttMensaje.SetToolTip(this.cccb, "Seleccione un Centro de Costo");
+            this.ttMensaje.SetToolTip(this.cant, "Ingrese una cantidad");
+            this.ttMensaje.SetToolTip(this.sapntxt, "Seleccione un Articulo");
         }
 
         //Llenado del combo box

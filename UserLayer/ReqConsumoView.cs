@@ -14,6 +14,18 @@ namespace UserLayer
 {
     public partial class ReqConsumoView : Form
     {
+        //Mensaje de confirmacion
+        private void MensajeKK(string mensaje)
+        {
+            MessageBox.Show(mensaje, "Sistema Tool Crib", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        //Mensaje de Error
+        private void MensajeError(string mensaje)
+        {
+            MessageBox.Show(mensaje, "Sistemas Tool Crib", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
         public ReqConsumoView()
         {
             InitializeComponent();

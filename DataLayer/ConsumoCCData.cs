@@ -20,6 +20,8 @@ namespace DataLayer
         //Textos de Busqueda
         private string _VarAux;
         private string _VarAux2;
+
+        private int _halpme;
         public DateTime Fecha
         {
             get
@@ -111,13 +113,26 @@ namespace DataLayer
             }
         }
 
+        public int Halpme
+        {
+            get
+            {
+                return _halpme;
+            }
+
+            set
+            {
+                _halpme = value;
+            }
+        }
+
         //Constructores
         public ConsumoCCData()
         {
 
         }
 
-        public ConsumoCCData(DateTime fecha, int idconsumo, int ccc, string idreq, decimal total, string varaux, string varaux2)
+        public ConsumoCCData(DateTime fecha, int idconsumo, int ccc, string idreq, decimal total, string varaux, string varaux2,int halpme)
         {
             this.Fecha = fecha;
             this.IDConsumo = idconsumo;
@@ -126,6 +141,7 @@ namespace DataLayer
             this.Total = total;
             this.VarAux = varaux;
             this.VarAux2 = varaux2;
+            this.Halpme = halpme;
         }
 
         //Metodos
@@ -376,7 +392,7 @@ namespace DataLayer
 
         //Mostrar detalles de la salida
 
-        public DataTable MostrarDetalles(string TextoBusqueda)
+        public DataTable MostrarDetalles(int TextoBusqueda)
         {
             DataTable DataResult = new DataTable("DetalleConsumoCC");
             SqlConnection SqlCon = new SqlConnection();
@@ -386,13 +402,13 @@ namespace DataLayer
                 SqlCon.ConnectionString = Conexion.CadenaConexion;
                 SqlCommand SqlComd = new SqlCommand();
                 SqlComd.Connection = SqlCon;
-                SqlComd.CommandText = "mostrardetasalida";
+                SqlComd.CommandText = "spmostrardetasalida";
                 SqlComd.CommandType = CommandType.StoredProcedure;
 
                 SqlParameter ParTextoBusqueda = new SqlParameter();
                 ParTextoBusqueda.ParameterName = "@varaux";
                 ParTextoBusqueda.SqlDbType = SqlDbType.Int;
-                ParTextoBusqueda.Value = VarAux;
+                ParTextoBusqueda.Value = Halpme;
                 SqlComd.Parameters.Add(ParTextoBusqueda);
 
                 SqlDataAdapter SqlData = new SqlDataAdapter(SqlComd);

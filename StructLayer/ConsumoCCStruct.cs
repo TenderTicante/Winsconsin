@@ -54,9 +54,10 @@ namespace StructLayer
             return Consumo.BusquedaFechas(varaux,varaux2);
         }
 
-        public static DataTable MostrarDetalle(string varaux)
+        public static DataTable MostrarDetalle(int varaux)
         {
             ConsumoCCData Consumo = new ConsumoCCData();
+            Consumo.Halpme = varaux;
             return Consumo.MostrarDetalles(varaux);
         }
 

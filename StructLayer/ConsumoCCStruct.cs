@@ -23,7 +23,6 @@ namespace StructLayer
             foreach(DataRow raw in dtDetalle.Rows)
             {
                 DetalleConsumoCCData detail = new DetalleConsumoCCData();
-                detail.IDDetalle = Convert.ToInt32(raw["IDDetalle"].ToString());
                 detail.SAPNumber = Convert.ToString(raw["SAPNumber"].ToString());
                 detail.Cantidad = Convert.ToDecimal(raw["Cantidad"].ToString());
                 detail.Subtotal = Convert.ToDecimal(raw["Subtotal"].ToString());

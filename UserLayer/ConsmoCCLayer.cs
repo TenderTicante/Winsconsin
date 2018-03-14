@@ -86,6 +86,7 @@ namespace UserLayer
             this.fechasalidapick.Enabled = valor;
             this.cccb.Enabled = valor;
             this.cant.Enabled = valor;
+            this.cant.DecimalPlaces = 2;
             this.additem.Enabled = valor;
             this.addreq.Enabled = valor;
             this.adddetail.Enabled = valor;
@@ -125,7 +126,7 @@ namespace UserLayer
 
         private void BuscarFechas()
         {
-            this.dataListado.DataSource = ConsumoCCStruct.BuscarFechas(this.fecha1.Value.ToString("dd/MM/yyyy"), this.fecha2.Value.ToString("dd/MM/yyyy"));
+            this.dataListado.DataSource = ConsumoCCStruct.BuscarFechas(fecha1.Value.ToString("yyyy/MM/dd"), fecha2.Value.ToString("yyyy/MM/dd"));
             this.OcultarColumnas();
             lbltotalreg.Text = "Total de Registros: " + Convert.ToString(dataListado.Rows.Count);
         }
@@ -224,6 +225,7 @@ namespace UserLayer
 
         private void button2_Click(object sender, EventArgs e)
         {
+            MessageBox.Show(fecha1.Value.ToString("yyyy/MM/dd"));
             this.BuscarFechas();
         }
 
@@ -285,6 +287,150 @@ namespace UserLayer
             else
             {
                 this.dataListado.Columns[0].Visible = false;
+            }
+        }
+
+        private void dataListado_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == dataListado.Columns["Eliminar"].Index)
+            {
+                DataGridViewCheckBoxCell ChkEliminar = (DataGridViewCheckBoxCell)dataListado.Rows[e.RowIndex].Cells["Eliminar"];
+                ChkEliminar.Value = !Convert.ToBoolean(ChkEliminar.Value);
+            }
+        }
+
+        private void cancelarbtn_Click(object sender, EventArgs e)
+        {
+            this.IsNuevo = false;
+            this.Botones();
+            this.Limpiar();
+            this.LimpiarDetalle();
+            this.Habilitar(false);
+        }
+
+        private void nuevobtn_Click(object sender, EventArgs e)
+        {
+            this.IsNuevo = true;
+            this.Botones();
+            this.Limpiar();
+            this.LimpiarDetalle();
+            this.Habilitar(true);
+        }
+
+        private void guardabtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string respuesta = "";
+                if (this.cccb.Text == string.Empty || this.Idreq.Text == string.Empty )
+                {
+                    MensajeError("Datos ingresados erroneamente, favor de revisar");
+                    if (this.cccb.Text == string.Empty)
+                    {
+                        errorIcono.SetError(cccb, "Centro de Costo no definido");
+                    }
+                    if (this.Idreq.Text == string.Empty)
+                    {
+                        errorIcono.SetError(desctxt, "Requisitor no definido");
+                    }
+
+                }
+                else
+                {
+                    if (this.IsNuevo)
+                    {
+                        respuesta = ConsumoCCStruct.Insertar(fechasalidapick.Value, Convert.ToInt32(cccb.Text), Idreq.Text, Convert.ToDecimal(label6.Text), datadetalle);
+                    }
+
+                    if (respuesta.Equals("KK"))
+                    {
+                        if (this.IsNuevo)
+                        {
+                            this.MensajeKK("Registro guardado exitosamente");
+                        }
+                    }
+                    else
+                    {
+                        this.MensajeError(respuesta);
+                    }
+                    this.IsNuevo = false;
+                    this.Botones();
+                    this.Limpiar();
+                    this.LimpiarDetalle();
+                    this.Mostrar();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+        private void adddetail_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if(this.sapntxt.Text == string.Empty)
+                {
+                    MensajeError("No se han seleccionado articulos ");
+                }
+                else
+                {
+                    bool registrar = true;
+
+                    foreach (DataRow raw in datadetalle.Rows)
+                    {
+                        if (Convert.ToString(raw["SAPNumber"]) == Convert.ToString(this.sapntxt.Text))
+                        {
+                            registrar = false;
+                            this.MensajeError("El articulo ya se ha registrado previamente");
+                        }
+                    }
+                        if (registrar && Convert.ToDecimal(cant.Value)<=Convert.ToDecimal(stocktxt.Text) && cant.Value>0)
+                        {
+                            decimal subtotal = Convert.ToDecimal(this.cant.Value) * Convert.ToDecimal(this.putxt.Text);
+                            total = total + subtotal;
+                            this.label6.Text = total.ToString("#0.00#");
+                            //Agregar detalle al listado
+                            DataRow row = this.datadetalle.NewRow();
+                            row["SAPNumber"]=Convert.ToString(this.sapntxt.Text);
+                            row["Descripcion"]=Convert.ToString(this.desctxt.Text);
+                            row["Cantidad"]=Convert.ToDecimal(this.cant.Value);
+                            row["UnidadMedida"] = Convert.ToString(this.umtxt.Text);
+                            row["Stock"] =Convert.ToDecimal(this.stocktxt.Text);
+                            row["PrecioUnitario"] =Convert.ToDecimal(this.putxt.Text);
+                            row["TipoCambio"] =Convert.ToString(this.tctxt.Text);
+                            row["Subtotal"] = subtotal;
+                            this.datadetalle.Rows.Add(row);
+                            this.LimpiarDetalle();
+                        }
+                        else
+                        {
+                            MensajeError("No hay stock suficiente");
+                        }
+                    }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message+ex.StackTrace);
+            }
+        }
+
+        private void deldetail_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int indicefila = this.dataListadoDetalle.CurrentCell.RowIndex;
+                DataRow row = this.datadetalle.Rows[indicefila];
+                //Disminir el total de la salida
+                this.total = this.total- Convert.ToDecimal(row["SubTotal"].ToString());
+                this.label6.Text = total.ToString("#0.00#");
+                //Se remueve la fila
+                this.datadetalle.Rows.Remove(row);
+            }
+            catch(Exception ex)
+            {
+                MensajeError("No hay fila para Remover");
             }
         }
     }

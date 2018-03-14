@@ -129,18 +129,14 @@ namespace DataLayer
 
                 //Se hace la condicion para saber si se inserto correctamente el registro
 
-                respuesta = SqlComd.ExecuteNonQuery() == 1 ? "KK" : "Error en Insercion la Matrix";
+                respuesta = SqlComd.ExecuteNonQuery() == 1 ? "KK" : Convert.ToString(IDDetalle)+Convert.ToString(SAPNumber)+Convert.ToString(Cantidad)+Convert.ToString(Subtotal);
             }
             catch (Exception e)
             {
                 //Mensaje de Errores
                 respuesta = e.Message;
             }
-            //Cierre de la conexion
-            finally
-            {
-                if (SqlCon.State == ConnectionState.Open) SqlCon.Close();
-            }
+
             return respuesta;
         }
     }

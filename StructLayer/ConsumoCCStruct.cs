@@ -47,10 +47,12 @@ namespace StructLayer
 
         //Metodo Buscarfecha que llama al metodo buscar fecha
         //de la clase ConsumoData de la capa de datos
-        public static DataTable BuscarFechas(string varaux,string varaux2)
+        public static DataTable BuscarFechas(DateTime varaux, DateTime varaux2)
         {
             ConsumoCCData Consumo = new ConsumoCCData();
-            return Consumo.BusquedaFechas(varaux,varaux2);
+            Consumo.Fecha1 = varaux;
+            Consumo.Fecha2 = varaux2;
+            return Consumo.BusquedaFechas(Consumo);
         }
 
         public static DataTable MostrarDetalle(int varaux)

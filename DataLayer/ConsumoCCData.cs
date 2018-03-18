@@ -385,7 +385,7 @@ namespace DataLayer
             return DataResultado;
         }
         //Metodo para buscar entre fechas
-        public DataTable BusquedaFechas(string varaux1, string varaux2)
+        public DataTable BusquedaFechas(ConsumoCCData Consumo)
         {
             DataTable DataResult = new DataTable("ConsumoCC");
             SqlConnection SqlCon = new SqlConnection();
@@ -399,16 +399,19 @@ namespace DataLayer
 
                 SqlParameter ParVarAux = new SqlParameter();
                 ParVarAux.ParameterName = "@varaux1";
+                ParVarAux.SqlDbType = SqlDbType.Date;
+                ParVarAux.Value = Consumo.Fecha1;
+                SqlComd.Parameters.Add(ParVarAux);
+                /*
                 ParVarAux.SqlDbType = SqlDbType.VarChar;
                 ParVarAux.Size = 50;
-                ParVarAux.Value = Fecha1;
-                SqlComd.Parameters.Add(ParVarAux);
+                ParVarAux.Value = Consumo.VarAux;
+                SqlComd.Parameters.Add(ParVarAux);*/
 
                 SqlParameter ParVarAux2 = new SqlParameter();
                 ParVarAux2.ParameterName = "@varaux2";
-                ParVarAux.Size = 50;
-                ParVarAux2.SqlDbType = SqlDbType.VarChar;
-                ParVarAux.Value = Fecha2;
+                ParVarAux2.SqlDbType = SqlDbType.Date;
+                ParVarAux2.Value = Consumo.Fecha2;
                 SqlComd.Parameters.Add(ParVarAux2);
 
                 SqlDataAdapter SqlData = new SqlDataAdapter(SqlComd);

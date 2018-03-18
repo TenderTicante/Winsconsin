@@ -126,7 +126,7 @@ namespace UserLayer
 
         private void BuscarFechas()
         {
-            this.dataListado.DataSource = ConsumoCCStruct.BuscarFechas(fecha1.Value.ToString("yyyy/MM/dd"), fecha2.Value.ToString("yyyy/MM/dd"));
+            this.dataListado.DataSource = ConsumoCCStruct.BuscarFechas(this.fecha1.Value, this.fecha2.Value);
             this.OcultarColumnas();
             lbltotalreg.Text = "Total de Registros: " + Convert.ToString(dataListado.Rows.Count);
         }
@@ -225,11 +225,11 @@ namespace UserLayer
 
         private void button2_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(fecha1.Value.ToString("yyyy/MM/dd"));
+            MessageBox.Show(fecha1.Value.ToString("dd/MM/yyyy"));
             this.BuscarFechas();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e) 
         {
             try
             {
@@ -339,7 +339,7 @@ namespace UserLayer
                 {
                     if (this.IsNuevo)
                     {
-                        respuesta = ConsumoCCStruct.Insertar(fechasalidapick.Value, Convert.ToInt32(cccb.Text), Idreq.Text, Convert.ToDecimal(label6.Text), datadetalle);
+                        respuesta = ConsumoCCStruct.Insertar(Convert.ToDateTime(fecha1.Value.ToString("dd/MM/yyyy")), Convert.ToInt32(cccb.Text), Idreq.Text, Convert.ToDecimal(label6.Text), datadetalle);
                     }
 
                     if (respuesta.Equals("KK"))

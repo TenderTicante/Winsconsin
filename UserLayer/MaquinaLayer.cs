@@ -315,5 +315,10 @@ namespace UserLayer
             cbcc.ValueMember = "ClaveCentroCosto";
             cbcc.DisplayMember = "ClaveCentroCosto";
         }
+
+        private void Buscarbtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

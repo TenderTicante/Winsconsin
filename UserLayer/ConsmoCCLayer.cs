@@ -64,7 +64,7 @@ namespace UserLayer
             this.cccb.SelectedIndex = 1;
             this.Idreq.Text = string.Empty;
             this.Nombrereq.Text = string.Empty;
-            this.label6.Text = "0.0";
+            this.totalfaq.Text = "0.0";
             this.crearTabla();
         }
 
@@ -211,21 +211,8 @@ namespace UserLayer
             _Consumo = null;
         }
 
-        private void button10_Click(object sender, EventArgs e)
-        {
-            ArticuloConsumoCCLayer Requisitor = new ArticuloConsumoCCLayer();
-            Requisitor.ShowDialog();
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            ReqConsumoView Requisitor = new ReqConsumoView();
-            Requisitor.ShowDialog();
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(fecha1.Value.ToString("dd/MM/yyyy"));
             this.BuscarFechas();
         }
 
@@ -273,7 +260,7 @@ namespace UserLayer
             this.cccb.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["ClaveCentroCosto"].Value);
             this.Idreq.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["IDRequisitor"].Value);
             this.Nombrereq.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Requisitor"].Value);
-            this.label6.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Total"].Value);
+            this.totalfaq.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Total"].Value);
             MostrarDetalle();
             tabControl1.SelectedIndex = 1;
         }
@@ -299,7 +286,19 @@ namespace UserLayer
             }
         }
 
-        private void cancelarbtn_Click(object sender, EventArgs e)
+        private void addreq_Click(object sender, EventArgs e)
+        {
+            ReqConsumoView Requisitor = new ReqConsumoView();
+            Requisitor.ShowDialog();
+        }
+
+        private void additem_Click(object sender, EventArgs e)
+        {
+            ArticuloConsumoCCLayer Articulo = new ArticuloConsumoCCLayer();
+            Articulo.ShowDialog();
+        }
+
+        private void cancelarbtn_Click_1(object sender, EventArgs e)
         {
             this.IsNuevo = false;
             this.Botones();
@@ -308,7 +307,7 @@ namespace UserLayer
             this.Habilitar(false);
         }
 
-        private void nuevobtn_Click(object sender, EventArgs e)
+        private void nuevobtn_Click_1(object sender, EventArgs e)
         {
             this.IsNuevo = true;
             this.Botones();
@@ -317,12 +316,12 @@ namespace UserLayer
             this.Habilitar(true);
         }
 
-        private void guardabtn_Click(object sender, EventArgs e)
+        private void guardabtn_Click_1(object sender, EventArgs e)
         {
             try
             {
                 string respuesta = "";
-                if (this.cccb.Text == string.Empty || this.Idreq.Text == string.Empty )
+                if (this.cccb.Text == string.Empty || this.Idreq.Text == string.Empty)
                 {
                     MensajeError("Datos ingresados erroneamente, favor de revisar");
                     if (this.cccb.Text == string.Empty)
@@ -339,7 +338,7 @@ namespace UserLayer
                 {
                     if (this.IsNuevo)
                     {
-                        respuesta = ConsumoCCStruct.Insertar(Convert.ToDateTime(fecha1.Value.ToString("dd/MM/yyyy")), Convert.ToInt32(cccb.Text), Idreq.Text, Convert.ToDecimal(label6.Text), datadetalle);
+                        respuesta = ConsumoCCStruct.Insertar(Convert.ToDateTime(fecha1.Value.ToString("dd/MM/yyyy")), Convert.ToInt32(cccb.Text), Idreq.Text, Convert.ToDecimal(totalfaq.Text), datadetalle);
                     }
 
                     if (respuesta.Equals("KK"))
@@ -366,11 +365,11 @@ namespace UserLayer
             }
         }
 
-        private void adddetail_Click(object sender, EventArgs e)
+        private void adddetail_Click_1(object sender, EventArgs e)
         {
             try
             {
-                if(this.sapntxt.Text == string.Empty)
+                if (this.sapntxt.Text == string.Empty)
                 {
                     MensajeError("No se han seleccionado articulos ");
                 }
@@ -386,49 +385,50 @@ namespace UserLayer
                             this.MensajeError("El articulo ya se ha registrado previamente");
                         }
                     }
-                        if (registrar && Convert.ToDecimal(cant.Value)<=Convert.ToDecimal(stocktxt.Text) && cant.Value>0)
-                        {
-                            decimal subtotal = Convert.ToDecimal(this.cant.Value) * Convert.ToDecimal(this.putxt.Text);
-                            total = total + subtotal;
-                            this.label6.Text = total.ToString("#0.00#");
-                            //Agregar detalle al listado
-                            DataRow row = this.datadetalle.NewRow();
-                            row["SAPNumber"]=Convert.ToString(this.sapntxt.Text);
-                            row["Descripcion"]=Convert.ToString(this.desctxt.Text);
-                            row["Cantidad"]=Convert.ToDecimal(this.cant.Value);
-                            row["UnidadMedida"] = Convert.ToString(this.umtxt.Text);
-                            row["Stock"] =Convert.ToDecimal(this.stocktxt.Text);
-                            row["PrecioUnitario"] =Convert.ToDecimal(this.putxt.Text);
-                            row["TipoCambio"] =Convert.ToString(this.tctxt.Text);
-                            row["Subtotal"] = subtotal;
-                            this.datadetalle.Rows.Add(row);
-                            this.LimpiarDetalle();
-                        }
-                        else
-                        {
-                            MensajeError("No hay stock suficiente");
-                        }
+                    if (registrar && Convert.ToDecimal(cant.Value) <= Convert.ToDecimal(stocktxt.Text) && cant.Value > 0)
+                    {
+                        decimal subtotal = Convert.ToDecimal(this.cant.Value) * Convert.ToDecimal(this.putxt.Text);
+                        //MessageBox.Show(Convert.ToString(cant.Value) + " " + putxt.Text);
+                        total = total + subtotal;
+                        this.totalfaq.Text = total.ToString("#0.00#");
+                        //Agregar detalle al listado
+                        DataRow row = this.datadetalle.NewRow();
+                        row["SAPNumber"] = Convert.ToString(this.sapntxt.Text);
+                        row["Descripcion"] = Convert.ToString(this.desctxt.Text);
+                        row["Cantidad"] = Convert.ToDecimal(this.cant.Value);
+                        row["UnidadMedida"] = Convert.ToString(this.umtxt.Text);
+                        row["Stock"] = Convert.ToDecimal(this.stocktxt.Text);
+                        row["PrecioUnitario"] = Convert.ToDecimal(this.putxt.Text);
+                        row["TipoCambio"] = Convert.ToString(this.tctxt.Text);
+                        row["Subtotal"] = subtotal;
+                        this.datadetalle.Rows.Add(row);
+                        this.LimpiarDetalle();
                     }
+                    else
+                    {
+                        MensajeError("No hay stock suficiente");
+                    }
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message+ex.StackTrace);
+                MessageBox.Show(ex.Message + ex.StackTrace);
             }
         }
 
-        private void deldetail_Click(object sender, EventArgs e)
+        private void deldetail_Click_1(object sender, EventArgs e)
         {
             try
             {
                 int indicefila = this.dataListadoDetalle.CurrentCell.RowIndex;
                 DataRow row = this.datadetalle.Rows[indicefila];
                 //Disminir el total de la salida
-                this.total = this.total- Convert.ToDecimal(row["SubTotal"].ToString());
-                this.label6.Text = total.ToString("#0.00#");
+                this.total = this.total - Convert.ToDecimal(row["SubTotal"].ToString());
+                this.totalfaq.Text = total.ToString("#0.00#");
                 //Se remueve la fila
                 this.datadetalle.Rows.Remove(row);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MensajeError("No hay fila para Remover");
             }

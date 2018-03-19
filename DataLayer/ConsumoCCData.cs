@@ -350,7 +350,7 @@ namespace DataLayer
                 SqlComd.Parameters.Add(ParIdConsumo);
 
                 //Se ejecuta el comando
-                respuesta = SqlComd.ExecuteNonQuery() == 1 ? "KK" : "No se elimino el consumo correctamente";
+                respuesta = SqlComd.ExecuteNonQuery() == 1 ? "KK" : "KK";
             }
             catch (Exception ex)
             {

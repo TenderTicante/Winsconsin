@@ -9,170 +9,90 @@ using System.Data.SqlClient;
 
 namespace DataLayer
 {
-    public class ConsumoCCData
+    class ConsumoMaqData
     {
-        private DateTime _Fecha;
         private int _IDConsumo;
-        private int _ClaveCC;
+        private string _NoMaq;
         private string _IDRequisitor;
+        private DateTime _Fecha;
         private decimal _Total;
-
-        //Textos de Busqueda
-        private string _VarAux;
-        private string _VarAux2;
-
+        //Variables para Busqueda
         private DateTime _Fecha1;
         private DateTime _Fecha2;
-
+        private string _VarAux;
         private int _halpme;
-        public DateTime Fecha
-        {
-            get
-            {
-                return _Fecha;
-            }
-
-            set
-            {
-                _Fecha = value;
-            }
-        }
 
         public int IDConsumo
         {
-            get
-            {
-                return _IDConsumo;
-            }
-
-            set
-            {
-                _IDConsumo = value;
-            }
+            get{return _IDConsumo;}
+            set{_IDConsumo = value;}
         }
 
-        public int ClaveCC
+        public string NoMaq
         {
-            get
-            {
-                return _ClaveCC;
-            }
-
-            set
-            {
-                _ClaveCC = value;
-            }
+            get{return _NoMaq;}
+            set{_NoMaq = value;}
         }
 
         public string IDRequisitor
         {
-            get
-            {
-                return _IDRequisitor;
-            }
+            get{return _IDRequisitor;}
+            set{_IDRequisitor = value;}
+        }
 
-            set
-            {
-                _IDRequisitor = value;
-            }
+        public DateTime Fecha
+        {
+            get{return _Fecha;}
+            set{_Fecha = value;}
         }
 
         public decimal Total
         {
-            get
-            {
-                return _Total;
-            }
-
-            set
-            {
-                _Total = value;
-            }
-        }
-
-        public string VarAux
-        {
-            get
-            {
-                return _VarAux;
-            }
-
-            set
-            {
-                _VarAux = value;
-            }
-        }
-
-        public string VarAux2
-        {
-            get
-            {
-                return _VarAux2;
-            }
-
-            set
-            {
-                _VarAux2 = value;
-            }
-        }
-
-        public int Halpme
-        {
-            get
-            {
-                return _halpme;
-            }
-
-            set
-            {
-                _halpme = value;
-            }
+            get{return _Total;}
+            set {_Total = value;}
         }
 
         public DateTime Fecha1
         {
-            get
-            {
-                return _Fecha1;
-            }
-
-            set
-            {
-                _Fecha1 = value;
-            }
+            get{return _Fecha1;}
+            set{_Fecha1 = value;}
         }
 
         public DateTime Fecha2
         {
-            get
-            {
-                return _Fecha2;
-            }
+            get{return _Fecha2;}
+            set{_Fecha2 = value;}
+        }
 
-            set
-            {
-                _Fecha2 = value;
-            }
+        public string VarAux
+        {
+            get{return _VarAux;}
+            set{_VarAux = value;}
+        }
+
+        public int Halpme
+        {
+            get{return _halpme;}
+            set {_halpme = value;}
         }
 
         //Constructores
-        public ConsumoCCData()
+        public ConsumoMaqData()
         {
 
         }
 
-        public ConsumoCCData(DateTime fecha, int idconsumo, int ccc, string idreq, decimal total, string varaux, string varaux2,int halpme,DateTime fecha1,DateTime fecha2)
+        public ConsumoMaqData(DateTime fecha, int idconsumo, string nomaq, string idreq, decimal total, string varaux, DateTime fecha1, DateTime fecha2,int halpme)
         {
-            this.Fecha = fecha;
             this.IDConsumo = idconsumo;
-            this.ClaveCC = ccc;
+            this.NoMaq = nomaq;
             this.IDRequisitor = idreq;
+            this.Fecha = fecha;
             this.Total = total;
             this.VarAux = varaux;
-            this.VarAux2 = varaux2;
-            this.Halpme = halpme;
             this.Fecha1 = fecha1;
             this.Fecha2 = fecha2;
+            this.Halpme = halpme;
         }
 
         //Metodos
@@ -190,7 +110,7 @@ namespace DataLayer
                 //establecer comando
                 SqlCommand SqlCmd = new SqlCommand();
                 SqlCmd.Connection = SqlCon;
-                SqlCmd.CommandText = "spdistock";
+                SqlCmd.CommandText = "spdistockmaq";
                 SqlCmd.CommandType = CommandType.StoredProcedure;
 
                 SqlParameter ParSAPN = new SqlParameter();
@@ -225,7 +145,7 @@ namespace DataLayer
             return respuesta;
         }
 
-        public string Insertar(ConsumoCCData Consumo, List<DetalleConsumoCCData> Detalle)
+        public string Insertar(ConsumoMaqData Consumo, List<DetalleCMaqData> Detalle)
         {
             string respuesta = "";
 
@@ -242,7 +162,7 @@ namespace DataLayer
                 SqlCommand SqlCmd = new SqlCommand();
                 SqlCmd.Connection = SqlCon;
                 SqlCmd.Transaction = SqlTra;
-                SqlCmd.CommandText = "spsalidacc";
+                SqlCmd.CommandText = "spsalidamaq";
                 SqlCmd.CommandType = CommandType.StoredProcedure;
 
                 SqlParameter ParIDConsumo = new SqlParameter();
@@ -251,17 +171,12 @@ namespace DataLayer
                 ParIDConsumo.Direction = ParameterDirection.Output;
                 SqlCmd.Parameters.Add(ParIDConsumo);
 
-                SqlParameter ParFecha = new SqlParameter();
-                ParFecha.ParameterName = "@Fecha";
-                ParFecha.SqlDbType = SqlDbType.Date;
-                ParFecha.Value = Fecha;
-                SqlCmd.Parameters.Add(ParFecha);
-
-                SqlParameter ParClaveCC = new SqlParameter();
-                ParClaveCC.ParameterName = "@ClaveCentroCosto";
-                ParClaveCC.SqlDbType = SqlDbType.Int;
-                ParClaveCC.Value = Consumo.ClaveCC;
-                SqlCmd.Parameters.Add(ParClaveCC);
+                SqlParameter ParNoMaq = new SqlParameter();
+                ParNoMaq.ParameterName = "@NoMaq";
+                ParNoMaq.SqlDbType = SqlDbType.VarChar;
+                ParNoMaq.Size = 16;
+                ParNoMaq.Value = Consumo.NoMaq;
+                SqlCmd.Parameters.Add(ParNoMaq);
 
                 SqlParameter ParIdReq = new SqlParameter();
                 ParIdReq.ParameterName = "@IDRequisitor";
@@ -269,6 +184,12 @@ namespace DataLayer
                 ParIdReq.Size = 32;
                 ParIdReq.Value = Consumo.IDRequisitor;
                 SqlCmd.Parameters.Add(ParIdReq);
+
+                SqlParameter ParFecha = new SqlParameter();
+                ParFecha.ParameterName = "@Fecha";
+                ParFecha.SqlDbType = SqlDbType.Date;
+                ParFecha.Value = Fecha;
+                SqlCmd.Parameters.Add(ParFecha);
 
                 SqlParameter ParTotal = new SqlParameter();
                 ParTotal.ParameterName = "@Total";
@@ -284,7 +205,7 @@ namespace DataLayer
                 {
                     //Se obtiene el codigo de la salida genreada
                     this.IDConsumo = Convert.ToInt32(SqlCmd.Parameters["@IDConsumo"].Value);
-                    foreach (DetalleConsumoCCData det in Detalle)
+                    foreach (DetalleCMaqData det in Detalle)
                     {
                         det.IDDetalle = this.IDConsumo;
                         //Se llama al metodo Insertar de la clase Detalle de Consumo
@@ -328,7 +249,7 @@ namespace DataLayer
         }
 
         //Metodo Eliminar
-        public string Eliminar(ConsumoCCData Consumo)
+        public string Eliminar(ConsumoMaqData Consumo)
         {
             string respuesta = "";
             SqlConnection SqlCon = new SqlConnection();
@@ -340,7 +261,7 @@ namespace DataLayer
                 //Establecer Comando
                 SqlCommand SqlComd = new SqlCommand();
                 SqlComd.Connection = SqlCon;
-                SqlComd.CommandText = "speliminarsalida";
+                SqlComd.CommandText = "speliminarsalidamaq";
                 SqlComd.CommandType = CommandType.StoredProcedure;
 
                 SqlParameter ParIdConsumo = new SqlParameter();
@@ -365,14 +286,14 @@ namespace DataLayer
 
         public DataTable Mostrar()
         {
-            DataTable DataResultado = new DataTable("ConsumoCC");
+            DataTable DataResultado = new DataTable("ConsumoMaquina");
             SqlConnection SqlCon = new SqlConnection();
             try
             {
                 SqlCon.ConnectionString = Conexion.CadenaConexion;
                 SqlCommand SqlCmd = new SqlCommand();
                 SqlCmd.Connection = SqlCon;
-                SqlCmd.CommandText = "spmostrarsalidascc";
+                SqlCmd.CommandText = "spmostrarsalidasmaq";
                 SqlCmd.CommandType = CommandType.StoredProcedure;
 
                 SqlDataAdapter SqlData = new SqlDataAdapter(SqlCmd);
@@ -386,16 +307,16 @@ namespace DataLayer
         }
 
         //Metodo para buscar entre fechas
-        public DataTable BusquedaFechas(ConsumoCCData Consumo)
+        public DataTable BusquedaFechas(ConsumoMaqData Consumo)
         {
-            DataTable DataResult = new DataTable("ConsumoCC");
+            DataTable DataResult = new DataTable("ConsumoMaquina");
             SqlConnection SqlCon = new SqlConnection();
             try
             {
                 SqlCon.ConnectionString = Conexion.CadenaConexion;
                 SqlCommand SqlComd = new SqlCommand();
                 SqlComd.Connection = SqlCon;
-                SqlComd.CommandText = "spbuscarsalidaccfecha"; 
+                SqlComd.CommandText = "spsalidasmaqfechas";
                 SqlComd.CommandType = CommandType.StoredProcedure;
 
                 SqlParameter ParVarAux = new SqlParameter();
@@ -403,11 +324,6 @@ namespace DataLayer
                 ParVarAux.SqlDbType = SqlDbType.Date;
                 ParVarAux.Value = Consumo.Fecha1;
                 SqlComd.Parameters.Add(ParVarAux);
-                /*
-                ParVarAux.SqlDbType = SqlDbType.VarChar;
-                ParVarAux.Size = 50;
-                ParVarAux.Value = Consumo.VarAux;
-                SqlComd.Parameters.Add(ParVarAux);*/
 
                 SqlParameter ParVarAux2 = new SqlParameter();
                 ParVarAux2.ParameterName = "@varaux2";
@@ -426,10 +342,9 @@ namespace DataLayer
         }
 
         //Mostrar detalles de la salida
-
         public DataTable MostrarDetalles(int TextoBusqueda)
         {
-            DataTable DataResult = new DataTable("DetalleConsumoCC");
+            DataTable DataResult = new DataTable("DetalleConsumoMaq");
             SqlConnection SqlCon = new SqlConnection();
 
             try
@@ -437,7 +352,7 @@ namespace DataLayer
                 SqlCon.ConnectionString = Conexion.CadenaConexion;
                 SqlCommand SqlComd = new SqlCommand();
                 SqlComd.Connection = SqlCon;
-                SqlComd.CommandText = "spmostrardetasalida";
+                SqlComd.CommandText = "spmostrardetasalmaq";
                 SqlComd.CommandType = CommandType.StoredProcedure;
 
                 SqlParameter ParTextoBusqueda = new SqlParameter();
@@ -455,9 +370,8 @@ namespace DataLayer
             }
             return DataResult;
         }
-
         //Mostrar Articulos por su Descripcion
-        public DataTable MostrarDescripcionArt(ConsumoCCData Consumo)
+        public DataTable MostrarDescripcionArt(ConsumoMaqData Consumo)
         {
             DataTable DataResult = new DataTable("Articulo");
             SqlConnection SqlCon = new SqlConnection();
@@ -488,7 +402,7 @@ namespace DataLayer
         }
 
         //Mostrar Articulos por su SAPNumber
-        public DataTable MostrarSAPArt(ConsumoCCData Consumo)
+        public DataTable MostrarSAPArt(ConsumoMaqData Consumo)
         {
             DataTable DataResult = new DataTable("Articulo");
             SqlConnection SqlCon = new SqlConnection();

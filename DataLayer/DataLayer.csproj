@@ -57,6 +57,8 @@
     <Compile Include="Class1.cs" />
     <Compile Include="Conexion.cs" />
     <Compile Include="ConsumoCCData.cs" />
+    <Compile Include="ConsumoMaqData.cs" />
+    <Compile Include="DetalleCMaqData.cs" />
     <Compile Include="DetalleConsumoCCData.cs" />
     <Compile Include="MaquinaData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

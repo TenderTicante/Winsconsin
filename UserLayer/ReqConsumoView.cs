@@ -96,12 +96,15 @@ namespace UserLayer
         private void dataListado_DoubleClick(object sender, EventArgs e)
         {
             ConsmoCCLayer layer = ConsmoCCLayer.GetInstancia();
+            ConsumoMaqLayer layermaquina = ConsumoMaqLayer.GetInstancia();
             string string1;
             string1 = Convert.ToString(this.dataListado.CurrentRow.Cells["ClaveRequisitor"].Value);
             string string2;
             string2 = Convert.ToString(this.dataListado.CurrentRow.Cells["Nombre"].Value + " " + this.dataListado.CurrentRow.Cells["Apellidos"].Value);
+
+
             layer.setRequisitor(string1,string2);
-            MessageBox.Show(string1+string2);
+            layermaquina.setRequisitor(string1,string2);
             this.Hide();
         }
     }

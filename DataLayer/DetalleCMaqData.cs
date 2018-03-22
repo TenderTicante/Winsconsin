@@ -9,7 +9,7 @@ using System.Data.SqlClient;
 
 namespace DataLayer
 {
-    class DetalleCMaqData
+    public class DetalleCMaqData
     {
         private int _IDDetalle;
         private string _SAPNumber;

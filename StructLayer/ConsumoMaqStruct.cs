@@ -9,71 +9,71 @@ using DataLayer;
 
 namespace StructLayer
 {
-    public class ConsumoCCStruct
+    public class ConsumoMaqStruct
     {
-        //Metodo para insertar un consumo en la tabla de Consumo de Maquina
-        public static string Insertar(DateTime fecha, int clavecc, string idreq, decimal total,DataTable dtDetalle)
+        public static string Insertar(string maq, string idreq, DateTime fecha, decimal total, DataTable dtDetalle)
         {
-            ConsumoCCData Consumo = new ConsumoCCData();
-            Consumo.Fecha = fecha;
-            Consumo.ClaveCC = clavecc;
-            Consumo.IDRequisitor = idreq;
-            Consumo.Total = total;
-            List<DetalleConsumoCCData> detalle = new List<DetalleConsumoCCData>();
+            ConsumoMaqData ConsumoMaq = new ConsumoMaqData();
+            ConsumoMaq.NoMaq = maq;
+            ConsumoMaq.IDRequisitor = idreq;
+            ConsumoMaq.Fecha = fecha;
+            ConsumoMaq.Total = total;
+            List<DetalleCMaqData> detalle = new List<DetalleCMaqData>();
 
-            foreach(DataRow raw in dtDetalle.Rows)
+            foreach (DataRow raw in dtDetalle.Rows)
             {
-                DetalleConsumoCCData detail = new DetalleConsumoCCData();
+                DetalleCMaqData detail = new DetalleCMaqData();
                 detail.SAPNumber = Convert.ToString(raw["SAPNumber"].ToString());
                 detail.Cantidad = Convert.ToDecimal(raw["Cantidad"].ToString());
                 detail.Subtotal = Convert.ToDecimal(raw["Subtotal"].ToString());
                 detalle.Add(detail);
             }
-            return Consumo.Insertar(Consumo,detalle);
+            return ConsumoMaq.Insertar(ConsumoMaq, detalle);
         }
 
         //Metodo para Eliminar salidas
         public static string Eliminar(int iddetalle)
         {
-            ConsumoCCData Consumo = new ConsumoCCData();
-            Consumo.IDConsumo = iddetalle;
-            return Consumo.Eliminar(Consumo);
+            ConsumoMaqData ConsumoMaq = new ConsumoMaqData();
+            ConsumoMaq.IDConsumo = iddetalle;
+            return ConsumoMaq.Eliminar(ConsumoMaq);
         }
 
         //Metodo Mostrar que llama al metodo mostrar de la clase 
         //Data Consumo de la capa de datos
         public static DataTable Mostrar()
         {
-            return new ConsumoCCData().Mostrar();
+            return new ConsumoMaqData().Mostrar();
         }
 
         //Metodo Buscarfecha que llama al metodo buscar fecha
         //de la clase ConsumoData de la capa de datos
         public static DataTable BuscarFechas(DateTime varaux, DateTime varaux2)
         {
-            ConsumoCCData Consumo = new ConsumoCCData();
-            Consumo.Fecha1 = varaux;
-            Consumo.Fecha2 = varaux2;
-            return Consumo.BusquedaFechas(Consumo);
+            ConsumoMaqData ConsumoMaq = new ConsumoMaqData();
+            ConsumoMaq.Fecha1 = varaux;
+            ConsumoMaq.Fecha2 = varaux2;
+            return ConsumoMaq.BusquedaFechas(ConsumoMaq);
         }
 
+        //Metodo para mostrar el detalle de las salidas
         public static DataTable MostrarDetalle(int varaux)
         {
-            ConsumoCCData Consumo = new ConsumoCCData();
+            ConsumoMaqData Consumo = new ConsumoMaqData();
             Consumo.Halpme = varaux;
             return Consumo.MostrarDetalles(varaux);
         }
 
         public static DataTable BuscarArtNombre(string varaux)
         {
-            ConsumoCCData Consumo = new ConsumoCCData();
+            ConsumoMaqData Consumo = new ConsumoMaqData();
             Consumo.VarAux = varaux;
             return Consumo.MostrarDescripcionArt(Consumo);
         }
 
         public static DataTable BuscarArtSAP(string varaux)
         {
-            ConsumoCCData Consumo = new ConsumoCCData();
+            ConsumoMaqData Consumo = new ConsumoMaqData();
             Consumo.VarAux = varaux;
             return Consumo.MostrarSAPArt(Consumo);
         }

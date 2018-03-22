@@ -1,6 +1,6 @@
 ﻿namespace UserLayer
 {
-    partial class ConsmoCCLayer
+    partial class ConsumoMaqLayer
     {
         /// <summary>
         /// Required designer variable.
@@ -32,7 +32,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConsmoCCLayer));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConsumoMaqLayer));
+            this.ttMensaje = new System.Windows.Forms.ToolTip(this.components);
+            this.errorIcono = new System.Windows.Forms.ErrorProvider(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -57,16 +61,17 @@
             this.nuevobtn = new System.Windows.Forms.Button();
             this.dataListadoDetalle = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.Nombrereq = new System.Windows.Forms.TextBox();
-            this.Idreq = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.fechasalidapick = new System.Windows.Forms.DateTimePicker();
-            this.cccb = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.totalfaq = new System.Windows.Forms.Label();
             this.addreq = new System.Windows.Forms.Button();
+            this.Nombrereq = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.nomaqtxt = new System.Windows.Forms.TextBox();
+            this.Idreq = new System.Windows.Forms.TextBox();
+            this.maq = new System.Windows.Forms.Button();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.label12 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -88,11 +93,10 @@
             this.adddetail = new System.Windows.Forms.Button();
             this.deldetail = new System.Windows.Forms.Button();
             this.additem = new System.Windows.Forms.Button();
-            this.ttMensaje = new System.Windows.Forms.ToolTip(this.components);
-            this.errorIcono = new System.Windows.Forms.ErrorProvider(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.errorIcono)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -105,24 +109,49 @@
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cant)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorIcono)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
+            // 
+            // ttMensaje
+            // 
+            this.ttMensaje.IsBalloon = true;
+            // 
+            // errorIcono
+            // 
+            this.errorIcono.ContainerControl = this;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.SeaGreen;
+            this.pictureBox1.Location = new System.Drawing.Point(-10, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(994, 97);
+            this.pictureBox1.TabIndex = 20;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.SeaGreen;
+            this.pictureBox3.Location = new System.Drawing.Point(812, 19);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox3.TabIndex = 23;
+            this.pictureBox3.TabStop = false;
             // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.MidnightBlue;
+            this.label1.BackColor = System.Drawing.Color.SeaGreen;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Snow;
-            this.label1.Location = new System.Drawing.Point(252, 14);
+            this.label1.Location = new System.Drawing.Point(276, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(655, 55);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "Salidas por Centro de Costo";
+            this.label1.Size = new System.Drawing.Size(481, 55);
+            this.label1.TabIndex = 22;
+            this.label1.Text = "Salidas por Maquina";
             // 
             // tabControl1
             // 
@@ -138,7 +167,7 @@
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(868, 279);
-            this.tabControl1.TabIndex = 19;
+            this.tabControl1.TabIndex = 24;
             // 
             // tabPage1
             // 
@@ -414,7 +443,7 @@
             this.cancelarbtn.TabIndex = 46;
             this.cancelarbtn.Text = "Cancelar";
             this.cancelarbtn.UseVisualStyleBackColor = true;
-            this.cancelarbtn.Click += new System.EventHandler(this.cancelarbtn_Click_1);
+            this.cancelarbtn.Click += new System.EventHandler(this.cancelarbtn_Click);
             // 
             // guardabtn
             // 
@@ -425,7 +454,7 @@
             this.guardabtn.TabIndex = 45;
             this.guardabtn.Text = "Guardar";
             this.guardabtn.UseVisualStyleBackColor = true;
-            this.guardabtn.Click += new System.EventHandler(this.guardabtn_Click_1);
+            this.guardabtn.Click += new System.EventHandler(this.guardabtn_Click);
             // 
             // nuevobtn
             // 
@@ -436,7 +465,7 @@
             this.nuevobtn.TabIndex = 44;
             this.nuevobtn.Text = "Nuevo";
             this.nuevobtn.UseVisualStyleBackColor = true;
-            this.nuevobtn.Click += new System.EventHandler(this.nuevobtn_Click_1);
+            this.nuevobtn.Click += new System.EventHandler(this.nuevobtn_Click);
             // 
             // dataListadoDetalle
             // 
@@ -455,22 +484,24 @@
             // 
             // tableLayoutPanel4
             // 
-            this.tableLayoutPanel4.ColumnCount = 5;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel4.Controls.Add(this.Nombrereq, 3, 1);
-            this.tableLayoutPanel4.Controls.Add(this.Idreq, 2, 1);
-            this.tableLayoutPanel4.Controls.Add(this.label4, 2, 0);
+            this.tableLayoutPanel4.ColumnCount = 6;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.99589F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.03054F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.03054F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.07388F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.53334F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.33581F));
             this.tableLayoutPanel4.Controls.Add(this.label3, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.fechasalidapick, 0, 1);
-            this.tableLayoutPanel4.Controls.Add(this.cccb, 1, 1);
-            this.tableLayoutPanel4.Controls.Add(this.label5, 4, 0);
-            this.tableLayoutPanel4.Controls.Add(this.totalfaq, 4, 1);
-            this.tableLayoutPanel4.Controls.Add(this.addreq, 3, 0);
+            this.tableLayoutPanel4.Controls.Add(this.label5, 5, 0);
+            this.tableLayoutPanel4.Controls.Add(this.totalfaq, 5, 1);
+            this.tableLayoutPanel4.Controls.Add(this.addreq, 4, 0);
+            this.tableLayoutPanel4.Controls.Add(this.Nombrereq, 4, 1);
+            this.tableLayoutPanel4.Controls.Add(this.label4, 3, 0);
+            this.tableLayoutPanel4.Controls.Add(this.nomaqtxt, 2, 1);
+            this.tableLayoutPanel4.Controls.Add(this.Idreq, 3, 1);
+            this.tableLayoutPanel4.Controls.Add(this.maq, 1, 1);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(0);
@@ -481,43 +512,15 @@
             this.tableLayoutPanel4.Size = new System.Drawing.Size(854, 37);
             this.tableLayoutPanel4.TabIndex = 48;
             // 
-            // Nombrereq
-            // 
-            this.Nombrereq.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Nombrereq.Location = new System.Drawing.Point(510, 11);
-            this.Nombrereq.Margin = new System.Windows.Forms.Padding(0, 0, 30, 0);
-            this.Nombrereq.Name = "Nombrereq";
-            this.Nombrereq.ReadOnly = true;
-            this.Nombrereq.Size = new System.Drawing.Size(140, 31);
-            this.Nombrereq.TabIndex = 15;
-            // 
-            // Idreq
-            // 
-            this.Idreq.Location = new System.Drawing.Point(343, 14);
-            this.Idreq.Name = "Idreq";
-            this.Idreq.ReadOnly = true;
-            this.Idreq.Size = new System.Drawing.Size(164, 31);
-            this.Idreq.TabIndex = 14;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(343, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(85, 11);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Requisitor";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(173, 0);
+            this.label3.Location = new System.Drawing.Point(148, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(140, 11);
+            this.label3.Size = new System.Drawing.Size(81, 11);
             this.label3.TabIndex = 6;
-            this.label3.Text = "Centro de Costo";
+            this.label3.Text = "Maquina";
             // 
             // label2
             // 
@@ -526,7 +529,7 @@
             this.label2.Location = new System.Drawing.Point(20, 0);
             this.label2.Margin = new System.Windows.Forms.Padding(20, 0, 3, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(135, 11);
+            this.label2.Size = new System.Drawing.Size(88, 11);
             this.label2.TabIndex = 4;
             this.label2.Text = "Fecha de Salida";
             // 
@@ -537,23 +540,15 @@
             this.fechasalidapick.Location = new System.Drawing.Point(20, 16);
             this.fechasalidapick.Margin = new System.Windows.Forms.Padding(20, 5, 3, 0);
             this.fechasalidapick.Name = "fechasalidapick";
-            this.fechasalidapick.Size = new System.Drawing.Size(141, 27);
+            this.fechasalidapick.Size = new System.Drawing.Size(122, 27);
             this.fechasalidapick.TabIndex = 5;
             this.fechasalidapick.Value = new System.DateTime(2018, 3, 10, 0, 0, 0, 0);
-            // 
-            // cccb
-            // 
-            this.cccb.FormattingEnabled = true;
-            this.cccb.Location = new System.Drawing.Point(173, 14);
-            this.cccb.Name = "cccb";
-            this.cccb.Size = new System.Drawing.Size(121, 30);
-            this.cccb.TabIndex = 7;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(683, 0);
+            this.label5.Location = new System.Drawing.Point(708, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(49, 11);
             this.label5.TabIndex = 11;
@@ -563,7 +558,7 @@
             // 
             this.totalfaq.AutoSize = true;
             this.totalfaq.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalfaq.Location = new System.Drawing.Point(683, 11);
+            this.totalfaq.Location = new System.Drawing.Point(708, 11);
             this.totalfaq.Name = "totalfaq";
             this.totalfaq.Size = new System.Drawing.Size(131, 26);
             this.totalfaq.TabIndex = 12;
@@ -573,15 +568,66 @@
             // 
             this.addreq.Dock = System.Windows.Forms.DockStyle.Fill;
             this.addreq.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addreq.Location = new System.Drawing.Point(510, 0);
-            this.addreq.Margin = new System.Windows.Forms.Padding(0, 0, 30, 0);
+            this.addreq.Location = new System.Drawing.Point(475, 0);
+            this.addreq.Margin = new System.Windows.Forms.Padding(5, 0, 30, 0);
             this.addreq.Name = "addreq";
-            this.addreq.Size = new System.Drawing.Size(140, 11);
+            this.addreq.Size = new System.Drawing.Size(200, 11);
             this.addreq.TabIndex = 13;
             this.addreq.Text = "Añadir Requisitor";
             this.addreq.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.addreq.UseVisualStyleBackColor = true;
             this.addreq.Click += new System.EventHandler(this.addreq_Click);
+            // 
+            // Nombrereq
+            // 
+            this.Nombrereq.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Nombrereq.Location = new System.Drawing.Point(475, 11);
+            this.Nombrereq.Margin = new System.Windows.Forms.Padding(5, 0, 30, 0);
+            this.Nombrereq.Name = "Nombrereq";
+            this.Nombrereq.ReadOnly = true;
+            this.Nombrereq.Size = new System.Drawing.Size(200, 31);
+            this.Nombrereq.TabIndex = 15;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(370, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(85, 11);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Requisitor";
+            // 
+            // nomaqtxt
+            // 
+            this.nomaqtxt.Location = new System.Drawing.Point(259, 14);
+            this.nomaqtxt.Name = "nomaqtxt";
+            this.nomaqtxt.ReadOnly = true;
+            this.nomaqtxt.Size = new System.Drawing.Size(100, 31);
+            this.nomaqtxt.TabIndex = 17;
+            // 
+            // Idreq
+            // 
+            this.Idreq.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Idreq.Location = new System.Drawing.Point(370, 11);
+            this.Idreq.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
+            this.Idreq.Name = "Idreq";
+            this.Idreq.ReadOnly = true;
+            this.Idreq.Size = new System.Drawing.Size(97, 31);
+            this.Idreq.TabIndex = 14;
+            // 
+            // maq
+            // 
+            this.maq.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.maq.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maq.Location = new System.Drawing.Point(145, 14);
+            this.maq.Margin = new System.Windows.Forms.Padding(0, 3, 0, 25);
+            this.maq.Name = "maq";
+            this.maq.Size = new System.Drawing.Size(111, 1);
+            this.maq.TabIndex = 16;
+            this.maq.Text = "Seleccionar Maquina";
+            this.maq.UseVisualStyleBackColor = true;
+            this.maq.Click += new System.EventHandler(this.maq_Click);
             // 
             // tableLayoutPanel5
             // 
@@ -800,7 +846,7 @@
             this.adddetail.TabIndex = 47;
             this.adddetail.Text = "+";
             this.adddetail.UseVisualStyleBackColor = true;
-            this.adddetail.Click += new System.EventHandler(this.adddetail_Click_1);
+            this.adddetail.Click += new System.EventHandler(this.adddetail_Click);
             // 
             // deldetail
             // 
@@ -811,7 +857,7 @@
             this.deldetail.TabIndex = 48;
             this.deldetail.Text = "-";
             this.deldetail.UseVisualStyleBackColor = true;
-            this.deldetail.Click += new System.EventHandler(this.deldetail_Click_1);
+            this.deldetail.Click += new System.EventHandler(this.deldetail_Click);
             // 
             // additem
             // 
@@ -824,24 +870,6 @@
             this.additem.UseVisualStyleBackColor = true;
             this.additem.Click += new System.EventHandler(this.additem_Click);
             // 
-            // ttMensaje
-            // 
-            this.ttMensaje.IsBalloon = true;
-            // 
-            // errorIcono
-            // 
-            this.errorIcono.ContainerControl = this;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.MidnightBlue;
-            this.pictureBox1.Location = new System.Drawing.Point(-5, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(994, 97);
-            this.pictureBox1.TabIndex = 15;
-            this.pictureBox1.TabStop = false;
-            // 
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
@@ -851,35 +879,28 @@
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(200, 60);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 16;
+            this.pictureBox2.TabIndex = 21;
             this.pictureBox2.TabStop = false;
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.Color.MidnightBlue;
-            this.pictureBox3.Location = new System.Drawing.Point(247, 11);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox3.TabIndex = 18;
-            this.pictureBox3.TabStop = false;
-            // 
-            // ConsmoCCLayer
+            // ConsumoMaqLayer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(984, 461);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
-            this.Name = "ConsmoCCLayer";
-            this.Text = "Consumo por Centro de Costo";
+            this.Name = "ConsumoMaqLayer";
+            this.Text = "Consumo por Maquina";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ConsmoCCLayer_FormClosing);
-            this.Load += new System.EventHandler(this.ConsmoCCLayer_Load);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ConsumoMaqLayer_FormClosing);
+            this.Load += new System.EventHandler(this.ConsumoMaqLayer_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.errorIcono)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -895,28 +916,21 @@
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cant)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorIcono)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ToolTip ttMensaje;
         private System.Windows.Forms.ErrorProvider errorIcono;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.DataGridView dataListado;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Eliminar;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.ToolTip ttMensaje;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Label lbltotalreg;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label16;
@@ -924,15 +938,31 @@
         private System.Windows.Forms.DateTimePicker fecha1;
         private System.Windows.Forms.DateTimePicker fecha2;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label lbltotalreg;
         private System.Windows.Forms.CheckBox Eliminarchk;
+        private System.Windows.Forms.DataGridView dataListado;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Eliminar;
+        private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Button cancelarbtn;
         private System.Windows.Forms.Button guardabtn;
         private System.Windows.Forms.Button nuevobtn;
         private System.Windows.Forms.DataGridView dataListadoDetalle;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DateTimePicker fechasalidapick;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label totalfaq;
+        private System.Windows.Forms.Button addreq;
+        private System.Windows.Forms.TextBox Nombrereq;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox Idreq;
+        private System.Windows.Forms.Button maq;
+        private System.Windows.Forms.TextBox nomaqtxt;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label10;
@@ -954,16 +984,5 @@
         private System.Windows.Forms.Button adddetail;
         private System.Windows.Forms.Button deldetail;
         private System.Windows.Forms.Button additem;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private System.Windows.Forms.TextBox Nombrereq;
-        private System.Windows.Forms.TextBox Idreq;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker fechasalidapick;
-        private System.Windows.Forms.ComboBox cccb;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label totalfaq;
-        private System.Windows.Forms.Button addreq;
     }
 }

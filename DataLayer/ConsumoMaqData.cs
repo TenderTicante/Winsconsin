@@ -9,7 +9,7 @@ using System.Data.SqlClient;
 
 namespace DataLayer
 {
-    class ConsumoMaqData
+    public class ConsumoMaqData
     {
         private int _IDConsumo;
         private string _NoMaq;
@@ -172,7 +172,7 @@ namespace DataLayer
                 SqlCmd.Parameters.Add(ParIDConsumo);
 
                 SqlParameter ParNoMaq = new SqlParameter();
-                ParNoMaq.ParameterName = "@NoMaq";
+                ParNoMaq.ParameterName = "@NoMaquina";
                 ParNoMaq.SqlDbType = SqlDbType.VarChar;
                 ParNoMaq.Size = 16;
                 ParNoMaq.Value = Consumo.NoMaq;

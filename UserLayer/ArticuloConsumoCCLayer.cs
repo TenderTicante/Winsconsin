@@ -56,6 +56,7 @@ namespace UserLayer
         private void dataListado_DoubleClick(object sender, EventArgs e)
         {
             ConsmoCCLayer layer = ConsmoCCLayer.GetInstancia();
+            ConsumoMaqLayer maquinalayer = ConsumoMaqLayer.GetInstancia();
             string sap, desc, tc, um;
             decimal pu, stock;
 
@@ -66,6 +67,7 @@ namespace UserLayer
             pu = Convert.ToDecimal(this.dataListado.CurrentRow.Cells["PrecioUnitario"].Value);
             tc = Convert.ToString(this.dataListado.CurrentRow.Cells["TipoCambio"].Value);
             layer.setArticulo(sap,desc,um,stock,pu,tc);
+            maquinalayer.setArticulo(sap, desc, um, stock, pu, tc);
             this.Hide();
         }
 

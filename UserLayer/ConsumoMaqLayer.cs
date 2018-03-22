@@ -12,28 +12,66 @@ using StructLayer;
 
 namespace UserLayer
 {
-    public partial class ConsmoCCLayer : Form
+    public partial class ConsumoMaqLayer : Form
     {
         private bool IsNuevo;
         private DataTable datadetalle;
 
         private decimal total = 0;
 
-        private static ConsmoCCLayer _Consumo;
+        private static ConsumoMaqLayer _ConsumoMaq;
 
-        public static ConsmoCCLayer GetInstancia()
+        public ConsumoMaqLayer()
         {
-            if (_Consumo == null)
-            {
-                _Consumo = new ConsmoCCLayer();
-            }
-            return _Consumo;
+            InitializeComponent();
+            //Se agrega el logo de Robert Bosch y la leyenda proveedor en funcion del picture box #1 es
+            //decir la barra de color azul superior
+            pictureBox1.Controls.Add(pictureBox2);
+            pictureBox1.Dock = DockStyle.Top;
+            pictureBox1.Controls.Add(label1);
+
+            //Se fija el logo de Robert Bosch en la parte superior izquierda de la pantalla 
+            pictureBox2.Top = 10;
+            pictureBox2.Left = 10;
+
+            //Se fija la leyenda Proveedor en la parte central superior
+            label1.Top = (this.ClientSize.Height - label1.Height) / 16;
+            label1.Left = (this.ClientSize.Width - label1.Width) / 2;
+
+            //Se fija la barra azul inferior con fines esteticos
+            pictureBox3.Dock = DockStyle.Bottom;
+
+            //Se agregan las pestañas para visualizar los proveedores y/o modificarlos segun se requiera
+            tabControl1.Left = ((this.ClientSize.Width - tabControl1.Width) / 2);
+            tabControl1.Top = ((this.ClientSize.Height - tabControl1.Height) / 2) + 20;
+
+            //Se agregan los grupos de botones a los tab pages correspondientes para asegurar un diseño
+            //responsive
+            tabPage2.Controls.Add(groupBox1);
+
+            //Se alinea el group box a la medida
+            groupBox1.Top = ((this.tabPage2.Height - groupBox1.Height) / 10) * 6;
+            groupBox1.Left = ((this.tabPage2.Width - groupBox1.Width) / 2);
         }
 
-        public void setRequisitor(string idreq,string nombre)
+        public static ConsumoMaqLayer GetInstancia()
+        {
+            if (_ConsumoMaq == null)
+            {
+                _ConsumoMaq = new ConsumoMaqLayer();
+            }
+            return _ConsumoMaq;
+        }
+
+        public void setRequisitor(string idreq, string nombre)
         {
             this.Idreq.Text = idreq;
-            this.Nombrereq.Text = nombre;  
+            this.Nombrereq.Text = nombre;
+        }
+
+        public void setMaq(string idmaq)
+        {
+            this.nomaqtxt.Text = idmaq;
         }
 
         public void setArticulo(string sapn, string desc, string unme, decimal stock, decimal preun, string tica)
@@ -57,11 +95,11 @@ namespace UserLayer
         {
             MessageBox.Show(mensaje, "Sistemas Tool Crib", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
-
         private void Limpiar()
         {
-            this.cccb.SelectedIndex = 1;
+            this.nomaqtxt.Text = string.Empty;
             this.Idreq.Text = string.Empty;
+            this.fechasalidapick.Value.AddDays(1);
             this.Nombrereq.Text = string.Empty;
             this.totalfaq.Text = "0.0";
             this.crearTabla();
@@ -83,7 +121,8 @@ namespace UserLayer
         private void Habilitar(bool valor)
         {
             this.fechasalidapick.Enabled = valor;
-            this.cccb.Enabled = valor;
+            this.fechasalidapick.Value = DateTime.Today;
+            this.maq.Enabled = valor;
             this.cant.Enabled = valor;
             this.cant.DecimalPlaces = 2;
             this.additem.Enabled = valor;
@@ -118,21 +157,21 @@ namespace UserLayer
 
         private void Mostrar()
         {
-            this.dataListado.DataSource = ConsumoCCStruct.Mostrar();
+            this.dataListado.DataSource = ConsumoMaqStruct.Mostrar();
             this.OcultarColumnas();
             lbltotalreg.Text = "Total de Registros: " + Convert.ToString(dataListado.Rows.Count);
         }
 
         private void BuscarFechas()
         {
-            this.dataListado.DataSource = ConsumoCCStruct.BuscarFechas(this.fecha1.Value, this.fecha2.Value);
+            this.dataListado.DataSource = ConsumoMaqStruct.BuscarFechas(this.fecha1.Value, this.fecha2.Value);
             this.OcultarColumnas();
             lbltotalreg.Text = "Total de Registros: " + Convert.ToString(dataListado.Rows.Count);
         }
 
         private void MostrarDetalle()
         {
-            this.dataListadoDetalle.DataSource = ConsumoCCStruct.MostrarDetalle(Convert.ToInt32(idConsumo.Text));
+            this.dataListadoDetalle.DataSource = ConsumoMaqStruct.MostrarDetalle(Convert.ToInt32(idConsumo.Text));
         }
 
         private void crearTabla()
@@ -151,63 +190,21 @@ namespace UserLayer
             this.dataListadoDetalle.DataSource = this.datadetalle;
         }
 
-        public ConsmoCCLayer()
+        private void ConsumoMaqLayer_Load(object sender, EventArgs e)
         {
-            InitializeComponent();
-            //Se agrega el logo de Robert Bosch y la leyenda proveedor en funcion del picture box #1 es
-            //decir la barra de color azul superior
-            pictureBox1.Controls.Add(pictureBox2);
-            pictureBox1.Dock = DockStyle.Top;
-            pictureBox1.Controls.Add(label1);
-
-            //Se fija el logo de Robert Bosch en la parte superior izquierda de la pantalla 
-            pictureBox2.Top = 10;
-            pictureBox2.Left = 10;
-
-            //Se fija la leyenda Proveedor en la parte central superior
-            label1.Top = (this.ClientSize.Height - label1.Height) / 16;
-            label1.Left = (this.ClientSize.Width - label1.Width) / 2;
-
-            //Se fija la barra azul inferior con fines esteticos
-            pictureBox3.Dock = DockStyle.Bottom;
-
-            //Se agregan las pestañas para visualizar los proveedores y/o modificarlos segun se requiera
-            tabControl1.Left = ((this.ClientSize.Width - tabControl1.Width) / 2);
-            tabControl1.Top = ((this.ClientSize.Height - tabControl1.Height) / 2) + 20;
-
-            //Se agregan los grupos de botones a los tab pages correspondientes para asegurar un diseño
-            //responsive
-            tabPage2.Controls.Add(groupBox1);
-
-            //Se alinea el group box a la medida
-            groupBox1.Top = ((this.tabPage2.Height - groupBox1.Height) / 10) * 6;
-            groupBox1.Left = ((this.tabPage2.Width - groupBox1.Width) / 2);
-        }
-
-        private void ConsmoCCLayer_Load(object sender, EventArgs e)
-        {
-            llenarCombo();
             this.Mostrar();
             this.Habilitar(false);
             this.Botones();
             this.crearTabla();
-            this.ttMensaje.SetToolTip(this.Nombrereq,"Seleccione un requisitor");
-            this.ttMensaje.SetToolTip(this.cccb, "Seleccione un Centro de Costo");
+            this.ttMensaje.SetToolTip(this.Nombrereq, "Seleccione un requisitor");
+            this.ttMensaje.SetToolTip(this.nomaqtxt, "Seleccione una maquina");
             this.ttMensaje.SetToolTip(this.cant, "Ingrese una cantidad");
             this.ttMensaje.SetToolTip(this.sapntxt, "Seleccione un Articulo");
         }
 
-        //Llenado del combo box
-        private void llenarCombo()
+        private void ConsumoMaqLayer_FormClosing(object sender, FormClosingEventArgs e)
         {
-            this.cccb.DataSource = CentroCostoStruct.Mostrar();
-            cccb.ValueMember = "ClaveCentroCosto";
-            cccb.DisplayMember = "ClaveCentroCosto";
-        }
-
-        private void ConsmoCCLayer_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            _Consumo = null;
+            _ConsumoMaq = null;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -215,7 +212,7 @@ namespace UserLayer
             this.BuscarFechas();
         }
 
-        private void button3_Click(object sender, EventArgs e) 
+        private void button3_Click(object sender, EventArgs e)
         {
             try
             {
@@ -231,7 +228,7 @@ namespace UserLayer
                         if (Convert.ToBoolean(Row.Cells[0].Value))
                         {
                             codigo = Convert.ToInt32(Row.Cells[1].Value);
-                            respuesta = ConsumoCCStruct.Eliminar(codigo);
+                            respuesta = ConsumoMaqStruct.Eliminar(codigo);
                             if (respuesta.Equals("KK"))
                             {
                                 this.MensajeKK("Se elimino correctamente el registro");
@@ -255,10 +252,10 @@ namespace UserLayer
         private void dataListado_DoubleClick(object sender, EventArgs e)
         {
             this.idConsumo.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["IDConsumo"].Value);
-            this.fechasalidapick.Value = Convert.ToDateTime(this.dataListado.CurrentRow.Cells["Fecha"].Value);
-            this.cccb.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["ClaveCentroCosto"].Value);
+            this.nomaqtxt.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["NoMaquina"].Value);
             this.Idreq.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["IDRequisitor"].Value);
             this.Nombrereq.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Requisitor"].Value);
+            this.fechasalidapick.Value = Convert.ToDateTime(this.dataListado.CurrentRow.Cells["Fecha"].Value);
             this.totalfaq.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Total"].Value);
             MostrarDetalle();
             tabControl1.SelectedIndex = 1;
@@ -297,7 +294,13 @@ namespace UserLayer
             Articulo.ShowDialog();
         }
 
-        private void cancelarbtn_Click_1(object sender, EventArgs e)
+        private void maq_Click(object sender, EventArgs e)
+        {
+            MaqConsumoLayer Maquina = new MaqConsumoLayer();
+            Maquina.ShowDialog();
+        }
+
+        private void cancelarbtn_Click(object sender, EventArgs e)
         {
             this.IsNuevo = false;
             this.Botones();
@@ -306,7 +309,7 @@ namespace UserLayer
             this.Habilitar(false);
         }
 
-        private void nuevobtn_Click_1(object sender, EventArgs e)
+        private void nuevobtn_Click(object sender, EventArgs e)
         {
             this.IsNuevo = true;
             this.Botones();
@@ -315,17 +318,17 @@ namespace UserLayer
             this.Habilitar(true);
         }
 
-        private void guardabtn_Click_1(object sender, EventArgs e)
+        private void guardabtn_Click(object sender, EventArgs e)
         {
             try
             {
                 string respuesta = "";
-                if (this.cccb.Text == string.Empty || this.Idreq.Text == string.Empty)
+                if (this.nomaqtxt.Text == string.Empty || this.Idreq.Text == string.Empty)
                 {
                     MensajeError("Datos ingresados erroneamente, favor de revisar");
-                    if (this.cccb.Text == string.Empty)
+                    if (this.nomaqtxt.Text == string.Empty)
                     {
-                        errorIcono.SetError(cccb, "Centro de Costo no definido");
+                        errorIcono.SetError(nomaqtxt, "Maquina no definida");
                     }
                     if (this.Idreq.Text == string.Empty)
                     {
@@ -337,7 +340,7 @@ namespace UserLayer
                 {
                     if (this.IsNuevo)
                     {
-                        respuesta = ConsumoCCStruct.Insertar(Convert.ToDateTime(fechasalidapick.Value.ToString("dd/MM/yyyy")), Convert.ToInt32(cccb.Text), Idreq.Text, Convert.ToDecimal(totalfaq.Text), datadetalle);
+                        respuesta = ConsumoMaqStruct.Insertar(nomaqtxt.Text, Idreq.Text,Convert.ToDateTime(fechasalidapick.Value.ToString("dd/MM/yyyy")), Convert.ToDecimal(totalfaq.Text), datadetalle);
                     }
 
                     if (respuesta.Equals("KK"))
@@ -364,7 +367,7 @@ namespace UserLayer
             }
         }
 
-        private void adddetail_Click_1(object sender, EventArgs e)
+        private void adddetail_Click(object sender, EventArgs e)
         {
             try
             {
@@ -415,7 +418,7 @@ namespace UserLayer
             }
         }
 
-        private void deldetail_Click_1(object sender, EventArgs e)
+        private void deldetail_Click(object sender, EventArgs e)
         {
             try
             {

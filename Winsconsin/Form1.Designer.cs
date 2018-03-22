@@ -35,16 +35,17 @@
             this.nuevobtn = new System.Windows.Forms.Button();
             this.dataListadoDetalle = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.Nombrereq = new System.Windows.Forms.TextBox();
-            this.Idreq = new System.Windows.Forms.TextBox();
-            this.addreq = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.fechasalidapick = new System.Windows.Forms.DateTimePicker();
-            this.cccb = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.addreq = new System.Windows.Forms.Button();
+            this.Nombrereq = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.Idreq = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.label12 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -158,22 +159,24 @@
             // 
             // tableLayoutPanel4
             // 
-            this.tableLayoutPanel4.ColumnCount = 5;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel4.Controls.Add(this.Nombrereq, 3, 1);
-            this.tableLayoutPanel4.Controls.Add(this.Idreq, 2, 1);
-            this.tableLayoutPanel4.Controls.Add(this.addreq, 3, 0);
-            this.tableLayoutPanel4.Controls.Add(this.label4, 2, 0);
+            this.tableLayoutPanel4.ColumnCount = 6;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.89189F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.13513F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18.24324F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.13513F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.36486F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.22973F));
             this.tableLayoutPanel4.Controls.Add(this.label3, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.fechasalidapick, 0, 1);
-            this.tableLayoutPanel4.Controls.Add(this.cccb, 1, 1);
-            this.tableLayoutPanel4.Controls.Add(this.label5, 4, 0);
-            this.tableLayoutPanel4.Controls.Add(this.label6, 4, 1);
+            this.tableLayoutPanel4.Controls.Add(this.label5, 5, 0);
+            this.tableLayoutPanel4.Controls.Add(this.label6, 5, 1);
+            this.tableLayoutPanel4.Controls.Add(this.addreq, 4, 0);
+            this.tableLayoutPanel4.Controls.Add(this.Nombrereq, 4, 1);
+            this.tableLayoutPanel4.Controls.Add(this.label4, 3, 0);
+            this.tableLayoutPanel4.Controls.Add(this.Idreq, 3, 1);
+            this.tableLayoutPanel4.Controls.Add(this.button1, 1, 1);
+            this.tableLayoutPanel4.Controls.Add(this.textBox1, 2, 1);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(0);
@@ -184,53 +187,15 @@
             this.tableLayoutPanel4.Size = new System.Drawing.Size(959, 71);
             this.tableLayoutPanel4.TabIndex = 48;
             // 
-            // Nombrereq
-            // 
-            this.Nombrereq.Location = new System.Drawing.Point(576, 38);
-            this.Nombrereq.Name = "Nombrereq";
-            this.Nombrereq.ReadOnly = true;
-            this.Nombrereq.Size = new System.Drawing.Size(164, 20);
-            this.Nombrereq.TabIndex = 15;
-            // 
-            // Idreq
-            // 
-            this.Idreq.Location = new System.Drawing.Point(385, 38);
-            this.Idreq.Name = "Idreq";
-            this.Idreq.ReadOnly = true;
-            this.Idreq.Size = new System.Drawing.Size(164, 20);
-            this.Idreq.TabIndex = 14;
-            // 
-            // addreq
-            // 
-            this.addreq.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addreq.Location = new System.Drawing.Point(573, 0);
-            this.addreq.Margin = new System.Windows.Forms.Padding(0);
-            this.addreq.Name = "addreq";
-            this.addreq.Size = new System.Drawing.Size(164, 21);
-            this.addreq.TabIndex = 13;
-            this.addreq.Text = "Añadir Requisitor";
-            this.addreq.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.addreq.UseVisualStyleBackColor = true;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(385, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(85, 21);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Requisitor";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(194, 0);
+            this.label3.Location = new System.Drawing.Point(164, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(140, 21);
+            this.label3.Size = new System.Drawing.Size(81, 21);
             this.label3.TabIndex = 6;
-            this.label3.Text = "Centro de Costo";
+            this.label3.Text = "Maquina";
             // 
             // label2
             // 
@@ -252,19 +217,11 @@
             this.fechasalidapick.TabIndex = 5;
             this.fechasalidapick.Value = new System.DateTime(2018, 3, 10, 0, 0, 0, 0);
             // 
-            // cccb
-            // 
-            this.cccb.FormattingEnabled = true;
-            this.cccb.Location = new System.Drawing.Point(194, 38);
-            this.cccb.Name = "cccb";
-            this.cccb.Size = new System.Drawing.Size(121, 21);
-            this.cccb.TabIndex = 7;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(767, 0);
+            this.label5.Location = new System.Drawing.Point(794, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(49, 21);
             this.label5.TabIndex = 11;
@@ -274,11 +231,65 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(767, 35);
+            this.label6.Location = new System.Drawing.Point(794, 35);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(180, 36);
+            this.label6.Size = new System.Drawing.Size(131, 36);
             this.label6.TabIndex = 12;
             this.label6.Text = "Tu puta madre como ves?";
+            // 
+            // addreq
+            // 
+            this.addreq.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addreq.Location = new System.Drawing.Point(529, 0);
+            this.addreq.Margin = new System.Windows.Forms.Padding(0);
+            this.addreq.Name = "addreq";
+            this.addreq.Size = new System.Drawing.Size(164, 21);
+            this.addreq.TabIndex = 13;
+            this.addreq.Text = "Añadir Requisitor";
+            this.addreq.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.addreq.UseVisualStyleBackColor = true;
+            // 
+            // Nombrereq
+            // 
+            this.Nombrereq.Location = new System.Drawing.Point(532, 38);
+            this.Nombrereq.Name = "Nombrereq";
+            this.Nombrereq.ReadOnly = true;
+            this.Nombrereq.Size = new System.Drawing.Size(164, 20);
+            this.Nombrereq.TabIndex = 15;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(435, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(85, 21);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Requisitor";
+            // 
+            // Idreq
+            // 
+            this.Idreq.Location = new System.Drawing.Point(435, 38);
+            this.Idreq.Name = "Idreq";
+            this.Idreq.ReadOnly = true;
+            this.Idreq.Size = new System.Drawing.Size(91, 20);
+            this.Idreq.TabIndex = 14;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(164, 38);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(261, 38);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 17;
             // 
             // tableLayoutPanel5
             // 
@@ -545,7 +556,6 @@
         private System.Windows.Forms.Button cancelarbtn;
         private System.Windows.Forms.Button guardabtn;
         private System.Windows.Forms.Button nuevobtn;
-        private System.Windows.Forms.DataGridView dataListadoDetalle;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.TextBox Nombrereq;
         private System.Windows.Forms.TextBox Idreq;
@@ -554,7 +564,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker fechasalidapick;
-        private System.Windows.Forms.ComboBox cccb;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
@@ -578,6 +587,9 @@
         private System.Windows.Forms.Button adddetail;
         private System.Windows.Forms.Button deldetail;
         private System.Windows.Forms.Button additem;
+        private System.Windows.Forms.DataGridView dataListadoDetalle;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 

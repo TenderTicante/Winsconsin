@@ -68,6 +68,18 @@
     <Compile Include="ConsmoCCLayer.Designer.cs">
       <DependentUpon>ConsmoCCLayer.cs</DependentUpon>
     </Compile>
+    <Compile Include="ConsumoMaqLayer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsumoMaqLayer.Designer.cs">
+      <DependentUpon>ConsumoMaqLayer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MaqConsumoLayer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaqConsumoLayer.Designer.cs">
+      <DependentUpon>MaqConsumoLayer.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginLayer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +159,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ConsmoCCLayer.resx">
       <DependentUpon>ConsmoCCLayer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsumoMaqLayer.resx">
+      <DependentUpon>ConsumoMaqLayer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaqConsumoLayer.resx">
+      <DependentUpon>MaqConsumoLayer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginLayer.resx">
       <DependentUpon>LoginLayer.cs</DependentUpon>

@@ -92,7 +92,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 38.28306F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 61.71694F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 129F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 111F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 112F));
             this.tableLayoutPanel1.Controls.Add(this.txtBuscar, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.Buscarbtn, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.Registroslbl, 1, 1);
@@ -113,7 +113,7 @@
             this.txtBuscar.Location = new System.Drawing.Point(245, 10);
             this.txtBuscar.Margin = new System.Windows.Forms.Padding(10);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(359, 26);
+            this.txtBuscar.Size = new System.Drawing.Size(358, 26);
             this.txtBuscar.TabIndex = 1;
             // 
             // Buscarbtn
@@ -122,7 +122,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Buscarbtn.ForeColor = System.Drawing.Color.Black;
-            this.Buscarbtn.Location = new System.Drawing.Point(620, 6);
+            this.Buscarbtn.Location = new System.Drawing.Point(619, 6);
             this.Buscarbtn.Margin = new System.Windows.Forms.Padding(6);
             this.Buscarbtn.Name = "Buscarbtn";
             this.Buscarbtn.Size = new System.Drawing.Size(117, 34);
@@ -139,7 +139,7 @@
             this.Registroslbl.Location = new System.Drawing.Point(245, 56);
             this.Registroslbl.Margin = new System.Windows.Forms.Padding(10);
             this.Registroslbl.Name = "Registroslbl";
-            this.Registroslbl.Size = new System.Drawing.Size(359, 26);
+            this.Registroslbl.Size = new System.Drawing.Size(358, 26);
             this.Registroslbl.TabIndex = 5;
             this.Registroslbl.Text = "El caballo hace hiiiiiiiiiiiiiiiiiiiii";
             this.Registroslbl.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -154,7 +154,7 @@
             "Apellido",
             "CentroCosto",
             "Puesto"});
-            this.cbBusqueda.Location = new System.Drawing.Point(104, 10);
+            this.cbBusqueda.Location = new System.Drawing.Point(104, 12);
             this.cbBusqueda.Margin = new System.Windows.Forms.Padding(10);
             this.cbBusqueda.Name = "cbBusqueda";
             this.cbBusqueda.Size = new System.Drawing.Size(121, 28);

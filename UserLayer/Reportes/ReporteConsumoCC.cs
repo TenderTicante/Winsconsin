@@ -19,8 +19,20 @@ namespace UserLayer
 
         private void ReporteConsumoCC_Load(object sender, EventArgs e)
         {
+
+        }
+
+        private void Apbut_Click(object sender, EventArgs e)
+        {
+            this.ReporteConsumoCCTableAdapter.FillFecha(this.DataSetConsumo.ReporteConsumoCC,dateTimePicker1.Value,dateTimePicker2.Value);
+
+            this.reportViewer1.RefreshReport();
+        }
+
+        private void abertodos_Click(object sender, EventArgs e)
+        {
             // TODO: esta línea de código carga datos en la tabla 'DataSetConsumo.ReporteConsumoCC' Puede moverla o quitarla según sea necesario.
-            this.ReporteConsumoCCTableAdapter.Fill(this.DataSetConsumo.ReporteConsumoCC);
+            this.ReporteConsumoCCTableAdapter.ConsumoFull(this.DataSetConsumo.ReporteConsumoCC);
 
             this.reportViewer1.RefreshReport();
         }

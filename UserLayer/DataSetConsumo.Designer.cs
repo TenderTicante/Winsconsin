@@ -301,6 +301,8 @@ namespace UserLayer {
             
             private global::System.Data.DataColumn columnSubtotal;
             
+            private global::System.Data.DataColumn columnTipoCambio;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public ReporteConsumoCCDataTable() {
@@ -424,6 +426,14 @@ namespace UserLayer {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TipoCambioColumn {
+                get {
+                    return this.columnTipoCambio;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -459,7 +469,7 @@ namespace UserLayer {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ReporteConsumoCCRow AddReporteConsumoCCRow(System.DateTime Fecha, string CentroCosto, string Requisitor, decimal Total, string SAPNumber, string Descripcion, string NombreProveedor, decimal PrecioUnitario, decimal Cantidad, decimal Subtotal) {
+            public ReporteConsumoCCRow AddReporteConsumoCCRow(System.DateTime Fecha, string CentroCosto, string Requisitor, decimal Total, string SAPNumber, string Descripcion, string NombreProveedor, decimal PrecioUnitario, decimal Cantidad, decimal Subtotal, string TipoCambio) {
                 ReporteConsumoCCRow rowReporteConsumoCCRow = ((ReporteConsumoCCRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Fecha,
@@ -472,7 +482,8 @@ namespace UserLayer {
                         NombreProveedor,
                         PrecioUnitario,
                         Cantidad,
-                        Subtotal};
+                        Subtotal,
+                        TipoCambio};
                 rowReporteConsumoCCRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowReporteConsumoCCRow);
                 return rowReporteConsumoCCRow;
@@ -506,6 +517,7 @@ namespace UserLayer {
                 this.columnPrecioUnitario = base.Columns["PrecioUnitario"];
                 this.columnCantidad = base.Columns["Cantidad"];
                 this.columnSubtotal = base.Columns["Subtotal"];
+                this.columnTipoCambio = base.Columns["TipoCambio"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -533,6 +545,8 @@ namespace UserLayer {
                 base.Columns.Add(this.columnCantidad);
                 this.columnSubtotal = new global::System.Data.DataColumn("Subtotal", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSubtotal);
+                this.columnTipoCambio = new global::System.Data.DataColumn("TipoCambio", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTipoCambio);
                 this.columnFecha.AllowDBNull = false;
                 this.columnIDConsumo.AutoIncrement = true;
                 this.columnIDConsumo.AllowDBNull = false;
@@ -551,6 +565,8 @@ namespace UserLayer {
                 this.columnPrecioUnitario.AllowDBNull = false;
                 this.columnCantidad.AllowDBNull = false;
                 this.columnSubtotal.AllowDBNull = false;
+                this.columnTipoCambio.AllowDBNull = false;
+                this.columnTipoCambio.MaxLength = 5;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -824,6 +840,17 @@ namespace UserLayer {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string TipoCambio {
+                get {
+                    return ((string)(this[this.tableReporteConsumoCC.TipoCambioColumn]));
+                }
+                set {
+                    this[this.tableReporteConsumoCC.TipoCambioColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsCentroCostoNull() {
                 return this.IsNull(this.tableReporteConsumoCC.CentroCostoColumn);
             }
@@ -1017,6 +1044,7 @@ namespace UserLayer.DataSetConsumoTableAdapters {
             tableMapping.ColumnMappings.Add("PrecioUnitario", "PrecioUnitario");
             tableMapping.ColumnMappings.Add("Cantidad", "Cantidad");
             tableMapping.ColumnMappings.Add("Subtotal", "Subtotal");
+            tableMapping.ColumnMappings.Add("TipoCambio", "TipoCambio");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -1030,19 +1058,26 @@ namespace UserLayer.DataSetConsumoTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "dbo.ReporteConsumoCC";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "dbo.ReporteCCxFecha";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@varaux1", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@varaux2", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DataSetConsumo.ReporteConsumoCCDataTable dataTable) {
+        public virtual int ConsumoFull(DataSetConsumo.ReporteConsumoCCDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1057,6 +1092,54 @@ namespace UserLayer.DataSetConsumoTableAdapters {
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual DataSetConsumo.ReporteConsumoCCDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            DataSetConsumo.ReporteConsumoCCDataTable dataTable = new DataSetConsumo.ReporteConsumoCCDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillFecha(DataSetConsumo.ReporteConsumoCCDataTable dataTable, global::System.Nullable<global::System.DateTime> varaux1, global::System.Nullable<global::System.DateTime> varaux2) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((varaux1.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(varaux1.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((varaux2.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((System.DateTime)(varaux2.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DataSetConsumo.ReporteConsumoCCDataTable GetDataBy(global::System.Nullable<global::System.DateTime> varaux1, global::System.Nullable<global::System.DateTime> varaux2) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((varaux1.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(varaux1.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((varaux2.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((System.DateTime)(varaux2.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
             DataSetConsumo.ReporteConsumoCCDataTable dataTable = new DataSetConsumo.ReporteConsumoCCDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

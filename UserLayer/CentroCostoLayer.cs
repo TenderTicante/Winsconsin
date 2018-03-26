@@ -266,6 +266,7 @@ namespace UserLayer
                             }
                         }
                     }
+                    checkBox1.Checked = false;
                     this.MostrarColumnas();
                 }
             }
@@ -277,7 +278,7 @@ namespace UserLayer
 
         private void Eliminarchk_CheckedChanged(object sender, EventArgs e)
         {
-            if (Eliminarchk.Checked)
+           /* if (Eliminarchk.Checked)
             {
                 this.dataListado.Columns[0].Visible = true;
                 Eliminarchk.Checked = false;
@@ -285,7 +286,7 @@ namespace UserLayer
             else
             {
                 this.dataListado.Columns[0].Visible = false;
-            }
+            }*/
         }
 
         private void dataListado_DoubleClick(object sender, EventArgs e)
@@ -295,6 +296,18 @@ namespace UserLayer
             this.msecb.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["MSE"].Value);
 
             this.tabControl1.SelectedIndex = 1;
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                this.dataListado.Columns[0].Visible = true;
+            }
+            else
+            {
+                this.dataListado.Columns[0].Visible = false;
+            }
         }
     }
 }

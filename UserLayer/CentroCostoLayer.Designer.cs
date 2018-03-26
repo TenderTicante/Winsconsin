@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CentroCostoLayer));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
@@ -52,7 +52,6 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.Imprimirbtn = new System.Windows.Forms.Button();
-            this.Eliminarchk = new System.Windows.Forms.CheckBox();
             this.Buscarbtn = new System.Windows.Forms.Button();
             this.Eliminarbtn = new System.Windows.Forms.Button();
             this.Registroslbl = new System.Windows.Forms.Label();
@@ -68,6 +67,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ttMensaje = new System.Windows.Forms.ToolTip(this.components);
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -229,7 +229,7 @@
             "MSE2",
             "MSE3",
             "MSE4"});
-            this.msecb.Location = new System.Drawing.Point(289, 125);
+            this.msecb.Location = new System.Drawing.Point(289, 121);
             this.msecb.Margin = new System.Windows.Forms.Padding(1, 0, 0, 0);
             this.msecb.Name = "msecb";
             this.msecb.Size = new System.Drawing.Size(216, 28);
@@ -311,14 +311,14 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 61.71694F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 129F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 104F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 168F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 169F));
             this.tableLayoutPanel1.Controls.Add(this.txtBuscar, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.Imprimirbtn, 4, 0);
-            this.tableLayoutPanel1.Controls.Add(this.Eliminarchk, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.Buscarbtn, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.Eliminarbtn, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.Registroslbl, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.checkBox1, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
@@ -335,33 +335,20 @@
             this.txtBuscar.Location = new System.Drawing.Point(183, 10);
             this.txtBuscar.Margin = new System.Windows.Forms.Padding(10);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(260, 26);
+            this.txtBuscar.Size = new System.Drawing.Size(259, 26);
             this.txtBuscar.TabIndex = 1;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // Imprimirbtn
             // 
             this.Imprimirbtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Imprimirbtn.Location = new System.Drawing.Point(692, 6);
+            this.Imprimirbtn.Location = new System.Drawing.Point(691, 6);
             this.Imprimirbtn.Margin = new System.Windows.Forms.Padding(6);
             this.Imprimirbtn.Name = "Imprimirbtn";
-            this.Imprimirbtn.Size = new System.Drawing.Size(157, 34);
+            this.Imprimirbtn.Size = new System.Drawing.Size(158, 34);
             this.Imprimirbtn.TabIndex = 4;
             this.Imprimirbtn.Text = "Imprimir";
             this.Imprimirbtn.UseVisualStyleBackColor = true;
-            // 
-            // Eliminarchk
-            // 
-            this.Eliminarchk.AutoSize = true;
-            this.Eliminarchk.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Eliminarchk.ForeColor = System.Drawing.Color.Black;
-            this.Eliminarchk.Location = new System.Drawing.Point(3, 49);
-            this.Eliminarchk.Name = "Eliminarchk";
-            this.Eliminarchk.Size = new System.Drawing.Size(167, 40);
-            this.Eliminarchk.TabIndex = 6;
-            this.Eliminarchk.Text = "Eliminar Registros";
-            this.Eliminarchk.UseVisualStyleBackColor = true;
-            this.Eliminarchk.CheckedChanged += new System.EventHandler(this.Eliminarchk_CheckedChanged);
             // 
             // Buscarbtn
             // 
@@ -369,7 +356,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Buscarbtn.ForeColor = System.Drawing.Color.Black;
-            this.Buscarbtn.Location = new System.Drawing.Point(459, 6);
+            this.Buscarbtn.Location = new System.Drawing.Point(458, 6);
             this.Buscarbtn.Margin = new System.Windows.Forms.Padding(6);
             this.Buscarbtn.Name = "Buscarbtn";
             this.Buscarbtn.Size = new System.Drawing.Size(117, 34);
@@ -380,7 +367,7 @@
             // Eliminarbtn
             // 
             this.Eliminarbtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Eliminarbtn.Location = new System.Drawing.Point(588, 6);
+            this.Eliminarbtn.Location = new System.Drawing.Point(587, 6);
             this.Eliminarbtn.Margin = new System.Windows.Forms.Padding(6);
             this.Eliminarbtn.Name = "Eliminarbtn";
             this.Eliminarbtn.Size = new System.Drawing.Size(92, 34);
@@ -397,7 +384,7 @@
             this.Registroslbl.Location = new System.Drawing.Point(183, 56);
             this.Registroslbl.Margin = new System.Windows.Forms.Padding(10);
             this.Registroslbl.Name = "Registroslbl";
-            this.Registroslbl.Size = new System.Drawing.Size(260, 26);
+            this.Registroslbl.Size = new System.Drawing.Size(259, 26);
             this.Registroslbl.TabIndex = 5;
             this.Registroslbl.Text = "El borrego hace beeeeeeeee";
             // 
@@ -423,37 +410,37 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataListado.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataListado.BackgroundColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Maroon;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataListado.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Maroon;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataListado.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dataListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataListado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Eliminar});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Maroon;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataListado.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Maroon;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataListado.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataListado.GridColor = System.Drawing.Color.DimGray;
             this.dataListado.Location = new System.Drawing.Point(27, 101);
             this.dataListado.Name = "dataListado";
             this.dataListado.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.DarkRed;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataListado.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataListado.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dataListado.Size = new System.Drawing.Size(817, 114);
             this.dataListado.TabIndex = 7;
             this.dataListado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataListado_CellContentClick);
@@ -568,6 +555,19 @@
             // 
             this.ttMensaje.IsBalloon = true;
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.ForeColor = System.Drawing.Color.Black;
+            this.checkBox1.Location = new System.Drawing.Point(5, 56);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(5, 10, 3, 3);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(156, 24);
+            this.checkBox1.TabIndex = 8;
+            this.checkBox1.Text = "Eliminar Registros";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
             // CentroCostoLayer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -579,7 +579,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "CentroCostoLayer";
             this.Text = "CentroCostoLayer";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -622,7 +622,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Button Imprimirbtn;
-        private System.Windows.Forms.CheckBox Eliminarchk;
         private System.Windows.Forms.Button Buscarbtn;
         private System.Windows.Forms.Button Eliminarbtn;
         private System.Windows.Forms.Label Registroslbl;
@@ -644,5 +643,6 @@
         private System.Windows.Forms.ToolTip ttMensaje;
         private System.Windows.Forms.ComboBox msecb;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

@@ -432,5 +432,11 @@ namespace UserLayer
                 MensajeError("No hay fila para Remover");
             }
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            ReporteConsumoCC Reporte = new ReporteConsumoCC();
+            Reporte.ShowDialog();
+        }
     }
 }

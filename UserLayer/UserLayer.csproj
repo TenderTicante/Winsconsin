@@ -169,6 +169,12 @@
     <Compile Include="Reportes\ReporteConsumoCC.Designer.cs">
       <DependentUpon>ReporteConsumoCC.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\ReporteConsumoMaquina.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteConsumoMaquina.Designer.cs">
+      <DependentUpon>ReporteConsumoMaquina.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReqConsumoView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -242,6 +248,10 @@
     <EmbeddedResource Include="Reportes\ReporteConsumoCC.rdlc" />
     <EmbeddedResource Include="Reportes\ReporteConsumoCC.resx">
       <DependentUpon>ReporteConsumoCC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReporteConsumoMaquina.rdlc" />
+    <EmbeddedResource Include="Reportes\ReporteConsumoMaquina.resx">
+      <DependentUpon>ReporteConsumoMaquina.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReqConsumoView.resx">
       <DependentUpon>ReqConsumoView.cs</DependentUpon>

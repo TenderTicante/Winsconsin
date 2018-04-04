@@ -683,5 +683,12 @@ namespace UserLayer
         {
             _Instancia = null;
         }
+
+        private void Registroslbl_Click(object sender, EventArgs e)
+        {
+            kawaiipig.Visible = true;
+            kawaiipig2.Visible = true;
+            kawaiipig3.Visible = true;
+        }
     }
 }

@@ -55,16 +55,16 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1.27547cm</Width>
+              <Width>2.06048cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.52104cm</Width>
+              <Width>1.75437cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.01833cm</Width>
+              <Width>1.5788cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.94437cm</Width>
+              <Width>2.21703cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>2.28833cm</Width>
@@ -73,7 +73,7 @@
               <Width>2.1825cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.60042cm</Width>
+              <Width>2.22188cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>1.36229cm</Width>
@@ -85,12 +85,12 @@
               <Width>1.15063cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>1.62688cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.6cm</Height>
+              <Height>0.99688cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -516,6 +516,7 @@
                               <Value>=Fields!Fecha.Value</Value>
                               <Style>
                                 <FontFamily>Century Gothic</FontFamily>
+                                <Format>d</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -740,6 +741,8 @@
                               <Value>=Fields!PrecioUnitario.Value</Value>
                               <Style>
                                 <FontFamily>Century Gothic</FontFamily>
+                                <Format>'$'0.00;('$'0.00)</Format>
+                                <rd:FormatSymbolCulture>es-MX</rd:FormatSymbolCulture>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -804,6 +807,7 @@
                               <Value>=Fields!Cantidad.Value</Value>
                               <Style>
                                 <FontFamily>Century Gothic</FontFamily>
+                                <Format>0.00;(0.00)</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -822,6 +826,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -976,8 +981,8 @@
         <DataSetName>DataSet1</DataSetName>
         <Top>3.46287cm</Top>
         <Left>0.55245cm</Left>
-        <Height>1.2cm</Height>
-        <Width>19.22401cm</Width>
+        <Height>1.59688cm</Height>
+        <Width>20.8238cm</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>

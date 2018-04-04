@@ -366,6 +366,8 @@
     <Content Include="bin\Release\StructLayer.pdb" />
     <Content Include="bin\Release\UserLayer.dll" />
     <Content Include="bin\Release\UserLayer.pdb" />
+    <None Include="Resources\kawaii cow.png" />
+    <None Include="Resources\kawaii_pig.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

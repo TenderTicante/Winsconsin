@@ -1,4 +1,4 @@
-﻿namespace UserLayer.Reportes
+﻿namespace UserLayer
 {
     partial class ReporteConsumoMaquina
     {
@@ -28,28 +28,48 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.ReporteMaqBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.DataSetConsumo = new UserLayer.DataSetConsumo();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.label2 = new System.Windows.Forms.Label();
-            this.Apbtn2 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.Maqchk = new System.Windows.Forms.CheckBox();
+            this.ccchk = new System.Windows.Forms.CheckBox();
+            this.fechachk = new System.Windows.Forms.CheckBox();
+            this.maqtxt = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.cctxt = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
+            this.ReporteMaqTableAdapter = new UserLayer.DataSetConsumoTableAdapters.ReporteMaqTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.ReporteMaqBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSetConsumo)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // ReporteMaqBindingSource
+            // 
+            this.ReporteMaqBindingSource.DataMember = "ReporteMaq";
+            this.ReporteMaqBindingSource.DataSource = this.DataSetConsumo;
+            // 
+            // DataSetConsumo
+            // 
+            this.DataSetConsumo.DataSetName = "DataSetConsumo";
+            this.DataSetConsumo.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource1.Name = "DataSet1";
+            reportDataSource1.Value = this.ReporteMaqBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "UserLayer.Reportes.ReporteConsumoMaquina.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 60);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
@@ -58,15 +78,14 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.checkBox3);
-            this.panel1.Controls.Add(this.checkBox2);
-            this.panel1.Controls.Add(this.checkBox1);
             this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.Maqchk);
+            this.panel1.Controls.Add(this.ccchk);
+            this.panel1.Controls.Add(this.fechachk);
+            this.panel1.Controls.Add(this.maqtxt);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.Apbtn2);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.cctxt);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.dateTimePicker2);
@@ -78,30 +97,86 @@
             this.panel1.Size = new System.Drawing.Size(934, 60);
             this.panel1.TabIndex = 1;
             // 
-            // label1
+            // button2
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(167, 12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(37, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Fecha";
+            this.button2.Location = new System.Drawing.Point(808, 8);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(114, 46);
+            this.button2.TabIndex = 21;
+            this.button2.Text = "Ver Todo";
+            this.button2.UseVisualStyleBackColor = true;
             // 
-            // dateTimePicker1
+            // Maqchk
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(210, 8);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(97, 20);
-            this.dateTimePicker1.TabIndex = 4;
+            this.Maqchk.AutoSize = true;
+            this.Maqchk.Location = new System.Drawing.Point(4, 40);
+            this.Maqchk.Name = "Maqchk";
+            this.Maqchk.Size = new System.Drawing.Size(122, 17);
+            this.Maqchk.TabIndex = 20;
+            this.Maqchk.Text = "Filtrado por Maquina";
+            this.Maqchk.UseVisualStyleBackColor = true;
             // 
-            // dateTimePicker2
+            // ccchk
             // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(329, 8);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(97, 20);
-            this.dateTimePicker2.TabIndex = 5;
+            this.ccchk.AutoSize = true;
+            this.ccchk.Location = new System.Drawing.Point(4, 23);
+            this.ccchk.Name = "ccchk";
+            this.ccchk.Size = new System.Drawing.Size(157, 17);
+            this.ccchk.TabIndex = 19;
+            this.ccchk.Text = "Filtrado por Centro de Costo";
+            this.ccchk.UseVisualStyleBackColor = true;
+            // 
+            // fechachk
+            // 
+            this.fechachk.AutoSize = true;
+            this.fechachk.Location = new System.Drawing.Point(4, 6);
+            this.fechachk.Name = "fechachk";
+            this.fechachk.Size = new System.Drawing.Size(111, 17);
+            this.fechachk.TabIndex = 18;
+            this.fechachk.Text = "Filtrado por Fecha";
+            this.fechachk.UseVisualStyleBackColor = true;
+            // 
+            // maqtxt
+            // 
+            this.maqtxt.Location = new System.Drawing.Point(704, 8);
+            this.maqtxt.Name = "maqtxt";
+            this.maqtxt.Size = new System.Drawing.Size(98, 20);
+            this.maqtxt.TabIndex = 16;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(654, 11);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(48, 13);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "Maquina";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(490, 32);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(82, 23);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "Filtrar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // cctxt
+            // 
+            this.cctxt.Location = new System.Drawing.Point(526, 8);
+            this.cctxt.Name = "cctxt";
+            this.cctxt.Size = new System.Drawing.Size(98, 20);
+            this.cctxt.TabIndex = 12;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(442, 11);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(83, 13);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "Centro de Costo";
             // 
             // label2
             // 
@@ -112,94 +187,34 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "a";
             // 
-            // Apbtn2
+            // dateTimePicker2
             // 
-            this.Apbtn2.Location = new System.Drawing.Point(562, 32);
-            this.Apbtn2.Name = "Apbtn2";
-            this.Apbtn2.Size = new System.Drawing.Size(75, 23);
-            this.Apbtn2.TabIndex = 13;
-            this.Apbtn2.Text = "Filtrar";
-            this.Apbtn2.UseVisualStyleBackColor = true;
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker2.Location = new System.Drawing.Point(329, 8);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(97, 20);
+            this.dateTimePicker2.TabIndex = 5;
             // 
-            // textBox1
+            // dateTimePicker1
             // 
-            this.textBox1.Location = new System.Drawing.Point(599, 8);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(98, 20);
-            this.textBox1.TabIndex = 12;
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(210, 8);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(97, 20);
+            this.dateTimePicker1.TabIndex = 4;
             // 
-            // label3
+            // label1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(470, 11);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(129, 13);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "Filtrar por Centro de Costo";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(167, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(37, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Fecha";
             // 
-            // button1
+            // ReporteMaqTableAdapter
             // 
-            this.button1.Location = new System.Drawing.Point(302, 32);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Filtrar";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(791, 31);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 17;
-            this.button2.Text = "Filtrar";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(815, 8);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(98, 20);
-            this.textBox2.TabIndex = 16;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(717, 11);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(94, 13);
-            this.label4.TabIndex = 15;
-            this.label4.Text = "Filtrar por Maquina";
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(4, 6);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(111, 17);
-            this.checkBox1.TabIndex = 18;
-            this.checkBox1.Text = "Filtrado por Fecha";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(4, 23);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(157, 17);
-            this.checkBox2.TabIndex = 19;
-            this.checkBox2.Text = "Filtrado por Centro de Costo";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox3
-            // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(4, 40);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(122, 17);
-            this.checkBox3.TabIndex = 20;
-            this.checkBox3.Text = "Filtrado por Maquina";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.ReporteMaqTableAdapter.ClearBeforeFill = true;
             // 
             // ReporteConsumoMaquina
             // 
@@ -212,6 +227,8 @@
             this.Name = "ReporteConsumoMaquina";
             this.Text = "Consumo por Maquina";
             this.Load += new System.EventHandler(this.ReporteConsumoMaquina_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.ReporteMaqBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSetConsumo)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -226,15 +243,17 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox maqtxt;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button Apbtn2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox cctxt;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox Maqchk;
+        private System.Windows.Forms.CheckBox ccchk;
+        private System.Windows.Forms.CheckBox fechachk;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.BindingSource ReporteMaqBindingSource;
+        private DataSetConsumo DataSetConsumo;
+        private DataSetConsumoTableAdapters.ReporteMaqTableAdapter ReporteMaqTableAdapter;
     }
 }

@@ -127,7 +127,7 @@
             this.cbcc.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbcc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbcc.FormattingEnabled = true;
-            this.cbcc.Location = new System.Drawing.Point(274, 49);
+            this.cbcc.Location = new System.Drawing.Point(274, 46);
             this.cbcc.Margin = new System.Windows.Forms.Padding(0);
             this.cbcc.Name = "cbcc";
             this.cbcc.Size = new System.Drawing.Size(200, 28);
@@ -349,7 +349,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 61.71694F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 129F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 104F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 178F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 179F));
             this.tableLayoutPanel1.Controls.Add(this.txtBuscar, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.Imprimirbtn, 4, 0);
             this.tableLayoutPanel1.Controls.Add(this.Eliminarchk, 0, 1);
@@ -373,17 +373,17 @@
             this.txtBuscar.Location = new System.Drawing.Point(179, 10);
             this.txtBuscar.Margin = new System.Windows.Forms.Padding(10);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(254, 26);
+            this.txtBuscar.Size = new System.Drawing.Size(253, 26);
             this.txtBuscar.TabIndex = 1;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // Imprimirbtn
             // 
             this.Imprimirbtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Imprimirbtn.Location = new System.Drawing.Point(682, 6);
+            this.Imprimirbtn.Location = new System.Drawing.Point(681, 6);
             this.Imprimirbtn.Margin = new System.Windows.Forms.Padding(6);
             this.Imprimirbtn.Name = "Imprimirbtn";
-            this.Imprimirbtn.Size = new System.Drawing.Size(167, 34);
+            this.Imprimirbtn.Size = new System.Drawing.Size(168, 34);
             this.Imprimirbtn.TabIndex = 4;
             this.Imprimirbtn.Text = "Imprimir";
             this.Imprimirbtn.UseVisualStyleBackColor = true;
@@ -408,7 +408,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Buscarbtn.ForeColor = System.Drawing.Color.Black;
-            this.Buscarbtn.Location = new System.Drawing.Point(449, 6);
+            this.Buscarbtn.Location = new System.Drawing.Point(448, 6);
             this.Buscarbtn.Margin = new System.Windows.Forms.Padding(6);
             this.Buscarbtn.Name = "Buscarbtn";
             this.Buscarbtn.Size = new System.Drawing.Size(117, 34);
@@ -420,7 +420,7 @@
             // Eliminarbtn
             // 
             this.Eliminarbtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Eliminarbtn.Location = new System.Drawing.Point(578, 6);
+            this.Eliminarbtn.Location = new System.Drawing.Point(577, 6);
             this.Eliminarbtn.Margin = new System.Windows.Forms.Padding(6);
             this.Eliminarbtn.Name = "Eliminarbtn";
             this.Eliminarbtn.Size = new System.Drawing.Size(92, 34);
@@ -437,7 +437,7 @@
             this.Registroslbl.Location = new System.Drawing.Point(179, 56);
             this.Registroslbl.Margin = new System.Windows.Forms.Padding(10);
             this.Registroslbl.Name = "Registroslbl";
-            this.Registroslbl.Size = new System.Drawing.Size(254, 26);
+            this.Registroslbl.Size = new System.Drawing.Size(253, 26);
             this.Registroslbl.TabIndex = 5;
             this.Registroslbl.Text = "El pollito hace pioooooooooooooo";
             this.Registroslbl.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -591,7 +591,7 @@
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(-5, 0);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(235, 78);
+            this.pictureBox2.Size = new System.Drawing.Size(220, 60);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 6;
             this.pictureBox2.TabStop = false;

@@ -60,6 +60,7 @@
     <Compile Include="ConsumoMaqData.cs" />
     <Compile Include="DetalleCMaqData.cs" />
     <Compile Include="DetalleConsumoCCData.cs" />
+    <Compile Include="DetalleShoppingCart.cs" />
     <Compile Include="MaquinaData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProveedoresData.cs" />

@@ -322,5 +322,17 @@ namespace UserLayer
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Registroslbl_Click(object sender, EventArgs e)
+        {
+            cowpic1.Visible = true;
+            cowpic2.Visible = true;
+            cowpic3.Visible = true;
+        }
     }
 }
